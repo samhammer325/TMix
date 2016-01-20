@@ -1,9 +1,10 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  has_many :rating
-  has_many :playlists, through: :ratings
-  has_many :songs
+  has_many :rating, dependent: :destroy
+  has_many :playlists, through: :ratings, dependent: :destroy
+  has_many :songs, dependent: :destroy
+
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
