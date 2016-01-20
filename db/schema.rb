@@ -11,25 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160119010845) do
+ActiveRecord::Schema.define(version: 20160120000129) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "playlists", force: :cascade do |t|
     t.string   "name"
-    t.integer  "rating"
     t.boolean  "random"
     t.integer  "user_id"
+    t.integer  "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer  "score"
+    t.integer  "user_id"
+    t.integer  "playlist_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "ratings", ["playlist_id"], name: "index_ratings_on_playlist_id", using: :btree
+  add_index "ratings", ["user_id"], name: "index_ratings_on_user_id", using: :btree
 
   create_table "songs", force: :cascade do |t|
     t.string   "name"
     t.string   "artist"
     t.string   "album"
-    t.integer  "rating"
+    t.boolean  "favorite"
     t.string   "genre"
     t.integer  "playlist_id"
     t.datetime "created_at",  null: false

@@ -4,7 +4,7 @@ class CreateSongs < ActiveRecord::Migration
       t.string :name
       t.string :artist
       t.string :album
-      t.integer :rating
+      t.boolean :favorite
       t.string :genre
       t.integer :playlist_id
 
