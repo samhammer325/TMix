@@ -1,4 +1,24 @@
 Rails.application.configure do
+  config.app_domain = 'localhost:3000'
+  # Email
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default_url_options = { host: config.app_domain }
+  config.action_mailer.smtp_settings = {
+    address: 'mysongis325@gmail.com', 
+    port: '587',
+    enable_starttls_auto: true,
+    user_name: 'mysongis325@gmail.com',
+    password: 'devhackpoint',
+    authentication: :plain,
+    domain: 'localhost:3000'
+  }
+
+
+
+
+
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
