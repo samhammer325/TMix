@@ -1,2 +1,6 @@
-%h1 Email: = #{current_user.email}
+%h4.center Welcome #{current_user.email}
+.row
+  .col.s8
+    = react_component 'Search'
+
 = link_to 'Logout', destroy_user_session_path, method: 'delete'
