@@ -8,10 +8,10 @@ class User < ActiveRecord::Base
 
   has_many :rating, dependent: :destroy
   has_many :playlists, through: :ratings, dependent: :destroy
+  #TODO: User can't have many songs unless songs has a user_id!
   has_many :songs, dependent: :destroy
-
-
-  devise :database_authenticatable, :registerable, :confirmable,
+  
+  devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable
 
@@ -58,4 +58,5 @@ class User < ActiveRecord::Base
   #    user.password = Devise.friendly_token[0,20]
   #  end
   # end
+
 end
