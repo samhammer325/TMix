@@ -7,7 +7,8 @@ RSpec.describe Playlist, type: :model do
     it { should respond_to(:random) }
     it { should respond_to(:user_id) }
     it { should respond_to(:author_id) }
-    
+    it { should have_many(:songs) }
+    it { should have_many(:ratings) }
     it { should have_many(:users).through(:ratings) }
   end  
 
