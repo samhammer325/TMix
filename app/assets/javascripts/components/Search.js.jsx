@@ -18,11 +18,11 @@ class Search extends React.Component{
       // debugger
       // data: { artist: this.refs.searchText.value }
     }).success( data => {artist: artist}
-      debugger
+      // debugger
       // this.setState({tweets: data})
-    })
+    )}
 
-  }
+  
 
   render(){
 

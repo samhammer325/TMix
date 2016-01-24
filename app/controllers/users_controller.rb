@@ -2,7 +2,6 @@ class UsersController < ApplicationController
 	before_action :set_user, only: [:show, :edit, :update, :destroy, :finish_signup]
 	before_filter :ensure_sign_complete, only: [:new, :create, :update, :destroy]
 	def show
-		
 	end
 
 	def edit
@@ -25,10 +24,11 @@ class UsersController < ApplicationController
 	def finish_signup
 		if request.patch? && params[:user]
 			if @user.update(user_params)
-				@user.skip_reconfirmation!
+				# @user.skip_reconfirmation!
 				sign_in(@user, :bypass => true)
 				redirect_to root_url, notice: 'Your profile was successfully updated'
 			else
+				redirect_to root_url
 				@show_errors = true
 			end
 		end

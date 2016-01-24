@@ -3,8 +3,8 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
 
 
-  TEMP_EMAIL_PREFIX = "change@me"
-  TEMP_EMAIL_REGEX = /\Achange@me/
+  TEMP_EMAIL_PREFIX = "temporary@email"
+  TEMP_EMAIL_REGEX = /\Atemporary@email/
 
   has_many :rating, dependent: :destroy
   has_many :playlists, through: :ratings, dependent: :destroy
@@ -30,11 +30,12 @@ class User < ActiveRecord::Base
       if user.nil?
         user = User.new(
           name: auth.extra.raw_info.name,
+          picture: auth.info.image,
           #username: auth.info.nickname || auth.uid,
           email: email ? email : "#{TEMP_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
           password: Devise.friendly_token[0,20]
         )
-        user.skip_confirmation! #if user.respond_to?(:skip_confirmation)
+        # user.skip_confirmation! #if user.respond_to?(:skip_confirmation)
         user.save!
       end
     end
