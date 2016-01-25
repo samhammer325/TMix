@@ -1,4 +1,12 @@
 class Search extends React.Component{
+// git input for search term
+//done
+// take input from search, and make an ajax call for info.
+// convert info to use for card.
+// send info to card {songifo}  also change the search button to back to span if needed
+// must add key to get the warning away!
+
+
   constructor(props){
     super(props);
     this.state = {results: []};
@@ -12,14 +20,15 @@ class Search extends React.Component{
     self = this;
     let searchTerm = self.refs.searchText.value.replace(/\s/g, "%20")
     $.ajax({
+
       url: "http://api.dar.fm/playlist.php?&q=@artist%" + searchTerm + "&callback=jsonp&partner_token=9388418650",
       jsonp: 'callback',
-      //type: 'GET',
+      type: 'GET',
       dataType: 'jsonp',
     }).success( data => {
+      this.setState({results: data});
 
-      this.setState({artist: data});
-      this.playSearch();
+      // this.playSearch();
     });
   }
 
@@ -38,11 +47,21 @@ class Search extends React.Component{
   }
 
   render(){
+    let artists = this.state.results.map( artist => {
+      return(<Artist {...artist} />);
+    });
     return(
         <div>
           <h5>Search for an artist:</h5>
-          <input type='text' ref='searchText' placeholder="Artist"/>
-          <span onClick={this.getSearchResults} className='btn'>Search</span>
+          <input type='text' ref='searchText' autofoucu='true' placeholder="Artist"/>
+          <button onClick={this.getSearchResults} className='btn'>Search</button>
+          <hr />
+          <h4 className='center-align'>Artists playing:</h4>
+          <br />
+          <div className='row'>
+            {artists}
+          </div>
+          <hr />
         </div>)
   }
 }
