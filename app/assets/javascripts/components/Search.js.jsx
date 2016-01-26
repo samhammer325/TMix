@@ -39,20 +39,17 @@ class Search extends React.Component{
     }
     });
   }
-
   rPlay(){
     // @station = 
     let player = document.getElementById("player")
     debugger
   }
-
   render(){
     let i = 0;
     let artists = this.state.results.map( artist => {
       let key = `artist-${i++}`
       return(<Artist key = {key} {...artist} />);
     });
-
     // let player = this.state.results.map( player => {
     //   return(<Player {...player} />);
     // });

@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160123223908) do
+=======
+ActiveRecord::Schema.define(version: 20160126002325) do
+>>>>>>> spencer
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,24 +30,27 @@ ActiveRecord::Schema.define(version: 20160123223908) do
 
   add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
 
-  create_table "playlists", force: :cascade do |t|
+  create_table "mixtapes", force: :cascade do |t|
     t.string   "name"
+    t.string   "category"
+    t.integer  "author_id"
     t.boolean  "random"
     t.integer  "user_id"
-    t.integer  "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_index "mixtapes", ["user_id"], name: "index_mixtapes_on_user_id", using: :btree
+
   create_table "ratings", force: :cascade do |t|
     t.integer  "score"
     t.integer  "user_id"
-    t.integer  "playlist_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "mixtape_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  add_index "ratings", ["playlist_id"], name: "index_ratings_on_playlist_id", using: :btree
+  add_index "ratings", ["mixtape_id"], name: "index_ratings_on_mixtape_id", using: :btree
   add_index "ratings", ["user_id"], name: "index_ratings_on_user_id", using: :btree
 
   create_table "songs", force: :cascade do |t|
@@ -52,9 +59,9 @@ ActiveRecord::Schema.define(version: 20160123223908) do
     t.string   "album"
     t.boolean  "favorite"
     t.string   "genre"
-    t.integer  "playlist_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "mixtape_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

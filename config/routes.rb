@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
   root 'home#index'
 
+<<<<<<< HEAD
   post 'home_play', to: 'home#play'
 
+=======
+  resources :home
+
+  get 'mixtapes_users_mixtapes', to: 'mixtapes#users_mixtapes'
+>>>>>>> spencer
 
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
   match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup

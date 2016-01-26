@@ -6,7 +6,7 @@ class CreateSongs < ActiveRecord::Migration
       t.string :album
       t.boolean :favorite
       t.string :genre
-      t.integer :playlist_id
+      t.integer :mixtape_id
 
       t.timestamps null: false
     end
