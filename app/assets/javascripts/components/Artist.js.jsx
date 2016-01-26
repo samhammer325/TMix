@@ -7,14 +7,15 @@ class Artist extends React.Component{
 
   }
   render(){
-
+    
     return(<div>
-            <div className='card medium green lighten-2 col 4'>
+            <div className='card large green lighten-2 col 4'>
               <div className='card-content white-text'>
 
                 <h4>Artist: {this.props.artist}</h4>
                 <h5>Song: {this.props.title}</h5>
-                <a onClick={this.play}>On Station: {this.props.callsign}</a>
+                <br />
+                <a id="playButton" className="btn" station_id={this.props.station_id}>player</a>
               </div>
             </div>
           </div>);
