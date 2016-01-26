@@ -1,5 +1,4 @@
 class HomeController < ApplicationController
-<<<<<<< HEAD
   def index
   	@home = Song.all
 
@@ -15,7 +14,5 @@ class HomeController < ApplicationController
 
 
 
-=======
   
->>>>>>> spencer
 end

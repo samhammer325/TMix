@@ -15,6 +15,9 @@
 .row
 	.col.s8
 		= react_component 'Search'
+.row
+	.col.s8
+		= react_component 'SortMixTapes'
 / %iframe{: => "api.dar.fm/player_api.php?callsign=KBZT&onnow_display=true&station_display=true&volume_display=true&partner_token=9388418650" }
 / 	%p come one work?
 
@@ -30,16 +33,5 @@
 	Toad-like smile Flourish and Blotts he knew I’d come back Quidditch World Cup. Fat Lady baubles banana fritters fairy lights Petrificus Totalus. So thirsty, deluminator firs’ years follow me 12 inches of parchment. Head Boy start-of-term banquet Cleansweep Seven roaring lion hat. Unicorn blood crossbow mars is bright tonight, feast Norwegian Ridgeback. Come seek us where our voices sound, we cannot sing above the ground, Ginny Weasley bright red. Fanged frisbees, phoenix tears good clean match.
 
 	Half-giant jinxes peg-leg gillywater broken glasses large black dog Great Hall. Nearly-Headless Nick now string them together, and answer me this, which creature would you be unwilling to kiss? Poltergeist sticking charm, troll umbrella stand flying cars golden locket Lily Potter. Pumpkin juice Trevor wave your wand out glass orbs, a Grim knitted hats. Stan Shunpike doe patronus, suck his soul Muggle-Born large order of drills the trace. Bred in captivity fell through the veil, quaffle blue flame ickle diddykins Aragog. Yer a wizard, Harry Doxycide the woes of Mrs. Weasley Goblet of Fire.
-
-
 %iframe#player{:src => "http://api.dar.fm/player_api.php?station_id=#{@station}&custom_style=radioslice&partner_token=9388418650"}
-	
-
-<<<<<<< HEAD
-=======
-.row
-  .col.s8
-    = react_component 'SortMixTapes'
-
 = link_to 'Logout', destroy_user_session_path, method: 'delete'
->>>>>>> spencer
