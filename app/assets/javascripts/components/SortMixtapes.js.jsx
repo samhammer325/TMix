@@ -6,25 +6,9 @@ class SortMixTapes extends React.Component{
 	}
 
 componentDidMount(){
-    // $.ajax({
-    //   url: '/home',
-    //   type: 'GET'
-    // }).success( data => {
-    //   //this.setState({mixtapes: data.mixtapes});
-    //   debugger
-    // });
-
+  
     this.displayUsersMixTapes()
   }
-
-  //  getMixtapes(){
-  //   $.ajax({
-  //     url: '/home',
-  //     type: 'GET',
-  //   }).success( data => {
-  //     this.setState({mixtapes: data})
-  //   })
-  // }
 
 	displayUsersMixTapes(){
     $.ajax({
@@ -52,6 +36,5 @@ componentDidMount(){
              {mixtapes}
           </div>);
   }
-
 
 }

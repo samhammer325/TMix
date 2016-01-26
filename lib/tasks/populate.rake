@@ -1,9 +1,7 @@
 namespace :populate do
   desc "Deletes all mixtapes and populates database with new ones"
   task mixtapes: :environment do
-  	# Ride Wit Me  Nelly Country Grammer  Angel Shaggy Hotshot :: Ignition R. Kelly Chocolate Factory
-  	# User.destroy_all
-  	
+
   	password = "password"
 
 		User.populate(20) do |user|
