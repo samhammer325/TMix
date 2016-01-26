@@ -48,6 +48,8 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'simplecov'
   gem 'factory_girl_rails'
+  gem 'populator'
+  gem 'faker'
 end
 
 group :development do

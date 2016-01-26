@@ -17,12 +17,13 @@ class Search extends React.Component{
       dataType: 'jsonp'
       // debugger
       // data: { artist: this.refs.searchText.value }
-    }).success( data => {artist: artist}
+    }).success( data => {artist: artist})
       debugger
       // this.setState({tweets: data})
-    })
+    }
 
-  }
+  
+
 
   render(){
 
