@@ -1,6 +1,5 @@
 class Search extends React.Component{
-// git input for search term
-//done
+
 // take input from search, and make an ajax call for info.
 // convert info to use for card.
 // send info to card {songinfo}  also change the search button to back to span if needed
@@ -9,10 +8,8 @@ class Search extends React.Component{
     super(props);
     this.state = {results: []};
     this.getSearchResults = this.getSearchResults.bind(this);
-    this.playSearch = this.playSearch.bind(this);
   }
-  componentDidMount(){
-  }
+
   getSearchResults(){
     self = this;
     let searchTerm = self.refs.searchText.value.replace(/\s/g, "%20")
@@ -23,54 +20,31 @@ class Search extends React.Component{
       dataType: 'jsonp',
     }).success( data => {
       this.setState({results: data});
-      // this.playSearch();
     });
   }
-  playSearch(){
-    let stationId = this.state.artist[0].station_id
-    $.ajax({
-    url: "/home_play",
-    type: "post",
-    data: {station: stationId},
-    success: function(){
-    },
-    error:function(){
-      alert('Error');
-    }
-    });
-  }
-  rPlay(){
-    // @station = 
-    let player = document.getElementById("player")
-    debugger
-  }
+
+
   render(){
+    self = this;
     let i = 0;
     let artists = this.state.results.map( artist => {
       let key = `artist-${i++}`
-      return(<Artist key = {key} {...artist} />);
+      return(<Artist key={key} {...artist} rplay={self.playSong} />);
     });
-    // let player = this.state.results.map( player => {
-    //   return(<Player {...player} />);
-    // });
-    // let player = this.props.station_id( player => {
-    //   return(<{player} />);
-    // });
+    let playerKey = `player`
     return(
         <div>
+          <Player ref="player" rplay={this.playSong} key={playerKey} station = {this.props.station_id}/>
           <h5>Search for an artist:</h5>
           <input type='text' ref='searchText' autofocus='true' placeholder="Artist"/>
           <button onClick={this.getSearchResults} className='btn'>Search</button>
           <hr />
           <h4 className='center-align'>Artists playing:</h4>
           <br />
-          <div className='row'>
+          <div id='cardHolder' className='row'>
             {artists}
           </div>
           <hr />
-          <div className='row'>
-            <button className="btn" onClick={this.rPlay} >something</button>
-          </div>
         </div>)
   }
 }
