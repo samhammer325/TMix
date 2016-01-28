@@ -14,6 +14,7 @@ namespace :populate do
 	  		mixtape.user_id = user.id
 	  		mixtape.author_id = user.id
 	  		mixtape.name = Faker::Name.name
+	  		mixtape.average_rating = Faker::Number.between(1, 10)
 	  		mixtape.random = false
 
 	  		Song.populate(1) do |song|

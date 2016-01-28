@@ -5,12 +5,14 @@ class MixtapesController < ApplicationController
   	 render json: @mixtapes
   end
 
-  # def calculate_mixtape_ratings
-  #      mixtape = Mixtape.find(2)
-  #     # ratings = Rating.where(rating_id: mixtape_id)
-  #     binging.pry
+  def calculate_average_rating
+    @mixtapes = Mixtape.all
 
-  # end
+    # @mixtapes.each do |mixtape|
+      
+    # end
+
+  end
 
   # TODO: change the name to this function
   def users_mixtapes
@@ -23,8 +25,7 @@ class MixtapesController < ApplicationController
       # @mixtapes = Mixtape.where(user_id: 2)
   	end
   	# binding.pry
-     # calculate_mixtape_ratings
-
+     calculate_average_rating
   end
 
 end
