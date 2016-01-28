@@ -8,6 +8,7 @@ class Search extends React.Component{
     super(props);
     this.state = {results: []};
     this.getSearchResults = this.getSearchResults.bind(this);
+    this.createMixtape = this.createMixtape.bind(this);
   }
 
   getSearchResults(){
@@ -23,6 +24,19 @@ class Search extends React.Component{
     });
   }
 
+  createMixtape(){
+    $.ajax({
+      url: '/mixtapes',
+      type: 'POST',
+      data: {name: this.refs.mixtapeName.value, category: this.refs.category.value}
+    }).success( data => {
+      alert('yay')
+      this.refs.mixtapeName.value = null;
+      this.refs.category.value = null;
+    });
+
+
+  }
 
   render(){
     self = this;
@@ -34,6 +48,10 @@ class Search extends React.Component{
     let playerKey = `player`
     return(
         <div>
+          <input autofocus='true' placeholder='Mix Tape Name' ref='mixtapeName'/>
+          <input placeholder='category' ref='category'/>
+          <button onClick={this.createMixtape} className='btn orange'>Add Mixtape</button>
+
 
           <Player ref="player" rplay={this.playSong} key={playerKey} station = {this.props.station_id}/>
 

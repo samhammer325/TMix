@@ -12,6 +12,7 @@ class Artist extends React.Component{
   }
 
   add(){
+    alert('yay')
 
   }
 

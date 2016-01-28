@@ -3,8 +3,9 @@ Rails.application.routes.draw do
 
   post 'home_play', to: 'home#play'
 
-  resources :home
 
+  resources :home
+  resources :mixtapes
   get 'mixtapes_users_mixtapes', to: 'mixtapes#users_mixtapes'
 
 
