@@ -16,6 +16,7 @@ componentDidMount(){
       type: 'GET',
       data: { search_term: search_terms}
     }).success( data => {
+      debugger
       this.setState({mixtapes: data.mixtapes});
     }).error( data => {
       console.log(data);

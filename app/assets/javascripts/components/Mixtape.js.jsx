@@ -19,6 +19,7 @@ class Mixtape extends React.Component{
             <div className='card small blue darken-3 col s6'>
               <div className='card-content white-text'>
                 <h5>Mixtape: {this.props.name}</h5>
+                <li>Rating: {this.props.average_rating}</li>
               </div>
              {songs}
             </div>
