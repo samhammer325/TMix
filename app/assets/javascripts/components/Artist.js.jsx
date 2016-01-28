@@ -10,16 +10,20 @@ class Artist extends React.Component{
     let player = document.getElementById("player")
     player.src = "http://api.dar.fm/player_api.php?station_id=" + station + "&custom_style=radioslice&partner_token=9388418650"
   }
-  
+
+  add(){
+
+  }
+
   render(){
     return(<div>
-            <div className='card large green lighten-2 col 4'>
+            <div className='card-panel green'>
               <div className='card-content white-text'>
+                <p>{this.props.title} By: {this.props.artist} </p>
 
-                <h4>Artist: {this.props.artist}</h4>
-                <h5>Song: {this.props.title}</h5>
-                <br />
-                <a className="btn" station_id={this.props.station} onClick={() => this.play(this.props.station_id)}>player</a>
+                  <a className="btn " onClick={() => this.play(this.props.station_id)}>play</a>
+                  <a className="btn blue" onClick={() => this.add(this.props.title, this.props.artist)}>Add</a>
+
               </div>
             </div>
 

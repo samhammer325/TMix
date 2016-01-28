@@ -34,6 +34,9 @@ class Search extends React.Component{
     let playerKey = `player`
     return(
         <div>
+
+          <Player ref="player" rplay={this.playSong} key={playerKey} station = {this.props.station_id}/>
+
           <Player ref="player" rplay={this.playSong} key={playerKey} station = {this.props.station_id}/>
           <h5>Search for an artist:</h5>
           <input type='text' ref='searchText' autofocus='true' placeholder="Artist"/>
