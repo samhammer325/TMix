@@ -17,6 +17,9 @@ Bundler.require(*Rails.groups)
 
 module MySongIs
   class Application < Rails::Application
+    @graph = Koala::Facebook::API.new('CAACEdEose0cBAJKmPJ7T80509BY0RUT8RMZABHu4to3hzU2rvtZBNaaVD5HVYYuxnKZClSaWIZCPN5k0bZCL55M5QH4WjKC4zk8JLK3fnOBlIVbr7tnw30CGdsn5WU74QNSxMVQZAAUdQyhPG0JmO81OHCpu4oP3kELE2NsNjO3v2iSzoM2O7wE9ogMoeJATduDZBauVPcdgbExGbdrIu6h')
+
+    Koala.config.api_version = 'v2.0'
 #     config.action_dispatch.default_headers = {
 #     'X-Frame-Options' => 'ALLOWALL'
 # }

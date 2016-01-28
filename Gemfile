@@ -31,6 +31,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'koala', "~> 1.10.0rc"
 gem 'omniauth-twitter'
 gem 'materialize-sass'
 gem 'haml-rails'

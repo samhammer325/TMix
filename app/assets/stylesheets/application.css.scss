@@ -16,7 +16,7 @@
 
 @import "materialize";
 
-iframe {
+.player {
 	width: 100%;
 	height: 100px;
   position: fixed;
@@ -32,4 +32,18 @@ iframe {
 .socialright {
 	float: right;
 	border: 4px solid #059D8F;
+}
+
+.iframe
+{
+transform: scale(2);
+-ms-transform: scale(2); 
+-webkit-transform: scale(2); 
+-o-transform: scale(2); 
+-moz-transform: scale(2); 
+transform-origin: top left;
+-ms-transform-origin: top left;
+-webkit-transform-origin: top left;
+-moz-transform-origin: top left;
+-webkit-transform-origin: top left;
 }

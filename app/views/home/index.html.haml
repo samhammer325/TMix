@@ -4,6 +4,7 @@
 	%h4 #{current_user.name}
 	%img{alt: "profile_pic", src: "#{current_user.picture}"}
 	%br
+	.fb-share-button.iframe{"data-href" => "http://www.localhost:3000", "data-layout" => "button_count"}
 	%br
 	%br
 	= link_to 'Logout', destroy_user_session_path, method: 'delete'
@@ -18,8 +19,22 @@
 .row
 	.col.s8
 		= react_component 'SortMixTapes'
+
+#fb-root
+:javascript
+	(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1670876069868555";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+
 / %iframe{: => "api.dar.fm/player_api.php?callsign=KBZT&onnow_display=true&station_display=true&volume_display=true&partner_token=9388418650" }
 / 	%p come one work?
+
+
+/ %h1 = @graph.put_connections("me", "feed", message: "Hey I'm posting to facebook right now on a program I coded :D:D:D:D.")
 
 
 %h1
@@ -28,7 +43,4 @@
 	Toad-like smile Flourish and Blotts he knew I’d come back Quidditch World Cup. Fat Lady baubles banana fritters fairy lights Petrificus Totalus. So thirsty, deluminator firs’ years follow me 12 inches of parchment. Head Boy start-of-term banquet Cleansweep Seven roaring lion hat. Unicorn blood crossbow mars is bright tonight, feast Norwegian Ridgeback. Come seek us where our voices sound, we cannot sing above the ground, Ginny Weasley bright red. Fanged frisbees, phoenix tears good clean match.
 
 	Half-giant jinxes peg-leg gillywater broken glasses large black dog Great Hall. Nearly-Headless Nick now string them together, and answer me this, which creature would you be unwilling to kiss? Poltergeist sticking charm, troll umbrella stand flying cars golden locket Lily Potter. Pumpkin juice Trevor wave your wand out glass orbs, a Grim knitted hats. Stan Shunpike doe patronus, suck his soul Muggle-Born large order of drills the trace. Bred in captivity fell through the veil, quaffle blue flame ickle diddykins Aragog. Yer a wizard, Harry Doxycide the woes of Mrs. Weasley Goblet of Fire.
-= link_to 'Logout', destroy_user_session_path, method: 'delete'
-
-
 
