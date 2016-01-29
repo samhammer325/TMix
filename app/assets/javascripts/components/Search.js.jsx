@@ -6,7 +6,7 @@ class Search extends React.Component{
 // must add key to get the warning away!
   constructor(props){
     super(props);
-    this.state = {results: []};
+    this.state = {results: [], mixtape_id: 0};
     this.getSearchResults = this.getSearchResults.bind(this);
     this.createMixtape = this.createMixtape.bind(this);
   }
@@ -30,20 +30,38 @@ class Search extends React.Component{
       type: 'POST',
       data: {name: this.refs.mixtapeName.value, category: this.refs.category.value}
     }).success( data => {
-      alert('yay')
+      // alert('yay')
       this.refs.mixtapeName.value = null;
       this.refs.category.value = null;
+      this.setState ({mixtape_id: data.id})
     });
 
-
+   
   }
+
+  // createSong(){
+  //   $.ajax({
+  //     url: '/songs',
+  //     type: 'POST',
+  //     data: {mixtape_id: this.mixtape_id}
+  //   }).success(
+  //    alert('yes'))
+  //   });
+  // }
+
+
+        // current_state = this.state;
+       // current_state[:mixtape_id] = data.mixtape_id;
+     // this.setState(current_state);
+
+
 
   render(){
     self = this;
     let i = 0;
     let artists = this.state.results.map( artist => {
       let key = `artist-${i++}`
-      return(<Artist key={key} {...artist} rplay={self.playSong} />);
+      return(<Artist key={key} {...artist} rplay={self.playSong} mixtapeId={self.state.mixtape_id}/>);
     });
     let playerKey = `player`
     return(
@@ -55,7 +73,6 @@ class Search extends React.Component{
 
           <Player ref="player" rplay={this.playSong} key={playerKey} station = {this.props.station_id}/>
 
-          <Player ref="player" rplay={this.playSong} key={playerKey} station = {this.props.station_id}/>
           <h5>Search for an artist:</h5>
           <input type='text' ref='searchText' autofocus='true' placeholder="Artist"/>
           <button onClick={this.getSearchResults} className='btn'>Search</button>

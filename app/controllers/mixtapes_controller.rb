@@ -14,6 +14,7 @@ class MixtapesController < ApplicationController
 		@mixtape.name = mixtape_name
 		@mixtape.category = mixtape_category
 		@mixtape.save
+
 		render json: @mixtape
 	end
 

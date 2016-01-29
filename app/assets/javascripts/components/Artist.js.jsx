@@ -2,6 +2,7 @@ class Artist extends React.Component{
   constructor(props){
     super(props)
     this.play = this.play.bind(this)
+    this.add = this.add.bind(this)
   }
   componentDidMount(){
   }
@@ -10,6 +11,17 @@ class Artist extends React.Component{
     let player = document.getElementById("player")
     player.src = "http://api.dar.fm/player_api.php?station_id=" + station + "&custom_style=radioslice&partner_token=9388418650"
   }
+
+
+  add(songName, artist){
+    $.ajax({
+      url: '/songs',
+      type: 'POST',
+      data: {name: songName, artist: artist, mixtape_id: this.props.mixtapeId}
+    }).success( data => {
+    });
+  }
+
 
   render(){
     return(<div>
