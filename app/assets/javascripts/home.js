@@ -31,5 +31,5 @@
 
 // $("a[data-station_id]").data('station_id')
 
-$( "a#playButton" ).find( allAnchorElements )
+// $( "a#playButton" ).find( allAnchorElements )
 

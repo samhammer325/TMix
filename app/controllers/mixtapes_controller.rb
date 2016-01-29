@@ -14,7 +14,7 @@ class MixtapesController < ApplicationController
 		@mixtape.name = mixtape_name
 		@mixtape.category = mixtape_category
 		@mixtape.save
-		binding.pry
+		# binding.pry
 		render json: @mixtape
 	end
 
