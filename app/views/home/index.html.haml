@@ -1,14 +1,27 @@
-.container
-%h5.center Welcome #{current_user.email}
-%p.center Anyone has any questions about this email thing just slack me or ask me.
 %div.socialright
 	%h4 #{current_user.name}
-	%img{alt: "profile_pic", src: "#{current_user.picture}"}
+	- if current_user.picture == nil
+	- else
+		%img{alt: "profile_pic", src: "#{current_user.picture}"}
 	%br
-	.fb-share-button.iframe{"data-href" => "http://www.localhost:3000", "data-layout" => "button_count"}
+	- if /\.twimg/.match(current_user.picture)
+		%br
+		<a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="Keeping it fresh @MySongis Checkout my Mix - " data-size="large">Tweet	
+		%br
+	- elsif /graph/.match(current_user.picture)
+		.fb-share-button.iframe{"data-href" => "http://www.localhost:3000", "data-layout" => "button_count"}
+		%br
+	- else
+		.fb-share-button.iframe{"data-href" => "http://www.localhost:3000", "data-layout" => "button_count"}
+		%br
+		%br
+		%br
+		<a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="Keeping it fresh @MySongis Checkout my Mix - " data-size="large">Tweet	
+		%br
 	%br
 	%br
 	= link_to 'Logout', destroy_user_session_path, method: 'delete'
+	%br
 %br
 %br
 %h2 Welcome to My Song

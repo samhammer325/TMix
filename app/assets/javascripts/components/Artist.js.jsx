@@ -11,11 +11,6 @@ class Artist extends React.Component{
     player.src = "http://api.dar.fm/player_api.php?station_id=" + station + "&custom_style=radioslice&partner_token=9388418650"
   }
 
-  add(){
-    alert('yay')
-
-  }
-
   render(){
     return(<div>
             <div className='card-panel green'>
