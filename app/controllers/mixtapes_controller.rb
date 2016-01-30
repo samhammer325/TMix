@@ -3,6 +3,7 @@ class MixtapesController < ApplicationController
 	def index
   	 # @mixtapes = Mixtape.all
   	 # render json: @mixtapes
+		 @songs = @mixtape.songs
   end
 
 	def create
@@ -35,6 +36,18 @@ class MixtapesController < ApplicationController
 
   end
 
+	def show_mixtape
+		# binding.pry
+		# id = params[:id]
+		# id = id.to_i
+		@mixtape = Mixtape.where(id: params[:id])
+		# @mixtapes = Mixtape.all
+		# binding.pry
+		# @songs = @mixtape.songs.to_json
+		render json: @mixtape
+
+
+	end
 
   # TODO: change the name to this function
   def users_mixtapes

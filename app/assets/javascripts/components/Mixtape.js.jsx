@@ -4,9 +4,14 @@ class Mixtape extends React.Component{
     // this.state = {songs: [] };
   }
 
+  show_mixtape(){
+    debugger
+  
+  }
+
 
   render(){
-    
+
           // debugger
 
     let songs = this.props.mixtape.map( song => {
@@ -14,7 +19,7 @@ class Mixtape extends React.Component{
        //return(<Song key={key} {...song} />);
       return(<li> {song.song_name} </li>)
     });
-   
+
     return(<div>
             <div className='card small blue darken-3 col s6'>
               <div className='card-content white-text'>

@@ -1,0 +1,19 @@
+custom link for your own mixtape
+landing with the mixtape id when someone else comes in with the mixtape link
+  they have received from a facebook mixtape post.
+
+1) make a link of the custom mixtape you want to post.
+  (this link will host the mixtape id to use to pull up this mixtape and start playing)
+  (maybe the link will look like mysong.is/mixtape/114)
+  [X]LOOKS like the mixtape id is data-reactid=".1.9:$mixtape-9.0" 9.0 is the mix id
+  In console we can find the mixtape by using=> Mixtape.find_by(id: 5)
+    where we will use a variable instead of 5
+
+
+  this link will take you to a custom route in the routes.rb
+    where it will take the mixtape_id and show the mixtape.
+      you can make a function in the controller where it will take the numbers after the last /
+      and use that in the react show function.
+
+
+2) send the link to the facebook post function and post it.
