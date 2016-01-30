@@ -14,3 +14,4 @@
 config/facebook.yml
 /coverage
 .coreysThoughts
+.DS_Store
