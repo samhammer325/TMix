@@ -1,3 +1,5 @@
+.container
+%h5.center Welcome #{current_user.email}
 %div.socialright
 	%h4 #{current_user.name}
 	- if current_user.picture == nil
@@ -24,7 +26,7 @@
 	%br
 %br
 %br
-%h2 Welcome to My Song
+	%h2.center-align.rocksalt Welcome to My Song
 %br
 %hr
 
@@ -61,5 +63,5 @@
 
 
 
-
 = link_to 'Logout', destroy_user_session_path, method: 'delete'
+

@@ -106,10 +106,11 @@ class Search extends React.Component{
 
 
           <h5>Search for an artist:</h5>
-          <input type='text' ref='searchText' autofocus='true' placeholder="Artist"/>
-          <button onClick={this.getSearchResults} className='btn'>Search</button>
-          <hr />
-          <h4 className='center-align'>Artists playing:</h4>
+          <input className='col s4 offset s3' type='text' ref='searchText' autofocus='true' placeholder="Artist"/>
+          <button onClick={this.getSearchResults} className='btn waves-effect waves-light'>Search</button>
+          <br />
+          <br />
+          <h4 className='center-align center'>Artists playing:</h4>
           <br />
           <div id='cardHolder' className='row'>
             {artists}
