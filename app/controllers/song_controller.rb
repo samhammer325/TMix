@@ -3,12 +3,30 @@ class SongController < ApplicationController
   end
 
   def create
-    @song = Song.new
+  	song_name = params[:name]
+  	artist = params[:artist]
+  	mixtape_id = params[:mixtape_id]
+    @song = Song.new()
+    @song.mixtape_id = mixtape_id
+    @song.name = song_name
+    @song.artist = artist
+
+    @song.save
+    #TODO: check if song is unique
+
+    # if @song.save
+    # 	#todo slidetoggle artist
+    # end
+    render json: @mixtape
   end
+
+  # def show
+  # 	@songs = Song.find_by(mixtape_id: params[:mixtape_id])
+  # end
 
   private
 
-    def song_params
-      params.require(:song).permit(:name, :artist, :mixtape_id)
-    end
+    # def song_params
+    #   params.require(:song).permit(:name, :artist, :mixtape_id)
+    # end
 end

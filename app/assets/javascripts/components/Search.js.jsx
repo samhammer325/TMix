@@ -6,9 +6,11 @@ class Search extends React.Component{
 // must add key to get the warning away!
   constructor(props){
     super(props);
-    this.state = {results: [], mixtape_id: 0};
+    this.state = {results: [], mixtape_id: 0, mixtapeName: '', mixTapeCategory: '', songs: []};
     this.getSearchResults = this.getSearchResults.bind(this);
     this.createMixtape = this.createMixtape.bind(this);
+    this.mixtapeBuilder = this.mixtapeBuilder.bind(this);
+    this.getSongs = this.getSongs.bind(this);
   }
 
   getSearchResults(){
@@ -33,10 +35,20 @@ class Search extends React.Component{
       // alert('yay')
       this.refs.mixtapeName.value = null;
       this.refs.category.value = null;
-      this.setState ({mixtape_id: data.id})
+      this.setState ({mixtape_id: data.id, mixtapeName: data.name, mixTapeCategory: data.category})
     });
 
    
+  }
+
+  getSongs(){
+    $.ajax({
+      url: '/mixtapes_find_single_mixtape',
+      type: 'GET',
+      data: {mixtape_id: this.state.mixtape_id}
+    }).success( data => {
+      debugger
+    })
   }
 
   // createSong(){
@@ -53,6 +65,9 @@ class Search extends React.Component{
         // current_state = this.state;
        // current_state[:mixtape_id] = data.mixtape_id;
      // this.setState(current_state);
+  mixtapeBuilder(){
+    return(<h3>{this.state.mixtapeName} </h3>)
+  }
 
 
 
@@ -61,7 +76,7 @@ class Search extends React.Component{
     let i = 0;
     let artists = this.state.results.map( artist => {
       let key = `artist-${i++}`
-      return(<Artist key={key} {...artist} rplay={self.playSong} mixtapeId={self.state.mixtape_id}/>);
+      return(<Artist key={key} {...artist} rplay={self.playSong} mixtapeId={self.state.mixtape_id} getSongs={this.getSongs}/>);
     });
     let playerKey = `player`
     return(
@@ -70,8 +85,11 @@ class Search extends React.Component{
           <input placeholder='category' ref='category'/>
           <button onClick={this.createMixtape} className='btn orange'>Add Mixtape</button>
 
+          {this.mixtapeBuilder()}
+
 
           <Player ref="player" rplay={this.playSong} key={playerKey} station = {this.props.station_id}/>
+
 
           <h5>Search for an artist:</h5>
           <input type='text' ref='searchText' autofocus='true' placeholder="Artist"/>
