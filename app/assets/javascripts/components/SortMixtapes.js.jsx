@@ -1,4 +1,4 @@
-class SortMixTapes extends React.Component{
+class SortMixtapes extends React.Component{
 	constructor(props){
 		super(props);
 		this.displayUsersMixTapes = this.displayUsersMixTapes.bind(this);

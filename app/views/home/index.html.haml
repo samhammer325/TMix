@@ -38,20 +38,19 @@
 		fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));
 
+
 - if @mixtapes.present?
 	.row
 		.col.s8.offset-s2
-			= react_component 'SortMixTapes'
-	.row
-		.col.s8.offset-s2
-			= react_component 'Search'
+			= react_component 'TheHome'
 - else
 	.row
 		.col.s8.offset-s2
-			= react_component 'Search'
-	.row
-		.col.s8.offset-s2
-			= react_component 'SortMixTapes'
+			= react_component 'TheHome'
+		
+	
+
+
 
 
 / %iframe{: => "api.dar.fm/player_api.php?callsign=KBZT&onnow_display=true&station_display=true&volume_display=true&partner_token=9388418650" }
