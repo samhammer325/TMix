@@ -9,7 +9,6 @@ class Search extends React.Component{
     this.state = {results: [], mixtape_id: 0, mixtapeName: '', mixTapeCategory: '', songs: []};
     this.getSearchResults = this.getSearchResults.bind(this);
     this.createMixtape = this.createMixtape.bind(this);
-    this.mixtapeBuilder = this.mixtapeBuilder.bind(this);
     this.getSongs = this.getSongs.bind(this);
   }
 
@@ -47,7 +46,7 @@ class Search extends React.Component{
       type: 'GET',
       data: {mixtape_id: this.state.mixtape_id}
     }).success( data => {
-      debugger
+      this.setState({songs: data.songs});
     })
   }
 
@@ -65,9 +64,7 @@ class Search extends React.Component{
         // current_state = this.state;
        // current_state[:mixtape_id] = data.mixtape_id;
      // this.setState(current_state);
-  mixtapeBuilder(){
-    return(<h3>{this.state.mixtapeName} </h3>)
-  }
+
 
 
 
@@ -79,13 +76,30 @@ class Search extends React.Component{
       return(<Artist key={key} {...artist} rplay={self.playSong} mixtapeId={self.state.mixtape_id} getSongs={this.getSongs}/>);
     });
     let playerKey = `player`
+
+    let j = 0;
+    let songs = this.state.songs.map( song => {
+      let key = `artist-${j++}`
+    return(<h5> {song.song_name} </h5>);
+    
+    });
+
     return(
         <div>
           <input autofocus='true' placeholder='Mix Tape Name' ref='mixtapeName'/>
           <input placeholder='category' ref='category'/>
-          <button onClick={this.createMixtape} className='btn orange'>Add Mixtape</button>
+          <button onClick={this.createMixtape} className='btn orange'>Create New Mixtape</button>
+           
 
-          {this.mixtapeBuilder()}
+           <div id='cardHolder' className='row'>
+             <div className='card-panel green'>
+                <div className='card-content white-text'>
+                  <h3> {this.state.mixtapeName}</h3>
+              {     songs}
+                </div>
+              </div>
+            </div>
+          <button onClick={this.createMixtape} className='btn orange'>Done</button>
 
 
           <Player ref="player" rplay={this.playSong} key={playerKey} station = {this.props.station_id}/>

@@ -30,7 +30,7 @@ class MixtapesController < ApplicationController
   def find_single_mixtape
     mixtape_id =  params[:mixtape_id]
     @mixtape = Mixtape.find(mixtape_id)
-     # binding.pry
+      # binding.pry
     # render json: @mixtape
 
   end
