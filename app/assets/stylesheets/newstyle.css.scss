@@ -1,0 +1,39 @@
+body {
+  background: #896891;  
+}
+
+.container {
+  width: 800px;
+  margin: 0 auto;
+}
+
+#crowd1 {
+  width: 3200px;
+  height: 200px;
+  opacity: 0.3;
+}
+
+p { 
+  color:#000000;
+  font-size: 36px;
+  font-style: Arial;
+}
+
+.material-icons.md-light { 
+  color: rgba(255, 255, 255, 1);
+}
+.material-icons.md-48 { 
+  font-size: 48px;                       
+}
+
+.field {
+  border: 3px solid #000000;
+  padding: 10px 40px; 
+  background: #ffffff;
+  width: 300px;
+  height: 30px;
+  border-radius: 25px;
+  font: arial;
+}    
+
+

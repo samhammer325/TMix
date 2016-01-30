@@ -35,6 +35,7 @@ gem 'omniauth-twitter'
 gem 'materialize-sass'
 gem 'haml-rails'
 gem 'react-rails'
+gem 'font-awesome-sass'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

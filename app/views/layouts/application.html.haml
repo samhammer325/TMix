@@ -4,6 +4,10 @@
     %title MySongIs
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
+    %link{:href => "path/to/font-awesome/css/font-awesome.min.css", :rel => "stylesheet"}/
+    %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css", :rel => "stylesheet"}/
     = csrf_meta_tags
   %body
-    = yield
+    .container
+      = yield
+    = render 'layouts/footer'

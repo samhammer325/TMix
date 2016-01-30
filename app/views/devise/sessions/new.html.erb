@@ -1,26 +1,45 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+<div class="row">
+  <div id="crowd1" class="left-align">
+    <%= image_tag("crowd1.jpg", width: "40%") %>
   </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+  <p>Website Title</p>
+  <div class="links">
+    <div class="col s4">
+      <i class="material-icons md-light">view_list</i>
     </div>
-  <% end -%>
+    <div class="col s4">
+      <i class="fa fa-bed"></i>
+    </div>
+    <div class="col s4">
+      <i class="fa fa-eye"></i>
+    </div>
+  </div>  
+  <h2>Log in</h2>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="input-field col s6 pull-s3 offset-s3">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true %>
+    </div>
 
-<%= render "devise/shared/links" %>
+    <div class="input-field col s6 pull-s3 offset-s3">
+      <%= f.label :password %><br />
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>
+
+    <% if devise_mapping.rememberable? -%>
+      <div class="input-field col s6 pull-s3 offset-s3">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+    <% end -%>
+
+    <div class="actions col s6 pull-s3 offset-s3">
+      <br />
+      <%= f.submit "Log in" %>
+    </div>
+  <% end %>
+</div> 
+<div class="card blue-grey">
+  <%= render "devise/shared/links" %>
+</div>
