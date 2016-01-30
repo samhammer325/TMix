@@ -13,11 +13,13 @@ class Artist extends React.Component{
   }
 
   add(songName, artist){
+    let self = this;
     $.ajax({
-      url: '/songs',
+      url: '/song',
       type: 'POST',
       data: {name: songName, artist: artist, mixtape_id: this.props.mixtapeId}
     }).success( data => {
+      self.props.getSongs();
     });
   }
 

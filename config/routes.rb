@@ -3,9 +3,10 @@ Rails.application.routes.draw do
 
   post 'home_play', to: 'home#play'
 
-
+  resources :song
   resources :home
   resources :mixtapes
+  get 'mixtapes_find_single_mixtape', to: 'mixtapes#find_single_mixtape'
   get 'mixtapes_users_mixtapes', to: 'mixtapes#users_mixtapes'
 
 

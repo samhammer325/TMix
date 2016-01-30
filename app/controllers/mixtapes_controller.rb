@@ -27,6 +27,14 @@ class MixtapesController < ApplicationController
 
   end
 
+  def find_single_mixtape
+    mixtape_id =  params[:mixtape_id]
+    @mixtape = Mixtape.find(mixtape_id)
+     # binding.pry
+    # render json: @mixtape
+
+  end
+
 
   # TODO: change the name to this function
   def users_mixtapes
@@ -34,11 +42,11 @@ class MixtapesController < ApplicationController
      # binding.pry
   	if search_terms == 'all'
   		@mixtapes = Mixtape.all
-    elsif search_terms = 'users'
+    elsif search_terms == 'users'
       @mixtapes = Mixtape.where(user_id: current_user.id)
-    elsif search_terms = 'highest_rated'
+    elsif search_terms == 'highest_rated'
        @mixtapes.sort! {|a,b| a.average_rating <=> b.average_rating}
-  	end
+    end
 
   end
 
