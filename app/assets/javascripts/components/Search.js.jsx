@@ -114,7 +114,6 @@ class Search extends React.Component{
           <div id='cardHolder' className='row'>
             {artists}
           </div>
-          <hr />
         </div>)
   }
 }
