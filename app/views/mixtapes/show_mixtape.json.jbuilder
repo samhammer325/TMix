@@ -1,4 +1,4 @@
-
+<h1> hello </h1>
 json.(@mixtape, :id, :name, :category, :author_id, :random, :user_id)
 
 json.@song @mixtape.songs do |song|

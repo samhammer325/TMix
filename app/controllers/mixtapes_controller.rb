@@ -36,17 +36,19 @@ class MixtapesController < ApplicationController
 
   end
 
+# not using below when player component is being used, but the code can be helpful
 	def show_mixtape
+		@mixtape = Mixtape.find(params[:id])
+		@songs = @mixtape.songs
 		# binding.pry
-		# id = params[:id]
-		# id = id.to_i
-		@mixtape = Mixtape.where(id: params[:id])
-		# @mixtapes = Mixtape.all
-		# binding.pry
-		# @songs = @mixtape.songs.to_json
-		render json: @mixtape
+		@songs.each do |song|
+			name = song.name.split(' ').join('%20')
+			artist = song.artist.split(' ').join('%20')
+			binding.pry
 
-
+			"http://api.dar.fm/playlist.php?q=#{artist}%20#{name}&partner_token=1234567890"
+		end
+		render json: [@songs]
 	end
 
   # TODO: change the name to this function

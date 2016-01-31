@@ -37,7 +37,7 @@ class Search extends React.Component{
       this.setState ({mixtape_id: data.id, mixtapeName: data.name, mixTapeCategory: data.category})
     });
 
-   
+
   }
 
   getSongs(){
@@ -81,7 +81,7 @@ class Search extends React.Component{
     let songs = this.state.songs.map( song => {
       let key = `artist-${j++}`
     return(<h5> {song.song_name} </h5>);
-    
+
     });
 
     return(
@@ -89,7 +89,7 @@ class Search extends React.Component{
           <input autofocus='true' placeholder='Mix Tape Name' ref='mixtapeName'/>
           <input placeholder='category' ref='category'/>
           <button onClick={this.createMixtape} className='btn orange'>Create New Mixtape</button>
-           
+
 
            <div id='cardHolder' className='row'>
              <div className='card-panel green'>
