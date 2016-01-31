@@ -22,23 +22,18 @@ class Artist extends React.Component{
     }).success( data => {
       self.props.getSongs();
     });
+    render()
   }
-
 
   render(){
     return(<div>
             <div className='card-panel green'>
               <div className='card-content white-text'>
                 <p>{this.props.title} By: {this.props.artist} </p>
-
                   <a className="btn " onClick={() => this.play(this.props.station_id)}>play</a>
                   <a className="btn blue" onClick={() => this.add(this.props.title, this.props.artist)}>Add</a>
-
               </div>
             </div>
-
           </div>);
   }
-
-
 }
