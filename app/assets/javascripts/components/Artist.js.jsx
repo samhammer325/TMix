@@ -22,8 +22,8 @@ class Artist extends React.Component{
     }).success( data => {
       self.props.getSongs();
     });
+    render()
   }
-
 
   render(){
     return(<div>
@@ -36,9 +36,6 @@ class Artist extends React.Component{
                   </div>
               </div>
             </div>
-
           </div>);
   }
-
-
 }

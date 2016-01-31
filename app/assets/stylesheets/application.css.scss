@@ -18,6 +18,10 @@ $primary-color: #595959 !default;
 $secondary-color: #5E1175 !default;
 @import "materialize";
 
+a {
+  right: 15px;
+}
+
 .player {
 	width: 100%;
 	height: 100px;
@@ -30,23 +34,54 @@ $secondary-color: #5E1175 !default;
   background-color: #000000;
 }
 
+.push {
+  margin-left: 15px;
+}
 
+.pushlot {
+  margin-left: 30px;
+}
+
+.socialicon {
+  position: fixed;
+  bottom: 0px;
+  right: 12.25%;
+}
+
+.mix {
+  position: fixed;
+  bottom: 0px;
+  left: 11.5%;
+}
 
 .socialright {
-	float: right;
-	border: 4px solid #059D8F;
+  position: fixed;
+  top: 0px;
+  right: 0px;
   width: 20%;
+  height: 300px;
+  background-color: cyan;
 }
 
 .iframe{
-transform: scale(2);
--ms-transform: scale(2);
--webkit-transform: scale(2);
--o-transform: scale(2);
--moz-transform: scale(2);
-transform-origin: top left;
--ms-transform-origin: top left;
--webkit-transform-origin: top left;
--moz-transform-origin: top left;
--webkit-transform-origin: top left;
+  transform: scale(2);
+  -ms-transform: scale(2);
+  -webkit-transform: scale(2);
+  -o-transform: scale(2);
+  -moz-transform: scale(2);
+  transform-origin: top left;
+  -ms-transform-origin: top left;
+  -webkit-transform-origin: top left;
+  -moz-transform-origin: top left;
+  -webkit-transform-origin: top left;
 }
+
+.right {
+  float: right;
+  background-color: green;
+}
+
+.stupid {
+  text-decoration-color: gray;
+}
+
