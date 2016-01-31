@@ -36,6 +36,7 @@ gem 'omniauth-twitter'
 gem 'materialize-sass'
 gem 'haml-rails'
 gem 'react-rails'
+gem 'puma'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
