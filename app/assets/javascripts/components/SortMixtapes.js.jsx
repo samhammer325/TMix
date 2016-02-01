@@ -2,17 +2,17 @@ class SortMixtapes extends React.Component{
 	constructor(props){
 		super(props);
 		this.displayUsersMixTapes = this.displayUsersMixTapes.bind(this);
-    this.toggleVisible = this.toggleVisible.bind(this);
-    this.state = {mixtapes: [], visible: true };
+    // this.toggleVisible = this.toggleVisible.bind(this);
+    this.state = {mixtapes: []};
 	}
 
 componentDidMount(){
     // this.displayUsersMixTapes()
   }
 
-  toggleVisible() {
-    this.setState({visible: !this.state.visible});
-  }
+  // toggleVisible() {
+  //   this.setState({visible: !this.state.visible});
+  // }
 
 	displayUsersMixTapes(search_terms){
     $.ajax({
@@ -27,16 +27,16 @@ componentDidMount(){
   }
 
   render(){
-
+    // debugger
     let mixtapes = this.state.mixtapes.map( mixtape => {
       let key = `mixtape-${mixtape.id}`;
-      return(<Mixtape key={key} {...mixtape} />);
+      return(<Mixtape key={key} {...mixtape} temp2={this.temp}/>);
     });
 
-    if(this.state.visible){
+    
       return(
          <div>
-          <button onClick={this.toggleVisible}>Toggle MixTapes</button>
+           <button onClick={this.props.temp} className='btn'>Play</button>
        
           <h1 className="yellow">MixTapes</h1>
           <hr />
@@ -48,14 +48,11 @@ componentDidMount(){
           <hr />
           <h3 className='center-align'>Mixtapes:</h3>
            {mixtapes}
-        </div>)}
-      else {
-        return(
-          <div>
-           <button onClick={this.toggleVisible}>Toggle Mixtapes</button>
-           </div>)}
+        </div>)
+    }
+      
        
-  }
+  
 
    
 }

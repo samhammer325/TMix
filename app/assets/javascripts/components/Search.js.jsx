@@ -46,6 +46,7 @@ class Search extends React.Component{
       type: 'GET',
       data: {mixtape_id: this.state.mixtape_id}
     }).success( data => {
+      // debugger
       this.setState({songs: data.songs});
     })
   }
@@ -69,6 +70,7 @@ class Search extends React.Component{
 
 
   render(){
+    // debugger
     self = this;
     let i = 0;
     let artists = this.state.results.map( artist => {
@@ -95,7 +97,7 @@ class Search extends React.Component{
              <div className='card-panel green'>
                 <div className='card-content white-text'>
                   <h3> {this.state.mixtapeName}</h3>
-              {     songs}
+                {songs}
                 </div>
               </div>
             </div>

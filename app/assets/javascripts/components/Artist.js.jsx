@@ -20,6 +20,7 @@ class Artist extends React.Component{
       type: 'POST',
       data: {name: songName, artist: artist, mixtape_id: this.props.mixtapeId}
     }).success( data => {
+      // debugger
       self.props.getSongs();
     });
   }

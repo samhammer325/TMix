@@ -5,6 +5,11 @@ class TheHome extends React.Component{
     this.DisplaySortMixtapes = this.DisplaySortMixtapes.bind(this);
     this.DisplaySearch = this.DisplaySearch.bind(this);
     this.DisplayPlayMixtape = this.DisplayPlayMixtape.bind(this);
+    this.temp = this.temp.bind(this);
+	}
+
+	temp(){
+		alert("worked");
 	}
 
 	DisplaySortMixtapes(){
@@ -30,7 +35,7 @@ class TheHome extends React.Component{
 
 
 	render(){
-
+		 // debugger
 		if (this.state.sortMixtapesVisible) {
 			return(
 			<div>
@@ -38,7 +43,7 @@ class TheHome extends React.Component{
 				<button onClick={this.DisplaySearch}>DisplaySearch</button>
 				<button onClick={this.DisplayPlayMixtape}>DisplayPlayMixtape</button>
 
-				<SortMixtapes/>
+				<SortMixtapes temp={this.temp}/>
 			</div>);
 		};
 

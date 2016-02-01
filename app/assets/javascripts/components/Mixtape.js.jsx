@@ -1,7 +1,13 @@
 class Mixtape extends React.Component{
   constructor(props){
     super(props)
+    this.playMixtape = this.playMixtape.bind(this);
     // this.state = {songs: [] };
+  }
+
+  playMixtape(){
+     debugger
+    this.props.temp();
   }
 
 
@@ -22,6 +28,7 @@ class Mixtape extends React.Component{
                 <li>Rating: {this.props.average_rating}</li>
               </div>
              {songs}
+             
             </div>
           </div>);
   }
