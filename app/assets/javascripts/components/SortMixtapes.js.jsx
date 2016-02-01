@@ -2,25 +2,18 @@ class SortMixtapes extends React.Component{
 	constructor(props){
 		super(props);
 		this.displayUsersMixTapes = this.displayUsersMixTapes.bind(this);
-
-    // this.toggleVisible = this.toggleVisible.bind(this);
     this.state = {mixtapes: []};
-
-    this.toggleVisible = this.toggleVisible.bind(this);
     this.state = {mixtapes: [], visible: true, rangeStart: 0 };
     // this.state = {mixtapes: [], rangeStart: 0};
     this.upRange = this.upRange.bind(this);
     this.downRange = this.downRange.bind(this);
+    
 
 	}
 
 componentDidMount(){
     // this.displayUsersMixTapes()
   }
-
-  // toggleVisible() {
-  //   this.setState({visible: !this.state.visible});
-  // }
 
 	displayUsersMixTapes(search_terms){
     $.ajax({
@@ -34,12 +27,22 @@ componentDidMount(){
     });
   }
 
+  upRange(){
+    oldRange = this.state.rangeStart;
+    this.setState({rangeStart: oldRange + 4});
+  }
 
-  render(){
+  downRange(){
+    oldRange = this.state.rangeStart;
+    this.setState({rangeStart: oldRange - 4});
+  }
+
+
+  // render(){
     // debugger
-    let mixtapes = this.state.mixtapes.map( mixtape => {
-      let key = `mixtape-${mixtape.id}`;
-      return(<Mixtape key={key} {...mixtape} temp2={this.temp}/>);
+    // let mixtapes = this.state.mixtapes.map( mixtape => {
+    //   let key = `mixtape-${mixtape.id}`;
+    //   return(<Mixtape key={key} {...mixtape} temp2={this.temp}/>);
 
   // refreshMix(){
   //   let self = this;
@@ -53,15 +56,7 @@ componentDidMount(){
   //   });
   // }
 
-  upRange(){
-    oldRange = this.state.rangeStart;
-    this.setState({rangeStart: oldRange + 4});
-  }
-
-  downRange(){
-    oldRange = this.state.rangeStart;
-    this.setState({rangeStart: oldRange - 4});
-  }
+  
   render(){
     let rangeStart = [this.state.rangeStart, this.state.rangeStart + 4]
     let mixtapesShow = this.state.mixtapes.slice(rangeStart[0], rangeStart[1])
@@ -75,13 +70,9 @@ componentDidMount(){
     
       return(
          <div>
-
            <button onClick={this.props.temp} className='btn'>Play</button>
-
           <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
           <button onClick={this.toggleVisible}>Toggle MixTapes</button>
-
-       
           <h1 className="cyan">MixTapes</h1>
           <hr />
           <button onClick={this.displayUsersMixTapes.bind(this, "all" )}>Display All Mixtapes</button>
@@ -91,28 +82,20 @@ componentDidMount(){
           <button onClick={this.displayUsersMixTapes.bind(this, "highest_rated" )}>Display Highest Rated Mixtapes</button>
           <hr />
           <h3 className='center-align'>Mixtapes:</h3>
-
            {mixtapes}
-        </div>)
-    }
+
+          <div className = 'center'>
+
+        
       
-       
-  
-
-   
-
-          {mixtapes}
-          <div className="center">
             <i className="waves-effect waves-light medium material-icons" onClick={this.downRange}>fast_rewind _</i>
             <i className="waves-effect waves-light medium material-icons" onClick={this.upRange}>fast_forward</i>
           </div>
-        </div>)}
-      else {
-        return(
-          <div>
-           <button onClick={this.toggleVisible}>Toggle Mixtapes</button>
-           </div>)}    
-  }   
+        </div>
+    )}
+      
+         
+    
 
 }
 

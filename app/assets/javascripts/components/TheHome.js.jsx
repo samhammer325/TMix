@@ -5,12 +5,9 @@ class TheHome extends React.Component{
     this.DisplaySortMixtapes = this.DisplaySortMixtapes.bind(this);
     this.DisplaySearch = this.DisplaySearch.bind(this);
     this.DisplayPlayMixtape = this.DisplayPlayMixtape.bind(this);
-    this.temp = this.temp.bind(this);
+    
 	}
 
-	temp(){
-		alert("worked");
-	}
 
 	DisplaySortMixtapes(){
 		this.setState({sortMixtapesVisible: true});
@@ -42,9 +39,6 @@ class TheHome extends React.Component{
 				<button onClick={this.DisplaySortMixtapes}>DisplaySortMixtapes</button>
 				<button onClick={this.DisplaySearch}>DisplaySearch</button>
 				<button onClick={this.DisplayPlayMixtape}>DisplayPlayMixtape</button>
-
-
-				<SortMixtapes temp={this.temp}/>
 
 				<SortMixtapes current_user={this.props.current_user}/>
 
