@@ -1,0 +1,27 @@
+
+%nav.small-nav
+  .nav-wrapper 
+    %a.brand-logo{:href => "#!"} T-Mix
+    %a.button-collapse{"data-activates" => "mobile-demo", :href => "#"}
+      %i.material-icons menu
+    %ul#mobile-demo.side-nav
+      %li
+        %a{:href => "sass.html"} Sass
+      %li
+        %a{:href => "badges.html"} Components
+      %li
+        %a{:href => "collapsible.html"} Javascript
+      %li
+        %a{:href => "mobile.html"} Mobile
+%br
+%ul.side-nav.fixed.large-nav#sli
+  %h3 Mixtapes
+  %h5 Sort By:
+  %li
+    %a{:href => "#!"} Highest Rating
+  %li
+    %a{:href => "#!"} Genre
+  %li
+    %a{:href => "#!"} Friend's
+  %li
+    %a.waves-effect.waves-circle.waves-light.btn-floating.secondary-content{:href => "#!", :style => "font-size: 50px;"}+

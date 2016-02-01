@@ -1,30 +1,39 @@
-%div.socialright
-	%h4 #{current_user.name}
+= render 'layouts/navbar'
+%link{:href => "https://fonts.googleapis.com/icon?family=Material+Icons", :rel => "stylesheet"}/
+%div.socialright#me
+	%h4.center #{current_user.name}
 	- if current_user.picture == nil
 	- else
-		%img{alt: "profile_pic", src: "#{current_user.picture}"}
+		%img.pushlot{alt: "profile_pic", src: "#{current_user.picture}"}
 	%br
 	- if /\.twimg/.match(current_user.picture)
 		%br
-		<a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="Keeping it fresh @MySongis Checkout my Mix - " data-size="large">Tweet	
+		<a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="Keeping it fresh @MySongis Checkout my Mix - " data-size="large">Tweet
+		%br
 		%br
 	- elsif /graph/.match(current_user.picture)
-		.fb-share-button.iframe{"data-href" => "http://www.localhost:3000", "data-layout" => "button_count"}
+		.fb-share-button.iframe.push{"data-href" => "http://www.localhost:3000", "data-layout" => "button_count"}
 		%br
 	- else
-		.fb-share-button.iframe{"data-href" => "http://www.localhost:3000", "data-layout" => "button_count"}
+		.fb-share-button.iframe.push{"data-href" => "http://www.localhost:3000", "data-layout" => "button_count"}
 		%br
 		%br
 		%br
-		<a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="Keeping it fresh @MySongis Checkout my Mix - " data-size="large">Tweet	
+		<a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="Keeping it fresh @MySongis Checkout my Mix - " data-size="large">Tweet
+		%br
+		%br
 		%br
 	%br
+	= link_to '', destroy_user_session_path, method: 'delete', class: "stupid"
 	%br
-	= link_to 'Logout', destroy_user_session_path, method: 'delete'
 	%br
+	.btn.push.purple.waves-effect.waves-light= link_to 'Logout', destroy_user_session_path, method: 'delete', class: "white-text"
+	%br
+%i.socialicon.waves-effect.waves-light.material-icons.large#clickme swap_vert
+%i.mix.waves-effect.waves-light.material-icons.large#slide list
 %br
 %br
-%h2 Welcome to My Song
+%h2.center-align.rocksalt T-Mix 
 %br
 %hr
 
@@ -42,24 +51,25 @@
 - if @mixtapes.present?
 	.row
 		.col.s8.offset-s2
-			= react_component 'TheHome'
+			= react_component 'TheHome', { current_user: current_user}
 - else
 	.row
 		.col.s8.offset-s2
-			= react_component 'TheHome'
+			= react_component 'TheHome', { current_user: current_user}
 		
 	
 
 
+%script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.2.3/jquery.min.js"}
 
 
+
+%br
+%br
+%br
 / %iframe{: => "api.dar.fm/player_api.php?callsign=KBZT&onnow_display=true&station_display=true&volume_display=true&partner_token=9388418650" }
 / 	%p come one work?
 
 
 / %h1 = @graph.put_connections("me", "feed", message: "Hey I'm posting to facebook right now on a program I coded :D:D:D:D.")
 
-
-
-
-= link_to 'Logout', destroy_user_session_path, method: 'delete'

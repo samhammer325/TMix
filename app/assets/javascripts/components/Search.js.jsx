@@ -37,7 +37,7 @@ class Search extends React.Component{
       this.setState ({mixtape_id: data.id, mixtapeName: data.name, mixTapeCategory: data.category})
     });
 
-   
+
   }
 
   getSongs(){
@@ -83,7 +83,7 @@ class Search extends React.Component{
     let songs = this.state.songs.map( song => {
       let key = `artist-${j++}`
     return(<h5> {song.song_name} </h5>);
-    
+
     });
 
     return(
@@ -91,7 +91,7 @@ class Search extends React.Component{
           <input autofocus='true' placeholder='Mix Tape Name' ref='mixtapeName'/>
           <input placeholder='category' ref='category'/>
           <button onClick={this.createMixtape} className='btn orange'>Create New Mixtape</button>
-           
+
 
            <div id='cardHolder' className='row'>
              <div className='card-panel green'>
@@ -108,15 +108,15 @@ class Search extends React.Component{
 
 
           <h5>Search for an artist:</h5>
-          <input type='text' ref='searchText' autofocus='true' placeholder="Artist"/>
-          <button onClick={this.getSearchResults} className='btn'>Search</button>
-          <hr />
-          <h4 className='center-align'>Artists playing:</h4>
+          <input className='col s4 offset s3' type='text' ref='searchText' autofocus='true' placeholder="Artist"/>
+          <button onClick={this.getSearchResults} className='btn waves-effect waves-light'>Search</button>
+          <br />
+          <br />
+          <h4 className='center-align center'>Artists playing:</h4>
           <br />
           <div id='cardHolder' className='row'>
             {artists}
           </div>
-          <hr />
         </div>)
   }
 }

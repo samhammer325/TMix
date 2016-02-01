@@ -1,0 +1,58 @@
+custom link for your own mixtape
+landing with the mixtape id when someone else comes in with the mixtape link
+  they have received from a facebook mixtape post.
+
+1) make a link of the custom mixtape you want to post.
+  (this link will host the mixtape id to use to pull up this mixtape and start
+  playing)
+  (maybe the link will look like mysong.is/mixtape/114)
+  [X]LOOKS like the mixtape id is data-reactid=".1.9:$mixtape-9.0" 9.0 is the
+  mix id
+  In console we can find the mixtape by using=> Mixtape.find_by(id: 5)
+    where we will use a variable instead of 5
+
+
+  this link will take you to a custom route in the routes.rb
+    where it will take the mixtape_id and show the mixtape.
+      you can make a function in the controller where it will take the numbers
+      after the last /
+      and use that in the react show function.
+
+
+2) send the link to the facebook post function and post it.
+  now they want the link to go to the force login page and just shoot the
+  mixtape songs to the search and play that mixtape
+=======================================
+==New Plan=============================
+=======================================
+  so when the link come in from the url, it ill pull the mixtape info and send
+  it to the player on the initial login screen
+
+    X player on the home screen to play the song
+    set up a variable with the station id to play that station with that song
+      on the mixtape
+    this will be done by making  a call to the playlist
+    the mixtape will get sent in threw a link http://localhost:3000/mixtape/1
+    the id will be taken to the controller and used to search for the mixtape.
+    the link will come in threw the mixtape controller with the mixtape.songs
+      artists name and song to make an ajax call to the API to see if there is a
+      similar response, if not it will go to the next song.
+
+    in the binding.pry i got the songs pulling up. find out how to pass the name
+      and artist to do a search for that song.
+      @mixtape.songs[1].name      and     @mixtape.songs[1].artist
+
+    Build a loop to go threw each song and send a request to the search api for
+      artists
+
+    redirect_to your_controller_action_url
+
+(index.html.haml)
+  if params[:mixtape]
+    -mixtapeId = params[:mixtape]
+  =react_component('The Home', {mixtapeId: mixtapeId || nil})
+
+    in theHome
+  constructor(props){
+    super(props);
+  }
