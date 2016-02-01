@@ -29,6 +29,17 @@ componentDidMount(){
     });
   }
 
+  // refreshMix(){
+  //   let self = this;
+  //   $.ajax({
+  //     url: "/mixtapes",
+  //     type: "GET",
+  //   }).success( data => {
+  //     self.setState({ mixtapes: data });
+  //   }).error( data => {
+  //     console.log("could not refresh")    
+  //   });
+  // }
 
   upRange(){
     oldRange = this.state.rangeStart;
@@ -45,7 +56,7 @@ componentDidMount(){
     let mixtapes = mixtapesShow.map( mixtape => {
       let key = `mixtape-${mixtape.id}`;
     
-      return(<Mixtape key={key} {...mixtape} />);
+      return(<Mixtape key={key} displayUsersMixTapes={this.displayUsersMixTapes} current_user={this.props.current_user} {...mixtape} />);
     });
 
     if(this.state.visible){

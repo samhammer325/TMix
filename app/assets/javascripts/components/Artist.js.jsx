@@ -21,6 +21,10 @@ class Artist extends React.Component{
       data: {name: songName, artist: artist, mixtape_id: this.props.mixtapeId}
     }).success( data => {
       self.props.getSongs();
+      for(let i = 1; i <= 10; i++){
+        
+
+       }
     });
     render()
   }
