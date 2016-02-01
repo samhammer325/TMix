@@ -30,7 +30,6 @@ class TheHome extends React.Component{
 
 
 	render(){
-
 		if (this.state.sortMixtapesVisible) {
 			return(
 			<div>
@@ -57,7 +56,7 @@ class TheHome extends React.Component{
 			return(
 			<div>
 				
-					<button className="btn cyan nav1" onClick={this.DisplaySortMixtapes}>Mixtapes</button>
+				<button className="btn cyan nav1" onClick={this.DisplaySortMixtapes}>Mixtapes</button>
 				<button className="btn pink nav2" onClick={this.DisplaySearch}>Search and Create Mix(s)</button>
 				<button className="btn teal nav3" onClick={this.DisplayPlayMixtape}>Play Mixtape</button>
 

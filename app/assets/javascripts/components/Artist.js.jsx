@@ -31,13 +31,17 @@ class Artist extends React.Component{
 
   render(){
     return(<div>
-            <div className="card-panel height trublue col l4 m6 s12">
+            <div className="marg card-panel height trublue col l4 m6 s12">
               <div className="card-content white-text">
-                <p className="stylez center truncate">{this.props.title} <br />By: {this.props.artist} </p>
-                  <div className="row center">
-                    <a className="btn waves-effect waves-light" onClick={() => this.play(this.props.station_id)}>play</a>
-                    <a className="btn bluezs waves-effect waves-light" onClick={() => this.add(this.props.title, this.props.artist)}>Add</a>
-                  </div>
+                <p className="stylez center truncate">
+                  {this.props.title} 
+                  <br />
+                  By: {this.props.artist}  
+                </p>
+                <div className="row center">
+                  <a className="btn waves-effect waves-light" onClick={() => this.play(this.props.station_id)}>play</a>
+                  <a className="btn bluezs waves-effect waves-light" onClick={() => this.add(this.props.title, this.props.artist)}>Add</a>
+                </div>
               </div>
             </div>
           </div>);

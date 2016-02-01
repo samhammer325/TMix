@@ -62,7 +62,7 @@ componentDidMount(){
       return(
          <div>
           <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-          <ul className="side-nav fixed large-nav center" id="sli">
+          <ul className="side-nav fixed large-nav" id="sli">
             <h1 className="cyan">MixTapes</h1>
             <hr />
             <button className="btn green waves-effect waves-light" onClick={this.displayUsersMixTapes.bind(this, "all" )}>All Mixtapes</button>

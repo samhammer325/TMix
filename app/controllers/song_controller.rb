@@ -20,6 +20,11 @@ class SongController < ApplicationController
     render json: @mixtape
   end
 
+  def destroy
+    Song.find(params[:id]).destroy
+    head :ok
+  end
+
   # def show
   # 	@songs = Song.find_by(mixtape_id: params[:mixtape_id])
   # end
