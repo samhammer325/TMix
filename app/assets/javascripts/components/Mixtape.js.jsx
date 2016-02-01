@@ -5,6 +5,7 @@ class Mixtape extends React.Component{
     this.playMixtape = this.playMixtape.bind(this);
     this.deleteMixtape = this.deleteMixtape.bind(this)
     this.deleteBtn = this.deleteBtn.bind(this)
+    this.deleteSong = this.deleteSong.bind(this)
     // this.state = {songs: [] };
     // this.state = { mixtapes: [] };
   }
@@ -31,6 +32,7 @@ class Mixtape extends React.Component{
       self.props.displayUsersMixTapes('users');
     });
   }
+
   deleteBtn(){
     if(this.props.author_id == this.props.current_user.id){
       return(<div onClick={this.deleteMixtape} className="rightbot waves-effect waves-light btn red">
@@ -40,13 +42,32 @@ class Mixtape extends React.Component{
   }
 
 
+  deleteSong(){
+    let self = this;
+    $.ajax({
+      url: '/mixtapes/' + this.props.id + '/songs/' + this.props.song_id,
+      type: 'DELETE'
+    }).success( data => {
+      self.props.displayUsersMixTapes('users');
+    });
+  }
+
+  buttonSong(){
+    if(this.props.author_id == this.props.current_user.id){
+      return(<div onClick={this.deleteSong} className="waves-light waves-effect btn orange">-</div>)
+    }
+  }
+
+  
   render(){
-
-
+    
     let songs = this.props.mixtape.map( song => {
       let key = `song-${song.song_id}`;
        //return(<Song key={key} {...song} />);
-      return(<li> {song.song_name} </li>)
+      return(<div>
+              <li id={song.song_id}> {song.song_name} </li>
+              <button className="btn" onClick={this.deleteSong()}>delete</button>
+            </div>)
     });
     
 

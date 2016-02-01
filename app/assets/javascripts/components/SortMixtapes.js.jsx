@@ -2,7 +2,7 @@ class SortMixtapes extends React.Component{
 	constructor(props){
 		super(props);
 		this.displayUsersMixTapes = this.displayUsersMixTapes.bind(this);
-    this.state = {mixtapes: []};
+
     this.state = {mixtapes: [], visible: true, rangeStart: 0 };
     // this.state = {mixtapes: [], rangeStart: 0};
     this.upRange = this.upRange.bind(this);
@@ -72,15 +72,17 @@ componentDidMount(){
          <div>
            <button onClick={this.props.temp} className='btn'>Play</button>
           <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-          <button onClick={this.toggleVisible}>Toggle MixTapes</button>
-          <h1 className="cyan">MixTapes</h1>
-          <hr />
-          <button onClick={this.displayUsersMixTapes.bind(this, "all" )}>Display All Mixtapes</button>
-          <hr />
-          <button onClick={this.displayUsersMixTapes.bind(this, "users" )}>Display My Mixtapes</button>
-          <hr />
-          <button onClick={this.displayUsersMixTapes.bind(this, "highest_rated" )}>Display Highest Rated Mixtapes</button>
-          <hr />
+
+          <ul className="side-nav fixed large-nav" id="sli">
+            <h1 className="cyan">MixTapes</h1>
+            <hr />
+            <button className="btn green waves-effect waves-light" onClick={this.displayUsersMixTapes.bind(this, "all" )}>All Mixtapes</button>
+            <hr />
+            <button className="btn cyan waves-effect waves-light" onClick={this.displayUsersMixTapes.bind(this, "users" )}>My Mixtapes</button>
+            <hr />
+            <button className="btn pink waves-effect waves-light" onClick={this.displayUsersMixTapes.bind(this, "highest_rated" )}>Highest Rated Mixtapes</button>
+            <hr />
+          </ul>
           <h3 className='center-align'>Mixtapes:</h3>
            {mixtapes}
 
@@ -91,11 +93,9 @@ componentDidMount(){
             <i className="waves-effect waves-light medium material-icons" onClick={this.downRange}>fast_rewind _</i>
             <i className="waves-effect waves-light medium material-icons" onClick={this.upRange}>fast_forward</i>
           </div>
-        </div>
-    )}
-      
-         
-    
 
-}
+        </div>)}
+         
+}   
+
 

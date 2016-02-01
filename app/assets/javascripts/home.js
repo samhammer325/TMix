@@ -45,6 +45,11 @@ $( "#slide" ).click(function() {
   $( "#sli" ).slideToggle( "slow");
 });
 
+  
+// $( "#delete" ).click(function() {
+//     $( "#tobe" ).remove();
+// });
+
 
 // $( "a#playButton" ).find( allAnchorElements )
 
