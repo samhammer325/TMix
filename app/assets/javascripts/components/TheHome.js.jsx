@@ -42,34 +42,29 @@ class TheHome extends React.Component{
 		if (this.state.sortMixtapesVisible) {
 			return(
 			<div>
-				<button className="btn cyan nav1" onClick={this.DisplaySortMixtapes}>Mixtapes</button>
-				<button className="btn pink nav2" onClick={this.DisplaySearch}>Search and Create Mix(s)</button>
-				<button className="btn teal nav3" onClick={this.DisplayPlayMixtape}>Play Mixtape</button>
-
+				<button className="btn nav1 waves-effect waves-light" onClick={this.DisplaySortMixtapes}>Mixtapes</button>
+				<button className="btn nav2 waves-effect waves-light" onClick={this.DisplaySearch}>Search and Create Mix(s)</button>
+				<button className="btn nav3 waves-effect waves-light" onClick={this.DisplayPlayMixtape}>Play Mixtape</button>
 				<SortMixtapes current_user={this.props.current_user} DisplayPlayMixtape = {this.DisplayPlayMixtape}/>
-
 			</div>);
 		};
 
 		if (this.state.searchVisible) {
 			return(
 			<div>
-				<button className="btn cyan nav1" onClick={this.DisplaySortMixtapes}>Mixtapes</button>
-				<button className="btn pink nav2" onClick={this.DisplaySearch}>Search and Create Mix(s)</button>
-				<button className="btn teal nav3" onClick={this.DisplayPlayMixtape}>Play Mixtape</button>
-
+				<button className="btn cyan nav1 waves-effect waves-light" onClick={this.DisplaySortMixtapes}>Mixtapes</button>
+				<button className="btn pink nav2 waves-effect waves-light" onClick={this.DisplaySearch}>Search and Create Mix(s)</button>
+				<button className="btn teal nav3 waves-effect waves-light" onClick={this.DisplayPlayMixtape}>Play Mixtape</button>
 				<Search current_user={this.props.current_user}/>
 			</div>);
 		};
 
 		if (this.state.playMixtapeVisible) {
 			return(
-			<div>
-				
-				<button className="btn cyan nav1" onClick={this.DisplaySortMixtapes}>Mixtapes</button>
-				<button className="btn pink nav2" onClick={this.DisplaySearch}>Search and Create Mix(s)</button>
-				<button className="btn teal nav3" onClick={this.DisplayPlayMixtape}>Play Mixtape</button>
-
+			<div>		
+				<button className="btn nav1" onClick={this.DisplaySortMixtapes}>Mixtapes</button>
+				<button className="btn nav2" onClick={this.DisplaySearch}>Search and Create Mix(s)</button>
+				<button className="btn nav3" onClick={this.DisplayPlayMixtape}>Play Mixtape</button>
 				<PlayMixtape current_user={this.props.current_user} mixtape_id={this.state.mixtape_id}/>
 			</div>);
 		};

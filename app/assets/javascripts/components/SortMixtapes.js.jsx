@@ -11,7 +11,7 @@ class SortMixtapes extends React.Component{
 
 	}
 
-componentDidMount(){
+  componentDidMount(){
     // this.displayUsersMixTapes()
   }
 
@@ -73,7 +73,6 @@ componentDidMount(){
          <div>
            <button onClick={this.props.temp} className='btn'>Play</button>
           <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-
           <ul className="side-nav fixed large-nav" id="sli">
             <h1 className="cyan">MixTapes</h1>
             <hr />
@@ -86,13 +85,10 @@ componentDidMount(){
           </ul>
           <h3>Mixtapes:</h3>
            {mixtapes}
-
           <div className = 'center'>
-
             <i className="waves-effect waves-light medium material-icons" onClick={this.downRange}>fast_rewind _</i>
             <i className="waves-effect waves-light medium material-icons" onClick={this.upRange}>fast_forward</i>
           </div>
-
-        </div>)}
-
+        </div>)
+  }
 }
