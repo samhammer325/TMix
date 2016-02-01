@@ -22,6 +22,7 @@ class Mixtape extends React.Component{
       self.props.displayUsersMixTapes('users');
     });
   }
+
   deleteBtn(){
     if(this.props.author_id == this.props.current_user.id){
       return(<div onClick={this.deleteMixtape} className="rightbot waves-effect waves-light btn red">
@@ -30,13 +31,17 @@ class Mixtape extends React.Component{
     }
   }
 
+  
+
   render(){
-
-
+    
     let songs = this.props.mixtape.map( song => {
       let key = `song-${song.song_id}`;
        //return(<Song key={key} {...song} />);
-      return(<li> {song.song_name} </li>)
+      return(<div>
+              <li id="tobe"> {song.song_name} </li>
+              <button id="delete">-</button>
+            </div>)
     });
     
 

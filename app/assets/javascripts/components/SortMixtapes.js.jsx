@@ -2,7 +2,6 @@ class SortMixtapes extends React.Component{
 	constructor(props){
 		super(props);
 		this.displayUsersMixTapes = this.displayUsersMixTapes.bind(this);
-    this.toggleVisible = this.toggleVisible.bind(this);
     this.state = {mixtapes: [], visible: true, rangeStart: 0 };
     // this.state = {mixtapes: [], rangeStart: 0};
     this.upRange = this.upRange.bind(this);
@@ -63,16 +62,16 @@ componentDidMount(){
       return(
          <div>
           <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-          <button onClick={this.toggleVisible}>Toggle MixTapes</button>
-       
-          <h1 className="cyan">MixTapes</h1>
-          <hr />
-          <button onClick={this.displayUsersMixTapes.bind(this, "all" )}>Display All Mixtapes</button>
-          <hr />
-          <button onClick={this.displayUsersMixTapes.bind(this, "users" )}>Display My Mixtapes</button>
-          <hr />
-          <button onClick={this.displayUsersMixTapes.bind(this, "highest_rated" )}>Display Highest Rated Mixtapes</button>
-          <hr />
+          <ul className="side-nav fixed large-nav center" id="sli">
+            <h1 className="cyan">MixTapes</h1>
+            <hr />
+            <button className="btn green waves-effect waves-light" onClick={this.displayUsersMixTapes.bind(this, "all" )}>All Mixtapes</button>
+            <hr />
+            <button className="btn cyan waves-effect waves-light" onClick={this.displayUsersMixTapes.bind(this, "users" )}>My Mixtapes</button>
+            <hr />
+            <button className="btn pink waves-effect waves-light" onClick={this.displayUsersMixTapes.bind(this, "highest_rated" )}>Highest Rated Mixtapes</button>
+            <hr />
+          </ul>
           <h3 className='center-align'>Mixtapes:</h3>
           {mixtapes}
           <div className="center">
@@ -80,11 +79,7 @@ componentDidMount(){
             <i className="waves-effect waves-light medium material-icons" onClick={this.upRange}>fast_forward</i>
           </div>
         </div>)}
-      else {
-        return(
-          <div>
-           <button onClick={this.toggleVisible}>Toggle Mixtapes</button>
-           </div>)}    
+         
   }   
 }
 

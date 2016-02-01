@@ -34,9 +34,9 @@ class TheHome extends React.Component{
 		if (this.state.sortMixtapesVisible) {
 			return(
 			<div>
-				<button onClick={this.DisplaySortMixtapes}>DisplaySortMixtapes</button>
-				<button onClick={this.DisplaySearch}>DisplaySearch</button>
-				<button onClick={this.DisplayPlayMixtape}>DisplayPlayMixtape</button>
+				<button className="btn cyan nav1" onClick={this.DisplaySortMixtapes}>Mixtapes</button>
+				<button className="btn pink nav2" onClick={this.DisplaySearch}>Search and Create Mix(s)</button>
+				<button className="btn teal nav3" onClick={this.DisplayPlayMixtape}>Play Mixtape</button>
 
 				<SortMixtapes current_user={this.props.current_user}/>
 			</div>);
@@ -45,9 +45,9 @@ class TheHome extends React.Component{
 		if (this.state.searchVisible) {
 			return(
 			<div>
-				<button onClick={this.DisplaySortMixtapes}>DisplaySortMixtapes</button>
-				<button onClick={this.DisplaySearch}>DisplaySearch</button>
-				<button onClick={this.DisplayPlayMixtape}>DisplayPlayMixtape</button>
+				<button className="btn cyan nav1" onClick={this.DisplaySortMixtapes}>Mixtapes</button>
+				<button className="btn pink nav2" onClick={this.DisplaySearch}>Search and Create Mix(s)</button>
+				<button className="btn teal nav3" onClick={this.DisplayPlayMixtape}>Play Mixtape</button>
 
 				<Search current_user={this.props.current_user}/>
 			</div>);
@@ -56,9 +56,10 @@ class TheHome extends React.Component{
 		if (this.state.playMixtapeVisible) {
 			return(
 			<div>
-				<button onClick={this.DisplaySortMixtapes}>DisplaySortMixtapes</button>
-				<button onClick={this.DisplaySearch}>DisplaySearch</button>
-				<button onClick={this.DisplayPlayMixtape}>DisplayPlayMixtape</button>
+				
+					<button className="btn cyan nav1" onClick={this.DisplaySortMixtapes}>Mixtapes</button>
+				<button className="btn pink nav2" onClick={this.DisplaySearch}>Search and Create Mix(s)</button>
+				<button className="btn teal nav3" onClick={this.DisplayPlayMixtape}>Play Mixtape</button>
 
 				<PlayMixtape current_user={this.props.current_user}/>
 			</div>);
@@ -68,3 +69,10 @@ class TheHome extends React.Component{
 		
 	}
 }
+
+
+
+
+
+
+
