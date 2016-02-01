@@ -3,7 +3,7 @@ class MixtapesController < ApplicationController
 	def index
   	 # @mixtapes = Mixtape.all
   	 # render json: @mixtapes
-		 @songs = @mixtape.songs
+		 # @songs = @mixtape.songs
   end
 
 	def create
@@ -64,6 +64,17 @@ class MixtapesController < ApplicationController
     end
 
   end
+
+
+  def destroy
+  	Mixtape.find(params[:id]).destroy
+  	head :ok
+  end
+
+
+
+
+
 
 	private
 

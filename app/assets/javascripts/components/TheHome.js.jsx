@@ -38,7 +38,7 @@ class TheHome extends React.Component{
 				<button onClick={this.DisplaySearch}>DisplaySearch</button>
 				<button onClick={this.DisplayPlayMixtape}>DisplayPlayMixtape</button>
 
-				<SortMixtapes/>
+				<SortMixtapes current_user={this.props.current_user}/>
 			</div>);
 		};
 
@@ -49,7 +49,7 @@ class TheHome extends React.Component{
 				<button onClick={this.DisplaySearch}>DisplaySearch</button>
 				<button onClick={this.DisplayPlayMixtape}>DisplayPlayMixtape</button>
 
-				<Search/>
+				<Search current_user={this.props.current_user}/>
 			</div>);
 		};
 
@@ -60,7 +60,7 @@ class TheHome extends React.Component{
 				<button onClick={this.DisplaySearch}>DisplaySearch</button>
 				<button onClick={this.DisplayPlayMixtape}>DisplayPlayMixtape</button>
 
-				<PlayMixtape/>
+				<PlayMixtape current_user={this.props.current_user}/>
 			</div>);
 		};
 		
