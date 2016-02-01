@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'static_pages/bio'
+
   root 'home#index'
 
   post 'home_play', to: 'home#play'

@@ -70,8 +70,8 @@ class SortMixtapes extends React.Component{
 
 
       return(
-         <div>
-           <button onClick={this.props.temp} className='btn'>Play</button>
+        <div>
+          <button onClick={this.props.temp} className='btn'>Play</button>
           <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
           <ul className="side-nav fixed large-nav" id="sli">
             <h1 className="cyan">MixTapes</h1>
@@ -89,6 +89,19 @@ class SortMixtapes extends React.Component{
             <i className="waves-effect waves-light medium material-icons" onClick={this.downRange}>fast_rewind _</i>
             <i className="waves-effect waves-light medium material-icons" onClick={this.upRange}>fast_forward</i>
           </div>
-        </div>)
-  }
-}
+        </div>)}
+}   
+
+// =======
+//         </div>)}
+//       else {
+//         return(
+//           <div>
+//            <button className="btn waves-effect waves-light" onClick={this.toggleVisible}>Toggle Mixtapes</button>
+//            </div>)}    
+//   }   
+// }
+// >>>>>>> Kool Styling
+           // <button className="btn waves-effect waves-light" onClick={this.toggleVisible}>Toggle Mixtapes</button>
+
+
