@@ -1,9 +1,15 @@
+@import "materialize/components/color";
+$primary-color: #595959 !default;
+$secondary-color: #896891 !default;
+@import "materialize";
 @import "newstyle.css.scss";
 @import "player.css.scss";
-@import "materialize";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+.mixx{
+  height: 115px;
+}
 
 a {
   right: 15px;
@@ -11,6 +17,10 @@ a {
 
 .sam {
   margin-left: 23%;
+}
+
+.purp{
+  background-color: #896891;
 }
 
 .player {
@@ -49,6 +59,11 @@ a {
     right: auto;
     margin-right: 1% !important;
 }
+
+.blubtn{
+  background-color: #00769C;
+}
+
 
 .rightbot {
   float: right;
@@ -92,7 +107,8 @@ a {
   right: 0px;
   width: 20%;
   height: 300px;
-  background-color: cyan;
+  background-color: rgba(62, 138, 123, 0.89);
+  border: 5px solid #201025
 }
 
 .iframe{
@@ -128,4 +144,28 @@ a {
 }
 .nav3 {
   margin-right: 2%;
+}
+
+body {
+  background: #896891; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #5E1175, #896891); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #5E1175, #896891); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.card-panel{
+  background-color: trublu !important;
+}
+
+.salt{
+  font-family: 'Rock Salt', serif;
+}
+
+.banger{
+  font-family: 'Bangers', serif;
+}
+
+.trublue {
+  background: #576CDB; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #576CDB , #717CCE); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #576CDB , #717CCE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }

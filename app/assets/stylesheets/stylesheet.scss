@@ -22,11 +22,16 @@
 }
 
 
-h2 {
-  font-family: 400 45px/0.5 'Rock Salt', serif;
+
+.mcard{
+  background-color: #00769C !important;
 }
+
+
+
 .side-nav {
-  width: 280px !important;
+  width: 180px !important;
+  background-color: rgba(62, 138, 123, 0.89) !important;
 }
 
 .bluez {
@@ -71,9 +76,4 @@ h2 {
   float:right;
 }
 
-body {
-  background: #896891; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #5E1175, #896891); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #5E1175, #896891); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-}

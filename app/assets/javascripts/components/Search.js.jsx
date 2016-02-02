@@ -86,18 +86,18 @@ class Search extends React.Component{
         <div>
           <input autofocus='true' placeholder='Mix Tape Name' ref='mixtapeName'/>
           <input placeholder='category' ref='category'/>
-          <button onClick={this.createMixtape} className='btn orange'>Create New Mixtape</button>
+          <button onClick={this.createMixtape} className='btn'>Create New Mixtape</button>
 
 
            <div id='cardHolder' className='row'>
-            <div className='card-panel green'>
-              <div className='card-content white-text'>
-                <h3> {this.state.mixtapeName}</h3>
+             <div className='card-panel trublue'>
+                <div className='card-content white-text'>
+                  <h3> {this.state.mixtapeName}</h3>
                 {songArray}
+                </div>
               </div>
             </div>
-          </div>
-          <button onClick={this.createMixtape} className='btn orange'>Done</button>
+          <button onClick={this.createMixtape} className='btn'>Done</button>
 
 
 
