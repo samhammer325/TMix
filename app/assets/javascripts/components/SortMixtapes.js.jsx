@@ -74,13 +74,14 @@ class SortMixtapes extends React.Component{
           <button onClick={this.props.temp} className='btn'>Play</button>
           <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
           <ul className="side-nav fixed large-nav" id="sli">
-            <h1 className="cyan">MixTapes</h1>
+            <img src="/assets/real.png" className="mixx" />
+            <h5 className="banger">Sort by:</h5>
             <hr />
-            <button className="btn green waves-effect waves-light" onClick={this.displayUsersMixTapes.bind(this, "all" )}>All Mixtapes</button>
+            <button className="btn waves-effect waves-light" onClick={this.displayUsersMixTapes.bind(this, "all" )}>All Mixtapes</button>
             <hr />
-            <button className="btn cyan waves-effect waves-light" onClick={this.displayUsersMixTapes.bind(this, "users" )}>My Mixtapes</button>
+            <button className="btn waves-effect waves-light" onClick={this.displayUsersMixTapes.bind(this, "users" )}>My Mixtapes</button>
             <hr />
-            <button className="btn pink waves-effect waves-light" onClick={this.displayUsersMixTapes.bind(this, "highest_rated" )}>Highest Rated Mixtapes</button>
+            <button className="btn waves-effect waves-light" onClick={this.displayUsersMixTapes.bind(this, "highest_rated" )}>Highest Rated Mixtapes</button>
             <hr />
           </ul>
           <h3>Mixtapes:</h3>
