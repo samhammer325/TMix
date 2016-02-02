@@ -1,6 +1,9 @@
+@import "materialize/components/color";
+$primary-color: #595959 !default;
+$secondary-color: #896891 !default;
+@import "materialize";
 @import "newstyle.css.scss";
 @import "player.css.scss";
-@import "materialize";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
@@ -14,6 +17,10 @@ a {
 
 .sam {
   margin-left: 23%;
+}
+
+.purp{
+  background-color: #896891;
 }
 
 .player {
@@ -137,4 +144,19 @@ a {
 }
 .nav3 {
   margin-right: 2%;
+}
+
+body {
+  background: #896891; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #5E1175, #896891); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #5E1175, #896891); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.salt{
+  font-family: 'Rock Salt', serif;
+}
+
+.banger{
+  font-family: 'Bangers', serif;
 }

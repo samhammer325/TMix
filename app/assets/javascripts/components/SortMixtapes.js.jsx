@@ -77,11 +77,11 @@ class SortMixtapes extends React.Component{
             <img src="/assets/real.png" className="mixx" />
             <h5 className="banger">Sort by:</h5>
             <hr />
-            <button className="btn waves-effect waves-light" onClick={this.displayUsersMixTapes.bind(this, "all" )}>All Mixtapes</button>
+            <button className="btn purp" onClick={this.displayUsersMixTapes.bind(this, "all" )}>All Mixtapes</button>
             <hr />
-            <button className="btn waves-effect waves-light" onClick={this.displayUsersMixTapes.bind(this, "users" )}>My Mixtapes</button>
+            <button className="btn purp" onClick={this.displayUsersMixTapes.bind(this, "users" )}>My Mixtapes</button>
             <hr />
-            <button className="btn waves-effect waves-light" onClick={this.displayUsersMixTapes.bind(this, "highest_rated" )}>Highest Rated Mixtapes</button>
+            <button className="btn purp" onClick={this.displayUsersMixTapes.bind(this, "highest_rated" )}>Highest Rated Mixtapes</button>
             <hr />
           </ul>
           <h3>Mixtapes:</h3>
