@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_action :set_user, only: [:show, :edit, :update, :destroy, :finish_signup]
+	before_action :set_user, only: [:show, :edit, :update, :destroy]
 	before_filter :ensure_sign_complete, only: [:new, :create, :update, :destroy]
 	def show
 	end

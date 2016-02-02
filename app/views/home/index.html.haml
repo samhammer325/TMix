@@ -1,37 +1,75 @@
-%h5.center Welcome #{current_user.email}
-%p.center Anyone has any questions about this email thing just slack me or ask me.
-%div.socialright
-	%h4 #{current_user.name}
-	%img{alt: "profile_pic", src: "#{current_user.picture}"}
+= render 'layouts/navbar'
+%link{:href => "https://fonts.googleapis.com/icon?family=Material+Icons", :rel => "stylesheet"}/
+%div.socialright#me
+	%h4.center #{current_user.name}
+	- if current_user.picture == nil
+	- else
+		%img.pushlot{alt: "profile_pic", src: "#{current_user.picture}"}
+	%br
+	- if /\.twimg/.match(current_user.picture)
+		%br
+		<a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="Keeping it fresh @MySongis Checkout my Mix - " data-size="large">Tweet
+		%br
+		%br
+	- elsif /graph/.match(current_user.picture)
+		.fb-share-button.iframe.push{"data-href" => "http://www.localhost:3000", "data-layout" => "button_count"}
+		%br
+	- else
+		.fb-share-button.iframe.push{"data-href" => "http://www.localhost:3000", "data-layout" => "button_count"}
+		%br
+		%br
+		%br
+		<a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="Keeping it fresh @MySongis Checkout my Mix - " data-size="large">Tweet
+		%br
+		%br
+		%br
+	%br
+	= link_to '', destroy_user_session_path, method: 'delete', class: "stupid"
 	%br
 	%br
+	.btn.push.purple.waves-effect.waves-light= link_to 'Logout', destroy_user_session_path, method: 'delete', class: "white-text"
 	%br
-	= link_to 'Logout', destroy_user_session_path, method: 'delete'
+%i.socialicon.waves-effect.waves-light.material-icons.large#clickme swap_vert
+%i.socialicon2.waves-effect.waves-light.material-icons.large#slide list
 %br
 %br
-%h2 Welcome to My Song
+%h2.center-align.rocksalt T-Mix 
 %br
 %hr
-.row
-	.col.s8
-		= react_component 'Search'
-.row
-	.col.s8
-		= react_component 'SortMixTapes'
+
+#fb-root
+:javascript
+	(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1670876069868555";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+
+
+- if @mixtapes.present?
+	.row
+		.col.s8.offset-s2
+			= react_component 'TheHome', { current_user: current_user}
+- else
+	.row
+		.col.s8.offset-s2
+			= react_component 'TheHome', { current_user: current_user}
+		
+	
+
+
+%script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.2.3/jquery.min.js"}
+
+
+
+%br
+%br
+%br
 / %iframe{: => "api.dar.fm/player_api.php?callsign=KBZT&onnow_display=true&station_display=true&volume_display=true&partner_token=9388418650" }
 / 	%p come one work?
 
-/ %iframe{: => "http://api.dar.fm/playlist.php?q=*katy*%20*perry*&callback=jsonp&web=1&partner_token=9388418650" } 
-/ 	%p working?
 
+/ %h1 = @graph.put_connections("me", "feed", message: "Hey I'm posting to facebook right now on a program I coded :D:D:D:D.")
 
-/ %iframe{:src => "http://api.dar.fm/player_api.php?callsign=KBZT&onnow_display=true&station_display=true&volume_display=true"}
-
-%h1
-	Thestral dirigible plums, Viktor Krum hexed memory charm Animagus Invisibility Cloak three-headed Dog. Half-Blood Prince Invisibility Cloak cauldron cakes, hiya Harry! Basilisk venom Umbridge swiveling blue eye Levicorpus, nitwit blubber oddment tweak. Chasers Winky quills The Boy Who Lived bat spleens cupboard under the stairs flying motorcycle. Sirius Black Holyhead Harpies, you’ve got dirt on your nose. Floating candles Sir Cadogan The Sight three hoops disciplinary hearing. Grindlewald pig’s tail Sorcerer's Stone biting teacup. Side-along dragon-scale suits Filch 20 points, Mr. Potter.
-
-	Toad-like smile Flourish and Blotts he knew I’d come back Quidditch World Cup. Fat Lady baubles banana fritters fairy lights Petrificus Totalus. So thirsty, deluminator firs’ years follow me 12 inches of parchment. Head Boy start-of-term banquet Cleansweep Seven roaring lion hat. Unicorn blood crossbow mars is bright tonight, feast Norwegian Ridgeback. Come seek us where our voices sound, we cannot sing above the ground, Ginny Weasley bright red. Fanged frisbees, phoenix tears good clean match.
-
-	Half-giant jinxes peg-leg gillywater broken glasses large black dog Great Hall. Nearly-Headless Nick now string them together, and answer me this, which creature would you be unwilling to kiss? Poltergeist sticking charm, troll umbrella stand flying cars golden locket Lily Potter. Pumpkin juice Trevor wave your wand out glass orbs, a Grim knitted hats. Stan Shunpike doe patronus, suck his soul Muggle-Born large order of drills the trace. Bred in captivity fell through the veil, quaffle blue flame ickle diddykins Aragog. Yer a wizard, Harry Doxycide the woes of Mrs. Weasley Goblet of Fire.
-%iframe#player{:src => "http://api.dar.fm/player_api.php?station_id=#{@station}&custom_style=radioslice&partner_token=9388418650"}
-= link_to 'Logout', destroy_user_session_path, method: 'delete'

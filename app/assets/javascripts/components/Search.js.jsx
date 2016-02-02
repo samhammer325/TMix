@@ -1,18 +1,17 @@
 class Search extends React.Component{
-// git input for search term
-//done
+
 // take input from search, and make an ajax call for info.
 // convert info to use for card.
 // send info to card {songinfo}  also change the search button to back to span if needed
 // must add key to get the warning away!
   constructor(props){
     super(props);
-    this.state = {results: []};
+    this.state = {results: [], mixtape_id: 0, mixtapeName: '', mixTapeCategory: '', songs: []};
     this.getSearchResults = this.getSearchResults.bind(this);
-    this.playSearch = this.playSearch.bind(this);
+    this.createMixtape = this.createMixtape.bind(this);
+    this.getSongs = this.getSongs.bind(this);
   }
-  componentDidMount(){
-  }
+
   getSearchResults(){
     self = this;
     let searchTerm = self.refs.searchText.value.replace(/\s/g, "%20")
@@ -23,53 +22,100 @@ class Search extends React.Component{
       dataType: 'jsonp',
     }).success( data => {
       this.setState({results: data});
-      // this.playSearch();
     });
   }
-  playSearch(){
-    let stationId = this.state.artist[0].station_id
+
+  createMixtape(){
     $.ajax({
-    url: "/home_play",
-    type: "post",
-    data: {station: stationId},
-    success: function(){
-    },
-    error:function(){
-      alert('Error');
-    }
+      url: '/mixtapes',
+      type: 'POST',
+      data: {name: this.refs.mixtapeName.value, category: this.refs.category.value}
+    }).success( data => {
+      // alert('yay')
+      this.refs.mixtapeName.value = null;
+      this.refs.category.value = null;
+      this.setState ({mixtape_id: data.id, mixtapeName: data.name, mixTapeCategory: data.category})
     });
+
+
   }
-  rPlay(){
-    // @station = 
-    let player = document.getElementById("player")
-    debugger
+
+  getSongs(){
+    $.ajax({
+      url: '/mixtapes_find_single_mixtape',
+      type: 'GET',
+      data: {mixtape_id: this.state.mixtape_id}
+    }).success( data => {
+      // debugger
+      this.setState({songs: data.songs});
+    })
   }
+
+  // createSong(){
+  //   $.ajax({
+  //     url: '/songs',
+  //     type: 'POST',
+  //     data: {mixtape_id: this.mixtape_id}
+  //   }).success(
+  //    alert('yes'))
+  //   });
+  // }
+
+
+        // current_state = this.state;
+       // current_state[:mixtape_id] = data.mixtape_id;
+     // this.setState(current_state);
+
+
+
+
   render(){
+    // debugger
+    self = this;
     let i = 0;
     let artists = this.state.results.map( artist => {
       let key = `artist-${i++}`
-      return(<Artist key = {key} {...artist} />);
+      return(<Artist key={key} {...artist} rplay={self.playSong} mixtapeId={self.state.mixtape_id} getSongs={this.getSongs}/>);
     });
-    // let player = this.state.results.map( player => {
-    //   return(<Player {...player} />);
-    // });
-    // let player = this.props.station_id( player => {
-    //   return(<{player} />);
-    // });
+    let playerKey = `player`
+
+    let j = 0;
+    let songs = this.state.songs.map( song => {
+      let key = `artist-${j++}`
+    return(<h5> {song.song_name} </h5>);
+
+    });
+
     return(
         <div>
+          <input autofocus='true' placeholder='Mix Tape Name' ref='mixtapeName'/>
+          <input placeholder='category' ref='category'/>
+          <button onClick={this.createMixtape} className='btn orange'>Create New Mixtape</button>
+
+
+           <div id='cardHolder' className='row'>
+             <div className='card-panel green'>
+                <div className='card-content white-text'>
+                  <h3> {this.state.mixtapeName}</h3>
+                {songs}
+                </div>
+              </div>
+            </div>
+          <button onClick={this.createMixtape} className='btn orange'>Done</button>
+
+
+          <Player ref="player" rplay={this.playSong} key={playerKey} station = {this.props.station_id}/>
+
+
           <h5>Search for an artist:</h5>
-          <input type='text' ref='searchText' autofocus='true' placeholder="Artist"/>
-          <button onClick={this.getSearchResults} className='btn'>Search</button>
-          <hr />
-          <h4 className='center-align'>Artists playing:</h4>
+          <input className='col s4 offset s3' type='text' ref='searchText' autofocus='true' placeholder="Artist"/>
+          <button onClick={this.getSearchResults} className='btn waves-effect waves-light'>Search</button>
           <br />
-          <div className='row'>
+          <br />
+          <h4 className='center-align center'>Artists playing:</h4>
+          <br />
+          <div id='cardHolder' className='row'>
             {artists}
-          </div>
-          <hr />
-          <div className='row'>
-            <button className="btn" onClick={this.rPlay} >something</button>
           </div>
         </div>)
   }
