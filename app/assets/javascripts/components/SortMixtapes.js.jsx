@@ -83,13 +83,11 @@ componentDidMount(){
             <button className="btn pink waves-effect waves-light" onClick={this.displayUsersMixTapes.bind(this, "highest_rated" )}>Highest Rated Mixtapes</button>
             <hr />
           </ul>
-          <h3 className='center-align'>Mixtapes:</h3>
+          <h3>Mixtapes:</h3>
            {mixtapes}
 
           <div className = 'center'>
 
-        
-      
             <i className="waves-effect waves-light medium material-icons" onClick={this.downRange}>fast_rewind _</i>
             <i className="waves-effect waves-light medium material-icons" onClick={this.upRange}>fast_forward</i>
           </div>

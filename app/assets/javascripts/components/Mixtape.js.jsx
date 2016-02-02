@@ -42,22 +42,23 @@ class Mixtape extends React.Component{
   }
 
 
-  deleteSong(){
+  deleteSong(song_id){
     let self = this;
     $.ajax({
-      url: '/mixtapes/' + this.props.id + '/songs/' + this.props.song_id,
+      url: '/song/' + song_id,
       type: 'DELETE'
     }).success( data => {
       self.props.displayUsersMixTapes('users');
     });
   }
 
-  buttonSong(){
+  buttonSong(song_id){
     if(this.props.author_id == this.props.current_user.id){
-      return(<div onClick={this.deleteSong} className="waves-light waves-effect btn orange">-</div>)
+      return(<div>
+                <button onClick={() => this.deleteSong(song_id)} className="noah waves-light waves-effect btn orange">delete Song</button>
+            </div>)
     }
   }
-
   
   render(){
     
@@ -65,26 +66,24 @@ class Mixtape extends React.Component{
       let key = `song-${song.song_id}`;
        //return(<Song key={key} {...song} />);
       return(<div>
-              <li id={song.song_id}> {song.song_name} </li>
-              <button className="btn" onClick={this.deleteSong()}>delete</button>
+              <li id={song.song_id}> {song.song_name} { this.buttonSong(song.song_id) }</li>
+              
             </div>)
     });
     
 
     return(<div>
-            <div className='card small blue darken-3 col s6'>
+            <div className='card small blue darken-3 col s6 over'>
              { this.deleteBtn() }
               <div className='card-content white-text'>
                 <h5>Mixtape: {this.props.name}</h5>
                 <li>Rating: {this.props.average_rating}</li>
               </div>
-             {songs}
-
-             
-
+             <div>
+                {songs}
+              </div>
              <br />
              <br />
-
             </div>
           </div>);
   }
