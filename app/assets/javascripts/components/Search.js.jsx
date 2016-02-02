@@ -11,6 +11,10 @@ class Search extends React.Component{
     this.createMixtape = this.createMixtape.bind(this);
     this.getSongs = this.getSongs.bind(this);
   }
+  // getInitialState(){
+  //   debugger
+  //   songArray = [];
+  // }
 
   getSearchResults(){
     self = this;
@@ -25,6 +29,7 @@ class Search extends React.Component{
     });
   }
 
+
   createMixtape(){
     $.ajax({
       url: '/mixtapes',
@@ -34,7 +39,8 @@ class Search extends React.Component{
       // alert('yay')
       this.refs.mixtapeName.value = null;
       this.refs.category.value = null;
-      this.setState ({mixtape_id: data.id, mixtapeName: data.name, mixTapeCategory: data.category})
+      this.setState ({mixtape_id: data.id, mixtapeName: data.name, mixTapeCategory: data.category, songs: []})
+
     });
 
 
@@ -48,6 +54,7 @@ class Search extends React.Component{
     }).success( data => {
       // debugger
       this.setState({songs: data.songs});
+
     })
   }
 
@@ -90,7 +97,7 @@ class Search extends React.Component{
 
 
            <div id='cardHolder' className='row'>
-            <div className='card-panel green'>
+          <div id='clearCard' className='card-panel green'>
               <div className='card-content white-text'>
                 <h3> {this.state.mixtapeName}</h3>
                 {songArray}
@@ -98,11 +105,6 @@ class Search extends React.Component{
             </div>
           </div>
           <button onClick={this.createMixtape} className='btn orange'>Done</button>
-
-
-
-
-
           <h5>Search for an artist:</h5>
           <input className='col s4 offset s3' type='text' ref='searchText' autofocus='true' placeholder="Artist"/>
           <button onClick={this.getSearchResults} className='btn waves-effect waves-light'>Search</button>
