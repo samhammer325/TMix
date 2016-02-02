@@ -33,6 +33,7 @@ class TheHome extends React.Component{
 
 	render(){
 		 // debugger
+		 self = this;
 		if (this.state.sortMixtapesVisible) {
 			return(
 			<div>
@@ -40,7 +41,7 @@ class TheHome extends React.Component{
 				<button onClick={this.DisplaySearch}>DisplaySearch</button>
 				<button onClick={this.DisplayPlayMixtape}>DisplayPlayMixtape</button>
 
-				<SortMixtapes current_user={this.props.current_user}/>
+				<SortMixtapes current_user={this.props.current_user} DisplayPlayMixtape = {this.DisplayPlayMixtape}/>
 
 			</div>);
 		};

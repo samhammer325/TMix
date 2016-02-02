@@ -12,12 +12,12 @@ class Mixtape extends React.Component{
 
   playMixtape(){
      debugger
-    this.props.temp();
+    
   }
 
 
   show_mixtape(){
-    debugger
+    
   
   }
 
@@ -41,12 +41,13 @@ class Mixtape extends React.Component{
 
 
   render(){
+      // debugger
 
 
     let songs = this.props.mixtape.map( song => {
       let key = `song-${song.song_id}`;
-       //return(<Song key={key} {...song} />);
-      return(<li> {song.song_name} </li>)
+       return(<Song key={key} {...song} />);
+      // return(<li> {song.song_name} </li>)
     });
     
 
@@ -56,6 +57,7 @@ class Mixtape extends React.Component{
               <div className='card-content white-text'>
                 <h5>Mixtape: {this.props.name}</h5>
                 <li>Rating: {this.props.average_rating}</li>
+                <button onClick={this.playMixtape}>Play</button>
               </div>
              {songs}
 
