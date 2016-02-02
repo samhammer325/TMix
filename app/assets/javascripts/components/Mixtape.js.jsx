@@ -11,7 +11,9 @@ class Mixtape extends React.Component{
 
 
   playMixtape(){
-     debugger
+    //debugger
+    this.props.displayPlayMixtape(this.props.mixtape_id);
+     // alert('play'); 
     
   }
 
@@ -41,13 +43,13 @@ class Mixtape extends React.Component{
 
 
   render(){
-      // debugger
+       // debugger
 
 
     let songs = this.props.mixtape.map( song => {
       let key = `song-${song.song_id}`;
-       return(<Song key={key} {...song} />);
-      // return(<li> {song.song_name} </li>)
+       // return(<Song key={key} {...song} />);
+        return(<li>key={key} {song.song_name}  {song.artist_name}</li>)
     });
     
 

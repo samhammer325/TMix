@@ -1,7 +1,7 @@
 class PlayMixtape extends React.Component{
   constructor(props){
     super(props)
-    this.state = {mixtape_id: 10, songs: []};
+    this.state = {songs: []};
      this.getSongs = this.getSongs.bind(this);
      // this.findPlayingSongs = this.findPlayingSongs.bind(this);
   }
@@ -17,7 +17,7 @@ class PlayMixtape extends React.Component{
     $.ajax({
       url: '/mixtapes_find_single_mixtape',
       type: 'GET',
-      data: {mixtape_id: this.state.mixtape_id}
+      data: {mixtape_id: this.props.mixtape_id}
     }).success( data => {
          // debugger
       this.setState({songs: data.songs});
@@ -42,7 +42,7 @@ class PlayMixtape extends React.Component{
     // debugger
      let songs = this.state.songs.map( song => {
       let key = `song-${song.id}`;
-    return(<Song key={key}  {...song} />);
+    return(<Song key={key} artist_name={this.props.artist_name} song_name={this.props.song_name}{...song} />);
 
   });
 

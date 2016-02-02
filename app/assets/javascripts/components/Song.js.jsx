@@ -12,7 +12,7 @@ class Song extends React.Component{
   }
 
 
-  componentDidMount(){
+  componentWillMount(){
       this.renderPlayButton();
   }
 
@@ -31,17 +31,21 @@ class Song extends React.Component{
     }).success( data => {
       
       this.setState({results: data});
+
     });
   }
   play(station){
+    debugger
     let player = document.getElementById("player")
     player.src = "https://apidarfm.global.ssl.fastly.net/player_api.php?station_id=" + station + "&custom_style=radioslice&partner_token=9388418650"
 
   }
 
   addButton(){
-      // debugger
+      alert('no results');
      if (this.state.results.length != 0) {
+      alert('Has results');
+      this.setState;
       station = this.state.results[0].station_id;
       return (<button onClick={this.play(station)} className='btn'>Play</button>);
 

@@ -1,7 +1,7 @@
 class TheHome extends React.Component{
   constructor(props){
     super(props);
-    this.state = {sortMixtapesVisible: false, searchVisible: true, playMixtapeVisible: false};
+    this.state = {sortMixtapesVisible: false, searchVisible: true, playMixtapeVisible: false, mixtape_id: 0};
     this.DisplaySortMixtapes = this.DisplaySortMixtapes.bind(this);
     this.DisplaySearch = this.DisplaySearch.bind(this);
     this.DisplayPlayMixtape = this.DisplayPlayMixtape.bind(this);
@@ -22,7 +22,8 @@ class TheHome extends React.Component{
 
 	}
 
-	DisplayPlayMixtape(){
+	DisplayPlayMixtape(mixtape_id){
+		this.setState({mixtape_id: mixtape_id})
 		this.setState({sortMixtapesVisible: false});
 		this.setState({searchVisible: false});
 		this.setState({playMixtapeVisible: true});
@@ -32,7 +33,7 @@ class TheHome extends React.Component{
 
 
 	render(){
-		 // debugger
+		  // debugger
 		 self = this;
 		if (this.state.sortMixtapesVisible) {
 			return(
@@ -64,7 +65,7 @@ class TheHome extends React.Component{
 				<button onClick={this.DisplaySearch}>DisplaySearch</button>
 				<button onClick={this.DisplayPlayMixtape}>DisplayPlayMixtape</button>
 
-				<PlayMixtape current_user={this.props.current_user}/>
+				<PlayMixtape current_user={this.props.current_user} mixtape_id={this.state.mixtape_id}/>
 			</div>);
 		};
 		

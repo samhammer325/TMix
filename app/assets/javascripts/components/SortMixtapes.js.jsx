@@ -64,7 +64,7 @@ componentDidMount(){
     let mixtapes = mixtapesShow.map( mixtape => {
       let key = `mixtape-${mixtape.id}`;
 
-      return(<Mixtape key={key} displayUsersMixTapes={this.displayUsersMixTapes} current_user={this.props.current_user} displayPlayMixtape={this.props.DisplayPlayMixtape} {...mixtape} />);
+      return(<Mixtape key={key} displayUsersMixTapes={this.displayUsersMixTapes} current_user={this.props.current_user} displayPlayMixtape={this.props.DisplayPlayMixtape} mixtape_id={mixtape.id}{...mixtape} />);
 
     });
 
