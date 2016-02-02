@@ -47,9 +47,9 @@ h2 {
   margin-right: auto;
 }
 
-.height {
-  height: 150px;
-}
+// .height {
+//   height: 150px;
+// }
 
 .trublue {
   background: #576CDB; /* fallback for old browsers */
@@ -58,10 +58,7 @@ h2 {
 }
 
 
-/*.card {
-  height: 140px !important;
-}
-*/
+
 .row .col.m4 {
   width: 33.33333%;
   margin-left: auto;
@@ -78,5 +75,5 @@ body {
   background: #896891; /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #5E1175, #896891); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to left, #5E1175, #896891); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        
+
 }

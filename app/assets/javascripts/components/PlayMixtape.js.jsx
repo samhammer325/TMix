@@ -1,4 +1,4 @@
-class PlayMixtape extends React.Component{
+  class PlayMixtape extends React.Component{
   constructor(props){
     super(props)
     this.state = {songs: []};
@@ -6,7 +6,7 @@ class PlayMixtape extends React.Component{
      // this.findPlayingSongs = this.findPlayingSongs.bind(this);
   }
 
-  
+
 
   componentWillMount(){
     this.getSongs();
@@ -19,9 +19,9 @@ class PlayMixtape extends React.Component{
       type: 'GET',
       data: {mixtape_id: this.props.mixtape_id}
     }).success( data => {
-         // debugger
+
       this.setState({songs: data.songs});
-      // debugger
+
 
     })
   }
@@ -29,11 +29,11 @@ class PlayMixtape extends React.Component{
   // findPlayingSongs(){
   //   // debugger
   //   for(var i = 0; i < this.state.songs.length; i++){
-  //     return 
+  //     return
   //   };
-   
+
   // }
-  
+
 
 
   render(){
@@ -47,7 +47,7 @@ class PlayMixtape extends React.Component{
   });
 
 
-      
+
 
      // this.props.getSongs();
     return(<div>

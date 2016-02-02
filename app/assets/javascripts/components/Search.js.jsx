@@ -67,22 +67,19 @@ class Search extends React.Component{
      // this.setState(current_state);
 
 
-
-
   render(){
     // debugger
     self = this;
     let i = 0;
     let artists = this.state.results.map( artist => {
-      let key = `artist-${i++}`
+      let key = `artist-${i += 1}`
       return(<Artist key={key} {...artist} rplay={self.playSong} mixtapeId={self.state.mixtape_id} getSongs={this.getSongs}/>);
     });
 
-    let j = 0;
+    let songArray = [];
     let songs = this.state.songs.map( song => {
-      let key = `artist-${j++}`
-    return(<h5> {song.song_name} </h5>);
-
+      let key = `song-${song.song_id}`
+      songArray.push(<MixTapeSong key={key} {...song}/>);
     });
 
     return(
@@ -93,13 +90,13 @@ class Search extends React.Component{
 
 
            <div id='cardHolder' className='row'>
-             <div className='card-panel green'>
-                <div className='card-content white-text'>
-                  <h3> {this.state.mixtapeName}</h3>
-                {songs}
-                </div>
+            <div className='card-panel green'>
+              <div className='card-content white-text'>
+                <h3> {this.state.mixtapeName}</h3>
+                {songArray}
               </div>
             </div>
+          </div>
           <button onClick={this.createMixtape} className='btn orange'>Done</button>
 
 

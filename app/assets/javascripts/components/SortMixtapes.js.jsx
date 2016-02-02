@@ -7,7 +7,7 @@ class SortMixtapes extends React.Component{
     // this.state = {mixtapes: [], rangeStart: 0};
     this.upRange = this.upRange.bind(this);
     this.downRange = this.downRange.bind(this);
-    
+
 
 	}
 
@@ -52,11 +52,11 @@ componentDidMount(){
   //   }).success( data => {
   //     self.setState({ mixtapes: data });
   //   }).error( data => {
-  //     console.log("could not refresh")    
+  //     console.log("could not refresh")
   //   });
   // }
 
-  
+
   render(){
           //debugger
     let rangeStart = [this.state.rangeStart, this.state.rangeStart + 4]
@@ -68,7 +68,7 @@ componentDidMount(){
 
     });
 
-    
+
       return(
          <div>
            <button onClick={this.props.temp} className='btn'>Play</button>
@@ -94,7 +94,5 @@ componentDidMount(){
           </div>
 
         </div>)}
-         
-}   
 
-
+}

@@ -14,30 +14,31 @@ class Artist extends React.Component{
 
 
   add(songName, artist){
+    // debugger
     let self = this;
     $.ajax({
       url: '/song',
       type: 'POST',
       data: {name: songName, artist: artist, mixtape_id: this.props.mixtapeId}
+
     }).success( data => {
-      // debugger
+
       self.props.getSongs();
       for(let i = 1; i <= 10; i++){
-        
+
 
        }
     });
-    render()
   }
 
   render(){
     return(<div>
-            <div className="marg card-panel height trublue col l4 m6 s12">
+            <div className="marg card-panel height blue col l4 m6 s12">
               <div className="card-content white-text">
                 <p className="stylez center truncate">
-                  {this.props.title} 
+                  {this.props.title}
                   <br />
-                  By: {this.props.artist}  
+                  By: {this.props.artist}
                 </p>
                 <div className="row center">
                   <a className="btn waves-effect waves-light" onClick={() => this.play(this.props.station_id)}>play</a>

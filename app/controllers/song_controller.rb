@@ -3,6 +3,7 @@ class SongController < ApplicationController
   end
 
   def create
+
   	song_name = params[:name]
   	artist = params[:artist]
   	mixtape_id = params[:mixtape_id]

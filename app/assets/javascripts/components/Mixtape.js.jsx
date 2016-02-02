@@ -14,14 +14,14 @@ class Mixtape extends React.Component{
   playMixtape(){
     //debugger
     this.props.displayPlayMixtape(this.props.mixtape_id);
-     // alert('play'); 
-    
+     // alert('play');
+
   }
 
 
   show_mixtape(){
-    
-  
+
+
   }
 
 
@@ -55,10 +55,6 @@ class Mixtape extends React.Component{
     });
   }
 
-  render(){
-       // debugger
-
-
 
   buttonSong(song_id){
     if(this.props.author_id == this.props.current_user.id){
@@ -67,23 +63,23 @@ class Mixtape extends React.Component{
             </div>)
     }
   }
-  
+
   render(){
-    
+
     let songs = this.props.mixtape.map( song => {
       let key = `song-${song.song_id}`;
 
        //return(<Song key={key} {...song} />);
       return(<div>
               <li id={song.song_id}> {song.song_name} { this.buttonSong(song.song_id) }</li>
-              
+
             </div>)
 
        // return(<Song key={key} {...song} />);
         return(<li>key={key} {song.song_name}  {song.artist_name}</li>)
 
     });
-    
+
 
     return(<div>
             <div className='card small blue darken-3 col s6 over'>
