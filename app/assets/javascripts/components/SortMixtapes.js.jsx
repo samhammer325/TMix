@@ -58,12 +58,13 @@ componentDidMount(){
 
   
   render(){
+          //debugger
     let rangeStart = [this.state.rangeStart, this.state.rangeStart + 4]
     let mixtapesShow = this.state.mixtapes.slice(rangeStart[0], rangeStart[1])
     let mixtapes = mixtapesShow.map( mixtape => {
       let key = `mixtape-${mixtape.id}`;
-    
-      return(<Mixtape key={key} displayUsersMixTapes={this.displayUsersMixTapes} current_user={this.props.current_user} {...mixtape} />);
+
+      return(<Mixtape key={key} displayUsersMixTapes={this.displayUsersMixTapes} current_user={this.props.current_user} displayPlayMixtape={this.props.DisplayPlayMixtape} mixtape_id={mixtape.id}{...mixtape} />);
 
     });
 

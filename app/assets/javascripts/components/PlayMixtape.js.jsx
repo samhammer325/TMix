@@ -1,47 +1,52 @@
 class PlayMixtape extends React.Component{
   constructor(props){
     super(props)
-    this.state = {mixtape_id: 10, songs2: []};
+    this.state = {songs: []};
      this.getSongs = this.getSongs.bind(this);
+     // this.findPlayingSongs = this.findPlayingSongs.bind(this);
   }
 
-  componentDidMount(){
+  
 
-       this.getSongs();
+  componentWillMount(){
+    this.getSongs();
+
   }
 
   getSongs(){
     $.ajax({
       url: '/mixtapes_find_single_mixtape',
       type: 'GET',
-      data: {mixtape_id: this.state.mixtape_id}
+      data: {mixtape_id: this.props.mixtape_id}
     }).success( data => {
          // debugger
-      this.setState({songs2: data.songs});
+      this.setState({songs: data.songs});
       // debugger
 
     })
   }
 
+  // findPlayingSongs(){
+  //   // debugger
+  //   for(var i = 0; i < this.state.songs.length; i++){
+  //     return 
+  //   };
+   
+  // }
+  
+
 
   render(){
-     // this.getSongs;
-        // debugger
 
-    // self = this;
-    // let i = 0;
-    // let artists = this.state.results.map( artist => {
-    //   let key = `artist-${i++}`
-    //   return(<Artist key={key} {...artist} rplay={self.playSong} mixtapeId={self.state.mixtape_id} getSongs={this.getSongs}/>);
-    // });
-    // let playerKey = `player`
 
-    let j = 0;
-    let songs = this.state.songs2.map( song => {
-      let key = `artist-${j++}`
-    return(<p> {song.song_name} By: {song.artist} </p>);
-   
-    });
+    // debugger
+     let songs = this.state.songs.map( song => {
+      let key = `song-${song.id}`;
+    return(<Song key={key} artist_name={this.props.artist_name} song_name={this.props.song_name}{...song} />);
+
+  });
+
+
       
 
      // this.props.getSongs();
@@ -49,7 +54,7 @@ class PlayMixtape extends React.Component{
             <div className= 'card-panel green'>
               <div className='card-content white-text'>
                 <h5>Play Mixtape: </h5>
-                  {songs}
+                {songs}
               </div>
             </div>
           </div>);

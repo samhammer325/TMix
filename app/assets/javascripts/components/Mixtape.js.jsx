@@ -12,13 +12,15 @@ class Mixtape extends React.Component{
 
 
   playMixtape(){
-     debugger
-    this.props.temp();
+    //debugger
+    this.props.displayPlayMixtape(this.props.mixtape_id);
+     // alert('play'); 
+    
   }
 
 
   show_mixtape(){
-    debugger
+    
   
   }
 
@@ -42,6 +44,7 @@ class Mixtape extends React.Component{
   }
 
 
+
   deleteSong(song_id){
     let self = this;
     $.ajax({
@@ -51,6 +54,11 @@ class Mixtape extends React.Component{
       self.props.displayUsersMixTapes('users');
     });
   }
+
+  render(){
+       // debugger
+
+
 
   buttonSong(song_id){
     if(this.props.author_id == this.props.current_user.id){
@@ -64,11 +72,16 @@ class Mixtape extends React.Component{
     
     let songs = this.props.mixtape.map( song => {
       let key = `song-${song.song_id}`;
+
        //return(<Song key={key} {...song} />);
       return(<div>
               <li id={song.song_id}> {song.song_name} { this.buttonSong(song.song_id) }</li>
               
             </div>)
+
+       // return(<Song key={key} {...song} />);
+        return(<li>key={key} {song.song_name}  {song.artist_name}</li>)
+
     });
     
 
@@ -78,6 +91,7 @@ class Mixtape extends React.Component{
               <div className='card-content white-text'>
                 <h5>Mixtape: {this.props.name}</h5>
                 <li>Rating: {this.props.average_rating}</li>
+                <button onClick={this.playMixtape}>Play</button>
               </div>
              <div>
                 {songs}

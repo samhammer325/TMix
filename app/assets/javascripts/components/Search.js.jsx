@@ -77,7 +77,6 @@ class Search extends React.Component{
       let key = `artist-${i++}`
       return(<Artist key={key} {...artist} rplay={self.playSong} mixtapeId={self.state.mixtape_id} getSongs={this.getSongs}/>);
     });
-    let playerKey = `player`
 
     let j = 0;
     let songs = this.state.songs.map( song => {
@@ -104,7 +103,7 @@ class Search extends React.Component{
           <button onClick={this.createMixtape} className='btn orange'>Done</button>
 
 
-          <Player ref="player" rplay={this.playSong} key={playerKey} station = {this.props.station_id}/>
+
 
 
           <h5>Search for an artist:</h5>
