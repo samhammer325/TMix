@@ -90,7 +90,7 @@ class Search extends React.Component{
 
 
            <div id='cardHolder' className='row'>
-             <div className='card-panel mcard'>
+             <div className='card-panel trublue'>
                 <div className='card-content white-text'>
                   <h3> {this.state.mixtapeName}</h3>
                 {songArray}
