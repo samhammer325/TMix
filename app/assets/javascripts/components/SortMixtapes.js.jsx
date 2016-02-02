@@ -11,8 +11,10 @@ class SortMixtapes extends React.Component{
 
 	}
 
-  componentDidMount(){
-    // this.displayUsersMixTapes()
+
+componentDidMount(){
+  // displayUsersMixTapes('users')
+    
   }
  
 
@@ -59,6 +61,9 @@ class SortMixtapes extends React.Component{
   // }
 
 
+  
+
+  
   render(){
     // if (this.state.displayMyMixtapes == true) {
     //   displayUsersMixTapes('users');
@@ -74,20 +79,11 @@ class SortMixtapes extends React.Component{
 
 
       return(
-        <div>
-          <button onClick={this.props.temp} className='btn'>Play</button>
-          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-          <ul className="side-nav fixed large-nav" id="sli">
-            <img src="/assets/real.png" className="mixx" />
-            <h5 className="banger">Sort by:</h5>
-            <hr />
-            <button className="btn purp" onClick={this.displayUsersMixTapes.bind(this, "all" )}>All Mixtapes</button>
-            <hr />
-            <button className="btn purp" onClick={this.displayUsersMixTapes.bind(this, "users" )}>My Mixtapes</button>
-            <hr />
-            <button className="btn purp" onClick={this.displayUsersMixTapes.bind(this, "highest_rated" )}>Highest Rated Mixtapes</button>
-            <hr />
-          </ul>
+
+         <div>
+          <button className="btn green waves-effect waves-light" onClick={this.displayUsersMixTapes.bind(this, "all" )}>All Mixtapes</button>
+          <button className="btn cyan waves-effect waves-light" onClick={this.displayUsersMixTapes.bind(this, "users" )}>My Mixtapes</button>
+          
           <h3>Mixtapes:</h3>
            {mixtapes}
           <div className = 'center'>

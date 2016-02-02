@@ -64,6 +64,7 @@ class Mixtape extends React.Component{
   //   }
   // }
 
+
   
        // debugger
 
@@ -81,11 +82,16 @@ class Mixtape extends React.Component{
 
     let songs = this.props.mixtape.map( song => {
       let key = `song-${song.song_id}`;
-   
+
+      // debugger
+       //return(<Song key={key} {...song} />);
       return(<div>
               <li> {song.song_name} by {song.artist_name} </li>
+              
             </div>)
 
+       // return(<Song key={key} {...song} />);
+        // return( {song.song_name} {song.artist_name} {...song})</li>);
 
     });
 
@@ -93,7 +99,7 @@ class Mixtape extends React.Component{
             // <div onClick={this.playMixtape} className='card small blue darken-3 col s6 over'>
     return(<div>
 
-            <div className='card small trublue darken-3 col s6 over'>
+            <div onClick={this.playMixtape} className='card small blue darken-3 col s6 over'>
              { this.deleteBtn() }
               <div className='card-content white-text' >
                 <p>Mixtape: {this.props.name}</p>
