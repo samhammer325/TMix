@@ -59,7 +59,7 @@ class TheHome extends React.Component{
 			return(
 			<div className="inner">
 				
-				<button className="btn nav2" onClick={this.DisplaySearch}>Create New Mixtape</button>
+				<button className="btn" onClick={this.DisplaySearch}>Create New Mixtape</button>
 				
 
 				<SortMixtapes current_user={this.props.current_user} DisplayPlayMixtape = {this.DisplayPlayMixtape} display_user_mixtapes={this.state.display_user_mixtapes} />
@@ -70,8 +70,13 @@ class TheHome extends React.Component{
 		if (this.state.searchVisible) {
 			return(
 			<div>
-
-				<button className="btn nav1" onClick={this.DisplaySortMixtapes}>Mixtapes</button>
+				<br />
+				<div className="center">
+					<button className="btn nav1" onClick={this.DisplaySortMixtapes}>Mixtapes</button>
+				</div>
+				<br />
+				<h1 className="center salt white-text">Creating a Mixtape</h1>
+				<br/ >
 				<Search current_user={this.props.current_user}/>
 			</div>);
 		};
@@ -79,11 +84,14 @@ class TheHome extends React.Component{
 		if (this.state.playMixtapeVisible) {
 			return(
 			<div>
-
-				
-				<button className="btn nav1" onClick={this.DisplaySortMixtapes}>Mixtapes</button>
-				<button className="btn nav2" onClick={this.DisplaySearch}>Create New Mixtape</button>
-				
+			<br />
+				<div className="center">
+					<button className="btn nav1" onClick={this.DisplaySortMixtapes}>Mixtapes</button>
+					<button className="btn nav2" onClick={this.DisplaySearch}>Create New Mixtape</button>
+				</div>
+				<br />
+				<h1 className="center salt white-text">Playin a Mix</h1>
+				<br />
 
 				<PlayMixtape current_user={this.props.current_user} mixtape_id={this.state.mixtape_id}/>
 			</div>);

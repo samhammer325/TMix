@@ -30,7 +30,7 @@ class Artist extends React.Component{
 
   render(){
     return(<div>
-            <div className="marg card-panel height blue col l4 m6 s12">
+            <div className="nav4 card-panel height cyan col l4 m6 s12">
               <div className="card-content">
                 <p className="stylez center truncate">
                   {this.props.title}
@@ -38,7 +38,7 @@ class Artist extends React.Component{
                   By: {this.props.artist}
                 </p>
                 <div className="row center">
-                  <a className="btn waves-effect waves-light" onClick={() => this.play(this.props.station_id)}>play</a>
+                  <a className="btn waves-effect waves-light marg" onClick={() => this.play(this.props.station_id)}>play</a>
                   <a className="btn bluezs waves-effect waves-light" onClick={() => this.add(this.props.title, this.props.artist)}>Add</a>
                 </div>
               </div>
