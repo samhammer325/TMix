@@ -39,9 +39,10 @@
   render(){
 
 
-    // debugger
      let songs = this.state.songs.map( song => {
-      let key = `song-${song.id}`;
+      let key = `song-${song.song_id}`;
+      
+
     return(<Song key={key} artist_name={this.props.artist_name} song_name={this.props.song_name}{...song} />);
 
   });

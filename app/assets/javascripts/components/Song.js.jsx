@@ -3,21 +3,38 @@ class Song extends React.Component{
     super(props);
     this.state = {results: [], streaming: false, station: 0};
     this.renderPlayButton = this.renderPlayButton.bind(this);
-    this.addButton = this.addButton.bind(this);
+    // this.addButton = this.addButton.bind(this);
     this.play = this.play.bind(this);
     // this.getSearchResults = this.getSearchResults.bind(this);
     // this.createMixtape = this.createMixtape.bind(this);
     // this.getSongs = this.getSongs.bind(this);
         // debugger
   }
+  componentDidMount(){
+    this.startTimer();
+     
 
-
-  componentWillMount(){
-    if (this.state.streaming == false) {
-      this.renderPlayButton();
-    };
-      
   }
+  
+  startTimer(){
+    window.setTimeout(this.checkIfStreaming(), 10000);
+  }
+
+  checkIfStreaming(){
+    this.renderPlayButton();
+    // alert("check if streaming");
+    // this.startTimer();
+  }
+
+  
+
+
+  // componentWillMount(){
+  //   if (this.state.streaming == false) {
+  //     this.renderPlayButton();
+  //   };
+      
+  // }
 
   renderPlayButton(){
     self = this;
@@ -35,7 +52,9 @@ class Song extends React.Component{
       this.setState({results: data});
       // debugger
       if (this.state.results.length != 0) {
-        this.state.station = this.state.results[0].station_id;
+        // this.state.station = this.state.results[0].station_id;
+        this.setState({station_id: this.state.results[0].station_id});
+        this.setState({streaming: true});
       };
 
 
@@ -48,16 +67,16 @@ class Song extends React.Component{
 
   }
 
-  addButton(){
-      alert('no results');
-     if (this.state.results.length != 0) {
-      alert('Has results');
+  // addButton(){
+  //     // alert('no results');
+  //    if (this.state.streaming == true) {
+  //     // alert('Has results');
       
-      return (<button onClick={this.play(this.state.station)} className='btn'>Play</button>);
+  //     return (<button onClick={this.play(this.state.station)} className='btn'>Play</button>);
 
-    };
+  //   };
 
-  }
+  // }
 
 
 
@@ -66,18 +85,19 @@ class Song extends React.Component{
     // debugger
     // this.renderPlayButton;
 
-        if (this.state.streaming) {
-          alert('streaming');
+        if (this.state.streaming == true) {
+          // alert('streaming');
+          station = this.state.results[0].station_id
           return(
              <div>
               <p>{this.props.song_name}</p>
               <p>By: {this.props.artist_name}</p>
-              <button onClick={this.play(this.state.station)} className='btn'>Play</button>
+              <button onClick={this.play(station)} className='btn'>Play</button>
               </div>
             );
          
         }else{
-          alert('not streaming')
+          // alert('not streaming')
           return(
              <div>
               <p>{this.props.song_name}</p>
