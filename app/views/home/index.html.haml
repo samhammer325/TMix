@@ -1,3 +1,4 @@
+= render 'layouts/navbar'
 %link{:href => "https://fonts.googleapis.com/icon?family=Material+Icons", :rel => "stylesheet"}/
 %div.socialright#me
 	%h6.black-text.center.salt #{current_user.name}
@@ -27,7 +28,6 @@
 	%br
 	.btn.logout.purple.waves-effect.waves-light.center= link_to 'Logout', destroy_user_session_path, method: 'delete', class: "white-text"
 	%br
-%i.socialicon.waves-effect.waves-light.material-icons.large#clickme swap_vert
 %br
 %br
 %br

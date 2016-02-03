@@ -67,6 +67,15 @@ $secondary-color: #896891 !default;
   left: 10px;
 }
 
+.team {
+  position: absolute;
+  top: 50px;
+  left: 500px;
+  background-color:white;
+  padding-left:10px;
+  padding-right:10px;
+}
+
 .emailon {
   position:absolute;
   top:12%;
@@ -87,6 +96,16 @@ $secondary-color: #896891 !default;
    position: absolute;
    top: 11%;
   left: 21%;
+}
+
+#heigh {
+height:100%;
+width:100%;
+}
+.abso {
+  position:absolute;
+  top:30%;
+  margin-left:15%;
 }
 
 
@@ -262,6 +281,7 @@ position: absolute;
   margin-right: 2%;
 }
 
+/*Brians*/
 body {
   background: #896891; /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #5E1175, #896891); /* Chrome 10-25, Safari 5.1-6 */
@@ -272,6 +292,17 @@ body {
   background: #576CDB; /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #576CDB , #717CCE); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to left, #576CDB , #717CCE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+/*Brians*/
+}
+
+.border {
+ border: 80px solid grey; 
+}
+
+.bigger {
+  margin-top:25px;
+  font-size:25px;
+
 }
 
 .card-panel{
