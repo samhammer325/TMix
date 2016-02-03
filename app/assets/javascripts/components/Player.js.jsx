@@ -7,7 +7,7 @@ class Player extends React.Component{
   render(){
     return(
       <div>
-        <iframe className="player" id="player" src="https://apidarfm.global.ssl.fastly.net/player_api.php?station_id=6480&custom_style=radioslice&partner_token=9388418650"></iframe>
+        <iframe className="player" id="player" src="http://api.dar.fm/player_api.php?station_id=6480&custom_style=radioslice&partner_token=9388418650"></iframe>
       </div>
     )
   }
