@@ -36,9 +36,9 @@ class Search extends React.Component{
       // alert('yay')
       this.refs.mixtapeName.value = null;
       this.refs.category.value = null;
-      this.setState ({mixtape_id: data.id, mixtapeName: data.name, mixTapeCategory: data.category})
+      this.setState ({mixtape_id: data.id, mixtapeName: data.name, mixTapeCategory: data.category, songs: []})
       $("#mixtapeForm").slideToggle("slow");
-      $("#cardHolder").slideToggle("slow"); 
+      $("#cardHolder").slideToggle("slow");
 
     });
 
@@ -109,14 +109,14 @@ class Search extends React.Component{
           </div>
 
            <div id='cardHolder' className='row'>
-            <div className='card-panel green'>
-              <div className='card-content white-text'>
-                <h3> {this.state.mixtapeName}</h3>
+             <div className='card-panel trublue'>
+                <div className='card-content white-text'>
+                  <h3> {this.state.mixtapeName}</h3>
                 {songArray}
+                </div>
               </div>
             </div>
-          </div>
-          <button onClick={this.createMixtape} className='btn orange'>Done</button>
+          <button onClick={this.createMixtape} className='btn'>Done</button>
 
           <h5>Search for an artist:</h5>
           <input className='col s4 offset s3' type='text' ref='searchText' autofocus='true' placeholder="Artist"/>

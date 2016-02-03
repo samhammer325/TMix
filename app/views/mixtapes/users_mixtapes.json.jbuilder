@@ -11,6 +11,7 @@ json.mixtapes @mixtapes do |mixtape|
 	json.mixtape mixtape.songs do |song|
 		json.song_id song.id
 		json.song_name song.name
+		json.artist_name song.artist
 
 	end
 
