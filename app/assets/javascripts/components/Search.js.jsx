@@ -11,6 +11,7 @@ class Search extends React.Component{
     this.createMixtape = this.createMixtape.bind(this);
     this.getSongs = this.getSongs.bind(this);
     this.noArtists = this.noArtists.bind(this);
+    
   }
 
   getSearchResults(){
