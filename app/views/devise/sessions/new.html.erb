@@ -1,63 +1,63 @@
-<div class="row">
-  <div id="crowd1">
+<div class="container">
+  <div class="crowd">
     <%= image_tag("crowd2.jpg", width: "100%") %>
   </div> 
-  <h1>Music Site</h1>
+  <h1>TMIX</h1>
   <h5>Your Life. Your Mix.</h5>
   <h2>Log in</h2>
-  <div class="inputdata">
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="row">
-        <div class="input-field col m4 offset-m1">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true %>
-        </div>  
-      </div>
-      <div class="row">
-        <div class="input-field col m4 offset-m1">
-          <%= f.label :password %><br />
-          <%= f.password_field :password, autocomplete: "off" %>
-        </div>
-        <div class="col m4 offset-m1" style="margin-top: -18%">
-          <div class="card black small">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="/assets/dj.jpg">
-            </div>
-            <div class="card-content ">
-              <span class="card-title activator grey-text text-darken-4">Mix<i class="material-icons right"></i></span>
-              <p><a href="#">This is a link</a></p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">About MusicSite<i class="material-icons right">close</i></span>
-              <p> Rap. Rock. Pop. Dance. R&B. The music you love can be shared with the people that matter the most.</p>
-            </div>
+  <div class="row" id="padded">
+    <div class="col m5 offset-m1" style="margin-top: -18%">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="row">
+          <div class="input-field col m10 offset-m1">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true %>
+          </div>  
+          <div class="input-field col m10 offset-m1">
+            <%= f.label :password %><br />
+            <%= f.password_field :password, autocomplete: "off" %>
           </div>
-        </div>  
-      </div>
-     <div class="row">
-       <div class="remember-field col m4 pull-m6">
-          <% if devise_mapping.rememberable? -%>
-        <div class="input-field col s6 m6 pull-s3 offset-s3">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
+          <div class="col m8 offset-m1">
+            <% if devise_mapping.rememberable? -%>
+              <div class="input-field">
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me %>
+              </div>
+            <% end -%>
+          </div>    
+          <div class="col m4">
+            <br />
+            <%= f.submit "Log in" %>
+          </div>
+        </div> 
+        <!-- End of form do loop div -->
+      <% end %>
+    </div> 
+    <div class="col m4 offset-m1" style="margin-top: -18%">
+      <div class="card black small">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="/assets/dj.jpg">
         </div>
-       </div>
-     </div>    
-      <% end -%>
+        <div class="card-content ">
+          <span class="card-title activator purple-text text-darken-2">About TMIX<i class="material-icons right"></i></span>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title purple-text text-darken-2">About TMIX<i class="material-icons right">close</i></span>
+          <p> Rap. Rock. Pop. Dance. R&B. The music you love can be shared with the people that matter the most.TMIX
+          allows you to create playlists of your favorite songs on demand. You can share your playlists on Twitter and Facebook.</p>
+        </div>
+      </div>
+    </div>  
+  </div>
 
-     <div class="row">
-       <div class="login-button col m4 offset-m1">
-         <div class="actions col s6 pull-s3 offset-s3">
-         <br />
-           <%= f.submit "Log in" %>
-         </div>
-        <% end %>
-       </div>
-     </div>   
-  </div> 
-</div>
-
-<div class="card1">
-  <%= render "devise/shared/links" %>
- 
+  <div class="card1" id="topspaced">
+    <%= render "devise/shared/links" %>
+    <div class="info">
+      <ul style="list-style-type:none">
+        <li>Start using TMIX by clicking the sign up button.</li>
+        <li>Password issues can be resolved by clicking the forgot your password button</li>
+        <li>Social Media interaction is easy by clicking the sign in with Facebook button or sign in with Twitter button</li>
+      </ul>
+    </div> 
+  </div>
 </div>

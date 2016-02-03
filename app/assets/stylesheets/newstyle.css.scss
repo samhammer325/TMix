@@ -7,7 +7,7 @@ body {
   margin: 0 auto;
 }
 
-#crowd1 {
+.crowd {
   width:1280px;
   opacity: 0.3;
   position: relative;
@@ -16,9 +16,9 @@ body {
 h1 {
   font-family: sin city;
   color: #ffffff;
-  position: absolute;
-  top: 35%;
-  right: 27%;
+  position: relaive;
+  top: 20%;
+  right: 50%;
 }
 
 @font-face {
@@ -27,28 +27,27 @@ h1 {
 }
 
 h5 {
-
   font-family: sin city;
   color: #ffffff;
   position: absolute;
-  top: 55%;
-  right: 27%;
+  top: 40%;
+  right: 35%;
 
 }
 
-h2 { 
-  left: -40px;
-
-}
-
-.inputdata {
-  position: relative;
-  top: 45px;
+h2 {   
+  color: purple;
+  position:relative;
 
 }
 
 .custom-card {
   width: 300px;
+}
+
+.col{
+  position:relative;
+  top: 100px;
 
 }
 
@@ -58,27 +57,42 @@ h2 {
   background-color: white; 
 }
 
-
-.fa-key{
-  color: #896891;
-  
+.info {
+  text-align: center;
+  margin: 20px 0;
+  position:relative;
+  top: -170px;
+  padding:1px;
+  color: purple;
 }
 
-.fa-sign-in {
-  color: #5e1175;
-
-  
+#padded {
+  margin: 10px 10px 100px;
+  padding: 10px 10px 100px;
 }
 
-.fa {
-  color: #00aced;
- 
+#topspaced {
+  margin: 50px 5px 10px;
+  padding: 50px 5px 10px;
+}
+
+/*.fa {
+  color: #00aced; 
 }
 
 .fa-facebook-official {
   color: #3b5998;
+}*/
 
-}
+/*.fa-key{
+  color: #896891;
+  
+}*/
 
+/*.fa-sign-in {
+  color: #5e1175;
+
+  
+}*/
 
 
