@@ -84,7 +84,9 @@ class Mixtape extends React.Component{
       let key = `song-${song.song_id}`;
 
       // debugger
-       //return(<Song key={key} {...song} />);
+
+      // you can undo this one if needs be
+       // return(<Song key={key} {...song} />);
       return(<div>
               <li> {song.song_name} by {song.artist_name} </li>
               

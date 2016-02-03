@@ -13,6 +13,10 @@ $secondary-color: #5E1175 !default;
   float:right;
 }
 
+.card.small .card-content {
+  max-height: 100%!important;
+}
+
 .input-field{
   width:20%!important;
 }
@@ -27,44 +31,49 @@ $secondary-color: #5E1175 !default;
 
 .signin {
   position:absolute;
-  top: 455px;
-  left: 35%;
+  top: 65%;
+  left: 33%;
 }
 
 .signup {
   position:absolute;
-  top: 455px;
-  left: 55%;
+  top: 65%;
+  left: 52%;
 }
 .fbook {
   position: absolute;
-  top: 595px;
-  left: 640px;
+  top: 84%;
+  left: 37%;
 }
 
 .faced {
   position:absolute;
-  top: 560px;
-  left:635px;
+  top: 79%;
+  left: 36.57%;
 }
 .tweetd {
   position:absolute;
-  top: 560px;
-  left: 885px;
+  top: 79%;
+  left: 54.8%;
 }
 .twet {
   position: absolute;
-  top:595px;
-  left:890px;
+  top: 84%;
+  left: 55%;
 }
 
 .myclass a {
   color:white;
 }
 
+.white-text a {
+  color:purple;
+}
+
 
 #img {
   height: 700px;
+  margin-top: 30px;
 }
 
 .email {
@@ -74,7 +83,7 @@ $secondary-color: #5E1175 !default;
 .team {
   position: absolute;
   top: 50px;
-  left: 500px;
+  left: 30.4%;
   background-color:white;
   padding-left:10px;
   padding-right:10px;
@@ -82,13 +91,13 @@ $secondary-color: #5E1175 !default;
 
 .emailon {
   position:absolute;
-  top:12%;
+  top:15%;
   left:32%;
 }
 
 .passon {
   position:absolute;
-  top:12%;
+  top:15%;
   left:55%;
 }
 
@@ -98,8 +107,8 @@ $secondary-color: #5E1175 !default;
 
 .textonpic {
    position: absolute;
-   top: 11%;
-  left: 21%;
+   top: 15%;
+  left: 17%;
 }
 
 #heigh {

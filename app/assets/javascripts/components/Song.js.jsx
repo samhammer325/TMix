@@ -63,7 +63,7 @@ class Song extends React.Component{
   }
   play(station){
     // debugger
-1    // http://api.dar.fm/player_api.php?station_id=6480&custom_style=radioslice&partner_token=9388418650
+// 1    // http://api.dar.fm/player_api.php?station_id=6480&custom_style=radioslice&partner_token=9388418650
     // player.src = "https://apidarfm.global.ssl.fastly.net/player_api.php?station_id=" + station + "&custom_style=radioslice&partner_token=9388418650"
     player.src = "http://api.dar.fm/player_api.php?station_id=" + this.state.station_id + "&custom_style=radioslice&partner_token=9388418650"
   }
