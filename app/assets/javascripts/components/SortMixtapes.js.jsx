@@ -7,8 +7,6 @@ class SortMixtapes extends React.Component{
     // this.state = {mixtapes: [], rangeStart: 0};
     this.upRange = this.upRange.bind(this);
     this.downRange = this.downRange.bind(this);
-
-
 	}
 
 

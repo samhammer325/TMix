@@ -11,6 +11,7 @@
     this.createMixtape = this.createMixtape.bind(this);
     this.getSongs = this.getSongs.bind(this);
     this.noArtists = this.noArtists.bind(this);
+    this.pass = this.pass.bind(this);
   }
 
   getSearchResults(){
@@ -41,9 +42,22 @@
       $("#cardHolder").slideToggle("slow");
 
     });
-
-
   }
+
+  pass(){
+    $("#mixtapeForm").slideToggle("slow");
+    $("#cardHolder").slideToggle("slow");
+  }
+
+  // findMixTape(){
+  //   $ajax({
+  //     url: '/mixtapes',
+  //     type: 'GET'
+  //   }).success( data => {
+  //     this.setState({})
+  //   })
+  //   }
+  // }
 
   getSongs(){
     $.ajax({
@@ -113,7 +127,7 @@
                 <div className='card-content'>
                   <h3> {this.state.mixtapeName}</h3>
                 {songArray}
-                <button onClick={this.createMixtape} className='btn'>Done</button>
+                <button onClick={this.pass} className='btn'>Done</button>
                 </div>
               </div>
             </div>
