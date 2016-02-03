@@ -103,9 +103,13 @@
     return(
         <div>
           <div id="mixtapeForm">
-            <input autofocus='true' placeholder='Mix Tape Name' ref='mixtapeName'/>
-            <input placeholder='category' ref='category'/>
-            <button onClick={this.createMixtape} className='btn'>Create New Mixtape</button>
+            <div className="row">
+              <input className="col s6" autofocus='true' placeholder='Mix Tape Name' ref='mixtapeName'/>
+            </div>
+            <div className="row">
+              <input className="col s6" placeholder='category' ref='category'/>
+            </div>
+              <button onClick={this.createMixtape} className='btn'>Create New Mixtape</button>
           </div>
 
            <div id='cardHolder' className='row'>

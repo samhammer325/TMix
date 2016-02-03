@@ -97,7 +97,7 @@ class Mixtape extends React.Component{
 
 
             // <div onClick={this.playMixtape} className='card small blue darken-3 col s6 over'>
-    return(<div>
+    return(<div className="pagination">
 
             <div onClick={this.playMixtape} className='card small trublue col s6 over'>
              { this.deleteBtn() }

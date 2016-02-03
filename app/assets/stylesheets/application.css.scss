@@ -7,6 +7,10 @@ $secondary-color: #5E1175 !default;
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+html {
+  min-width: 1127px;
+    }
+
 .fright {
   top:20px;
   margin-right:15px;
@@ -27,35 +31,35 @@ $secondary-color: #5E1175 !default;
 
 .signin {
   position:absolute;
-  top: 455px;
-  left: 35%;
+  top: 300px;
+  left: 34%;
 }
 
 .signup {
   position:absolute;
-  top: 455px;
-  left: 55%;
+  top: 300px;
+  left: 52%;
 }
 .fbook {
   position: absolute;
-  top: 595px;
-  left: 640px;
+  top: 395px;
+  left: 375px;
 }
 
 .faced {
   position:absolute;
-  top: 560px;
-  left:635px;
+  top: 364px;
+  left: 370px;
 }
 .tweetd {
   position:absolute;
-  top: 560px;
-  left: 885px;
+  top: 367px;
+  left: 485px;
 }
 .twet {
   position: absolute;
-  top:595px;
-  left:890px;
+  top: 394px;
+  left: 489px;
 }
 
 .myclass a {
@@ -64,7 +68,8 @@ $secondary-color: #5E1175 !default;
 
 
 #img {
-  height: 700px;
+  height: 450px;
+  width: 700px;
 }
 
 .email {
@@ -83,13 +88,13 @@ $secondary-color: #5E1175 !default;
 .emailon {
   position:absolute;
   top:12%;
-  left:32%;
+  left:36%;
 }
 
 .passon {
   position:absolute;
   top:12%;
-  left:55%;
+  left:60%;
 }
 
 .imageback {
@@ -98,8 +103,8 @@ $secondary-color: #5E1175 !default;
 
 .textonpic {
    position: absolute;
-   top: 11%;
-  left: 21%;
+   top: 15%;
+   left: 20%;
 }
 
 #heigh {
