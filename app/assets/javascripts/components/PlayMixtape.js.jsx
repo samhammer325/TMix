@@ -6,10 +6,6 @@
      // this.findPlayingSongs = this.findPlayingSongs.bind(this);
   }
 
-  // New commit
-
-
-
   componentWillMount(){
     this.getSongs();
 
@@ -36,21 +32,13 @@
 
   // }
 
-
-
   render(){
-
-
      let songs = this.state.songs.map( song => {
       let key = `song-${song.song_id}`;
-      
 
     return(<Song key={key} artist_name={this.props.artist_name} song_name={this.props.song_name}{...song} />);
 
   });
-
-
-
 
      // this.props.getSongs();
     return(<div>

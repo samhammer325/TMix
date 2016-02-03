@@ -1,4 +1,4 @@
-class Search extends React.Component{
+  class Search extends React.Component{
 
 // take input from search, and make an ajax call for info.
 // convert info to use for card.
