@@ -1,17 +1,120 @@
 @import "materialize/components/color";
-$primary-color: #595959 !default;
-$secondary-color: #896891 !default;
+/*$primary-color: #595959 !default;
+$secondary-color: #896891 !default;*/
 @import "materialize";
 @import "newstyle.css.scss";
 @import "player.css.scss";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+.fright {
+  top:20px;
+  margin-right:15px;
+  float:right;
+}
+
+.input-field{
+  width:20%!important;
+}
+.nav-wrapper {
+  height: 100px!important;
+  bottom: 25px!important;
+}
+
+.signin {
+  position:absolute;
+  top: 455px;
+  left: 35%;
+}
+
+.signup {
+  position:absolute;
+  top: 455px;
+  left: 55%;
+}
+.fbook {
+  position: absolute;
+  top: 595px;
+  left: 640px;
+}
+
+.faced {
+  position:absolute;
+  top: 560px;
+  left:635px;
+}
+.tweetd {
+  position:absolute;
+  top: 560px;
+  left: 885px;
+}
+.twet {
+  position: absolute;
+  top:595px;
+  left:890px;
+}
+
+.myclass a {
+  color:white;
+}
+
+
+#img {
+  height: 700px;
+}
+
+.email {
+  left: 10px;
+}
+
+.emailon {
+  position:absolute;
+  top:12%;
+  left:32%;
+}
+
+.passon {
+  position:absolute;
+  top:12%;
+  left:55%;
+}
+
+.imageback { 
+   position: relative; 
+}
+
+.textonpic { 
+   position: absolute; 
+   top: 11%;
+  left: 21%; 
+}
+
+
+.nav-suff {
+  margin-left: 10px;
+}
+
+.z {
+  z-index: 0;
+}
+
+.zi {
+  z-index: 10;
+}
+
+.ab {
+position: absolute;
+}
+
+.image {
+
+}
+
 .mixx{
   height: 115px;
 }
 
-a {
+.anchor {
   right: 15px;
 }
 
@@ -66,8 +169,8 @@ a {
     margin-right: 1% !important;
 }
 
-.blubtn{
-  background-color: #00769C;
+.whitet {
+  color: white!important;
 }
 
 
@@ -132,7 +235,6 @@ a {
 
 .right {
   float: right;
-  background-color: green;
 }
 
 .stupid {
@@ -152,11 +254,7 @@ a {
   margin-right: 2%;
 }
 
-body {
-  background: #896891; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #5E1175, #896891); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #5E1175, #896891); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
+
 
 .card-panel{
   background-color: trublu !important;
@@ -170,8 +268,4 @@ body {
   font-family: 'Bangers', serif;
 }
 
-.trublue {
-  background: #576CDB; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #576CDB , #717CCE); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #576CDB , #717CCE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
+
