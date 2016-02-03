@@ -1,9 +1,9 @@
 %link{:href => "https://fonts.googleapis.com/icon?family=Material+Icons", :rel => "stylesheet"}/
 %div.socialright#me
-	%h4.center #{current_user.name}
+	%h6.black-text.center.salt #{current_user.name}
 	- if current_user.picture == nil
 	- else
-		%img.pushlot{alt: "profile_pic", src: "#{current_user.picture}"}
+		%img.center.pushlot{alt: "profile_pic", src: "#{current_user.picture}"}
 	%br
 	- if /\.twimg/.match(current_user.picture)
 		%br
@@ -25,13 +25,11 @@
 	%br
 	= link_to '', destroy_user_session_path, method: 'delete', class: "stupid"
 	%br
-	%br
-	.btn.push.purple.waves-effect.waves-light= link_to 'Logout', destroy_user_session_path, method: 'delete', class: "white-text"
+	.btn.logout.purple.waves-effect.waves-light.center= link_to 'Logout', destroy_user_session_path, method: 'delete', class: "white-text"
 	%br
 %i.socialicon.waves-effect.waves-light.material-icons.large#clickme swap_vert
 %br
 %br
-%h1.center-align.salt T-Mix 
 %br
 %hr
 

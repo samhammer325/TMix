@@ -1,0 +1,169 @@
+@import 'materialize/components/color'; 
+$primary-color: #595959 !default;
+$secondary-color: #5E1175 !default;
+@import "materialize";
+@import "newstyle.css.scss";
+@import "player.css.scss";
+
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+
+a {
+  right: 15px;
+}
+
+.sam {
+  margin-left: 23%;
+}
+
+.player {
+  width: 50%;
+	height: 100px;
+  position: fixed;
+  vertical-align: left;
+  z-index: 10;
+  bottom: 0px;
+  border: 4px solid purple;
+  /*height: 100px;*/
+  /*vertical-align: left;*/
+  /*background-color: #000000;*/
+
+}
+
+.noah {
+  left: 60%;
+}
+
+.over {
+  overflow-y: auto;
+}
+
+.row .col.l4 {
+    width: 32.33333% !important;
+    margin-left: auto;
+    left: auto;
+    right: auto;
+}
+
+.row .col.s6 {
+    width: 49% !important;
+    margin-left: auto;
+    left: auto;
+    right: auto;
+    margin-right: 1% !important;
+}
+
+.blubtn{
+  background-color: #00769C;
+}
+
+
+.rightbot {
+  float: right;
+  top: 10px;
+}
+
+.pictur {
+  width: 5px;
+  height: 5px;
+}
+
+.logout {
+  margin-left: 50px;
+}
+
+.push {
+  margin-left: 1px;
+}
+
+.pushlot {
+  margin-left: 70px;
+}
+
+.socialicon {
+  position: fixed;
+  bottom: 0px;
+  right: 12.25%;
+}
+
+.socialicon2 {
+  position: fixed;
+  top: 25%;
+  right: 4%;
+}
+
+.mix {
+  position: fixed;
+  bottom: 0px;
+  left: 11.5%;
+}
+
+.socialright {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  width: 15%;
+  height: 205px;
+  background-color: rgba(62, 138, 123, 0.89);
+  border: 5px solid #201025
+}
+
+.iframe{
+  transform: scale(2);
+  -ms-transform: scale(2);
+  -webkit-transform: scale(2);
+  -o-transform: scale(2);
+  -moz-transform: scale(2);
+  transform-origin: top left;
+  -ms-transform-origin: top left;
+  -webkit-transform-origin: top left;
+  -moz-transform-origin: top left;
+  -webkit-transform-origin: top left;
+}
+
+.right {
+  float: right;
+  background-color: green;
+}
+
+.stupid {
+  text-decoration-color: gray;
+}
+
+.marg {
+  margin-right: 1%;
+}
+.nav1 {
+  margin-right: 2%;
+}
+.nav2 {
+  margin-right: 2%;
+}
+.nav3 {
+  margin-right: 2%;
+}
+
+body {
+  background: #896891; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #5E1175, #896891); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #5E1175, #896891); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.trublue {
+  background: #576CDB; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #576CDB , #717CCE); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #576CDB , #717CCE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.salt{
+  font-family: 'Rock Salt', serif;
+}
+
+.banger{
+  font-family: 'Bangers', serif;
+}
+
+.inner{
+  display: inline;
+}
