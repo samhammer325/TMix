@@ -1,6 +1,6 @@
 @import "materialize/components/color";
 $primary-color: #595959 !default;
-$secondary-color: #896891 !default;
+$secondary-color: #5E1175 !default;
 @import "materialize";
 @import "newstyle.css.scss";
 @import "player.css.scss";
@@ -18,7 +18,11 @@ $secondary-color: #896891 !default;
 }
 .nav-wrapper {
   height: 100px!important;
-  bottom: 25px!important;
+  /*bottom: 25px!important;*/
+}
+
+.bott {
+  bottom:25px!important;
 }
 
 .signin {
@@ -212,11 +216,11 @@ position: absolute;
 }
 
 .push {
-  margin-left: 15px;
+  margin-left: 1px;
 }
 
 .pushlot {
-  margin-left: 30px;
+  margin-left: 70px;
 }
 
 .socialicon {
@@ -241,8 +245,8 @@ position: absolute;
   position: fixed;
   top: 0px;
   right: 0px;
-  width: 20%;
-  height: 300px;
+  width: 15%;
+  height: 205px;
   background-color: rgba(62, 138, 123, 0.89);
   border: 5px solid #201025
 }
