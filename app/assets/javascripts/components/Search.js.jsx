@@ -6,14 +6,15 @@ class Search extends React.Component{
 // must add key to get the warning away!
   constructor(props){
     super(props);
-    this.state = {results: [], mixtape_id: 0, mixtapeName: '', mixTapeCategory: '', songs: []};
+    this.state = {results: [], searched: false, mixtape_id: 0, mixtapeName: '', mixTapeCategory: '', songs: []};
     this.getSearchResults = this.getSearchResults.bind(this);
     this.createMixtape = this.createMixtape.bind(this);
     this.getSongs = this.getSongs.bind(this);
+    this.noArtists = this.noArtists.bind(this);
   }
 
   getSearchResults(){
-    self = this;
+    let self = this;
     let searchTerm = self.refs.searchText.value.replace(/\s/g, "%20")
     $.ajax({
       url: "http://api.dar.fm/playlist.php?&q=@artist%" + searchTerm + "&callback=jsonp&partner_token=9388418650",
@@ -21,6 +22,7 @@ class Search extends React.Component{
       type: 'GET',
       dataType: 'jsonp',
     }).success( data => {
+      this.state.searched = true;
       this.setState({results: data});
     });
   }
@@ -35,6 +37,9 @@ class Search extends React.Component{
       this.refs.mixtapeName.value = null;
       this.refs.category.value = null;
       this.setState ({mixtape_id: data.id, mixtapeName: data.name, mixTapeCategory: data.category})
+      $("#mixtapeForm").slideToggle("slow");
+      $("#cardHolder").slideToggle("slow"); 
+
     });
 
 
@@ -48,8 +53,21 @@ class Search extends React.Component{
     }).success( data => {
       // debugger
       this.setState({songs: data.songs});
+
     })
   }
+
+  noArtists(artists){
+    if(artists.length == 0 && this.state.searched) {
+      if(self.refs.searchText.value == "") {
+        return(<h5>Please search for an artist! </h5>);
+      }else {
+        return(<h5>Could not find {self.refs.searchText.value} playing on a station.</h5>);
+      }
+    }
+  }
+
+
 
   // createSong(){
   //   $.ajax({
@@ -84,10 +102,11 @@ class Search extends React.Component{
 
     return(
         <div>
-          <input autofocus='true' placeholder='Mix Tape Name' ref='mixtapeName'/>
-          <input placeholder='category' ref='category'/>
-          <button onClick={this.createMixtape} className='btn orange'>Create New Mixtape</button>
-
+          <div id="mixtapeForm">
+            <input autofocus='true' placeholder='Mix Tape Name' ref='mixtapeName'/>
+            <input placeholder='category' ref='category'/>
+            <button onClick={this.createMixtape} className='btn orange'>Create New Mixtape</button>
+          </div>
 
            <div id='cardHolder' className='row'>
             <div className='card-panel green'>
@@ -99,10 +118,6 @@ class Search extends React.Component{
           </div>
           <button onClick={this.createMixtape} className='btn orange'>Done</button>
 
-
-
-
-
           <h5>Search for an artist:</h5>
           <input className='col s4 offset s3' type='text' ref='searchText' autofocus='true' placeholder="Artist"/>
           <button onClick={this.getSearchResults} className='btn waves-effect waves-light'>Search</button>
@@ -110,9 +125,11 @@ class Search extends React.Component{
           <br />
           <h4 className='center-align center'>Artists playing:</h4>
           <br />
-          <div id='cardHolder' className='row'>
-            {artists}
+          <div className='row'>
+          {this.noArtists(artists)}
+          {artists}
           </div>
+
         </div>)
   }
 }

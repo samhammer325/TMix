@@ -24,10 +24,7 @@ class Artist extends React.Component{
     }).success( data => {
 
       self.props.getSongs();
-      for(let i = 1; i <= 10; i++){
 
-
-       }
     });
   }
 
