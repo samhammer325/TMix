@@ -110,7 +110,7 @@
 
            <div id='cardHolder' className='row'>
              <div className='card-panel trublue'>
-                <div className='card-content white-text'>
+                <div className='card-content'>
                   <h3> {this.state.mixtapeName}</h3>
                 {songArray}
                 <button onClick={this.createMixtape} className='btn'>Done</button>

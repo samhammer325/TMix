@@ -7,6 +7,7 @@ $secondary-color: #5E1175 !default;
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+
 .fright {
   position:absolute;
   bottom:5px;
@@ -122,9 +123,12 @@ width:100%;
   margin-left:15%;
 }
 
+.tex {
+  color:white!important;
+}
 
 .nav-suff {
-  margin-left: 16px;
+  margin-left: 18px;
   margin-top: 21.500px!important;
 }
 

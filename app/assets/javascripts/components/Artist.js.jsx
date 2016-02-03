@@ -31,7 +31,7 @@ class Artist extends React.Component{
   render(){
     return(<div>
             <div className="marg card-panel height blue col l4 m6 s12">
-              <div className="card-content white-text">
+              <div className="card-content">
                 <p className="stylez center truncate">
                   {this.props.title}
                   <br />

@@ -86,8 +86,8 @@ class Song extends React.Component{
     // debugger
 
     // this renders if song is avalibe so needs work but works.
-    
-    // this.renderPlayButton();
+
+    this.renderPlayButton();
 
         if (this.state.streaming == true) {
           // alert('streaming');
@@ -104,7 +104,7 @@ class Song extends React.Component{
         }else{
           // alert('not streaming')
           return(
-             <div>
+             <div className="tex">
               <p>{this.props.song_name}</p>
               <p>By: {this.props.artist_name}</p>
             </div>
