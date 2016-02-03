@@ -67,6 +67,15 @@ $secondary-color: #896891 !default;*/
   left: 10px;
 }
 
+.team {
+  position: absolute;
+  top: 50px;
+  left: 500px;
+  background-color:white;
+  padding-left:10px;
+  padding-right:10px;
+}
+
 .emailon {
   position:absolute;
   top:12%;
@@ -87,6 +96,16 @@ $secondary-color: #896891 !default;*/
    position: absolute; 
    top: 11%;
   left: 21%; 
+}
+
+#heigh {
+height:100%;
+width:100%;
+}
+.abso {
+  position:absolute;
+  top:30%;
+  margin-left:15%;
 }
 
 
@@ -254,7 +273,14 @@ position: absolute;
   margin-right: 2%;
 }
 
+.border {
+ border: 80px solid grey; 
+}
 
+.bigger {
+  margin-top:25px;
+  font-size:25px;
+}
 
 .card-panel{
   background-color: trublu !important;
