@@ -52,6 +52,7 @@ class Song extends React.Component{
       this.setState({results: data});
       // debugger
       if (this.state.results.length != 0) {
+        debugger
         // this.state.station = this.state.results[0].station_id;
         this.setState({station_id: this.state.results[0].station_id});
         this.setState({streaming: true});
@@ -63,8 +64,9 @@ class Song extends React.Component{
   play(station){
     // debugger
     let player = document.getElementById("player")
-    player.src = "https://apidarfm.global.ssl.fastly.net/player_api.php?station_id=" + station + "&custom_style=radioslice&partner_token=9388418650"
-
+    // http://api.dar.fm/player_api.php?station_id=6480&custom_style=radioslice&partner_token=9388418650
+    // player.src = "https://apidarfm.global.ssl.fastly.net/player_api.php?station_id=" + station + "&custom_style=radioslice&partner_token=9388418650"
+    player.src = "http://api.dar.fm/player_api.php?station_id=" + station + "&custom_style=radioslice&partner_token=9388418650"
   }
 
   // addButton(){
@@ -88,11 +90,12 @@ class Song extends React.Component{
         if (this.state.streaming == true) {
           // alert('streaming');
           station = this.state.results[0].station_id
+          // debugger
           return(
              <div>
               <p>{this.props.song_name}</p>
               <p>By: {this.props.artist_name}</p>
-              <button onClick={this.play(station)} className='btn'>Play</button>
+              <button onClick={() => this.play(station)} className='btn'>Play</button>
               </div>
             );
          
