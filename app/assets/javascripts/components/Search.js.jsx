@@ -114,10 +114,11 @@ class Search extends React.Component{
                 <div className='card-content white-text'>
                   <h3> {this.state.mixtapeName}</h3>
                 {songArray}
+                 <button onClick={this.createMixtape} className='btn'>Done</button>
                 </div>
               </div>
             </div>
-          <button onClick={this.createMixtape} className='btn'>Done</button>
+         
 
           <h5>Search for an artist:</h5>
           <input className='col s4 offset s3' type='text' ref='searchText' autofocus='true' placeholder="Artist"/>
