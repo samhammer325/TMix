@@ -8,9 +8,9 @@ $secondary-color: #5E1175 !default;
 @import "font-awesome";
 
 .fright {
-  top:20px;
-  margin-right:15px;
-  float:right;
+  position:absolute;
+  bottom:5px;
+  right:7px;
 }
 
 .card.small .card-content {
@@ -21,12 +21,13 @@ $secondary-color: #5E1175 !default;
   width:20%!important;
 }
 .nav-wrapper {
-  height: 100px!important;
+  height: 90px!important;
   /*bottom: 25px!important;*/
 }
 
 .bott {
-  bottom:25px!important;
+  /*top:0px!important;*/
+  bottom:12px!important;
 }
 
 .signin {
@@ -108,7 +109,7 @@ $secondary-color: #5E1175 !default;
 .textonpic {
    position: absolute;
    top: 15%;
-  left: 17%;
+  left: 18%;
 }
 
 #heigh {
@@ -123,7 +124,8 @@ width:100%;
 
 
 .nav-suff {
-  margin-left: 10px;
+  margin-left: 16px;
+  margin-top: 21.500px!important;
 }
 
 .z {
@@ -313,7 +315,7 @@ body {
 }
 
 .bigger {
-  margin-top:25px;
+  margin-top:15%;
   font-size:25px;
 
 }

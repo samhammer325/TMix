@@ -87,8 +87,8 @@ componentDidMount(){
           <h3>Mixtapes:</h3>
            {mixtapes}
           <div className = 'center'>
-            <i className="waves-effect waves-light medium material-icons" onClick={this.downRange}>fast_rewind _</i>
-            <i className="waves-effect waves-light medium material-icons" onClick={this.upRange}>fast_forward</i>
+            <i className="medium material-icons" onClick={this.downRange}>fast_rewind _</i>
+            <i className="medium material-icons" onClick={this.upRange}>fast_forward</i>
           </div>
         </div>)};
 }   
