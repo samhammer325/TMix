@@ -7,6 +7,14 @@ $secondary-color: #5E1175 !default;
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+.toop {
+  margin-top:10px;
+  margin-right:5px;
+}
+
+.centerbutton {
+  margin-left: 45%;
+}
 
 
 .fright {
@@ -198,6 +206,14 @@ position: absolute;
 
 }
 
+.marginn {
+  margin-left:10px;
+}
+
+.uno {
+  margin-right:39px;
+}
+
 .noah {
   left: 60%;
 }
@@ -300,9 +316,11 @@ position: absolute;
 .stupid {
   text-decoration-color: gray;
 }
-
+.nav4 {
+  margin-right:1%;
+}
 .marg {
-  margin-right: 1%;
+  margin-right: 2%;
 }
 .nav1 {
   margin-right: 2%;
@@ -352,4 +370,5 @@ body {
 
 .inner{
   display: inline;
+  margin-left: 39px;
 }

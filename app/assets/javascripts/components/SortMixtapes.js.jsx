@@ -79,10 +79,13 @@ componentDidMount(){
       return(
 
          <div className="inner">
-          <button className="btn waves-effect waves-light" onClick={this.displayUsersMixTapes.bind(this, "all" )}>All Mixtapes</button>
-          <button className="btn waves-effect waves-light" onClick={this.displayUsersMixTapes.bind(this, "users" )}>My Mixtapes</button>
           
-          <h3>Mixtapes:</h3>
+          <button className="btn waves-effect waves-light uno" onClick={this.displayUsersMixTapes.bind(this, "all" )}>Popular Mixtapes</button>
+          <button className="btn waves-effect waves-light" onClick={this.displayUsersMixTapes.bind(this, "users" )}>My Mixtapes</button>
+          <br />
+          <br />
+          <h2 className="salt white-text center">Mixtapes</h2>
+          <br />
            {mixtapes}
           <div className = 'center'>
             <i className="medium material-icons" onClick={this.downRange}>fast_rewind _</i>

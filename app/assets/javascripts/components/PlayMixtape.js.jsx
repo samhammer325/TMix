@@ -42,7 +42,7 @@
 
      // this.props.getSongs();
     return(<div>
-            <div className= 'card-panel green'>
+            <div className= 'card-panel cyan'>
               <div className='card-content white-text'>
                 <h5>Play Mixtape: </h5>
                 {songs}

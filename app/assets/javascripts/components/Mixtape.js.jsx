@@ -101,9 +101,11 @@ class Mixtape extends React.Component{
             // <div onClick={this.playMixtape} className='card small blue darken-3 col s6 over'>
     return(<div className="pagination">
 
-            <div className='card small trublue col s6 over'>
+            <div className='card small cyan z-depth-3 col s6 over'>
              { this.deleteBtn() }
-             <button className="btn nav2" onClick={this.playMixtape}>Play</button>
+             <div className="toop">
+              <button className="btn" onClick={this.playMixtape}>Play</button>
+             </div> 
               <div className='card-content white-text' >
                 <p>Mixtape: {this.props.name}</p>
                  {songs}
