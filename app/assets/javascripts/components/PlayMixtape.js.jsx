@@ -6,6 +6,8 @@
      // this.findPlayingSongs = this.findPlayingSongs.bind(this);
   }
 
+  // New commit
+
 
 
   componentWillMount(){
