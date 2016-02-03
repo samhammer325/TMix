@@ -13,7 +13,7 @@ class SortMixtapes extends React.Component{
 
 
 componentDidMount(){
-  // displayUsersMixTapes('users')
+   this.displayUsersMixTapes('users')
     
   }
  
