@@ -37,8 +37,8 @@ class Mixtape extends React.Component{
 
   deleteBtn(){
     if(this.props.author_id == this.props.current_user.id){
-      return(<div onClick={this.deleteMixtape} className="rightbot waves-effect waves-light btn red">
-              delete
+      return(<div onClick={this.deleteMixtape} className="rightbot waves-effect waves-light btn white-text">
+              X
             </div>)
     }
   }
@@ -99,7 +99,7 @@ class Mixtape extends React.Component{
             // <div onClick={this.playMixtape} className='card small blue darken-3 col s6 over'>
     return(<div>
 
-            <div onClick={this.playMixtape} className='card small blue darken-3 col s6 over'>
+            <div onClick={this.playMixtape} className='card small trublue col s6 over'>
              { this.deleteBtn() }
               <div className='card-content white-text' >
                 <p>Mixtape: {this.props.name}</p>

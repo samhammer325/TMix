@@ -105,7 +105,7 @@ class Search extends React.Component{
           <div id="mixtapeForm">
             <input autofocus='true' placeholder='Mix Tape Name' ref='mixtapeName'/>
             <input placeholder='category' ref='category'/>
-            <button onClick={this.createMixtape} className='btn orange'>Create New Mixtape</button>
+            <button onClick={this.createMixtape} className='btn'>Create New Mixtape</button>
           </div>
 
            <div id='cardHolder' className='row'>
@@ -113,7 +113,6 @@ class Search extends React.Component{
                 <div className='card-content white-text'>
                   <h3> {this.state.mixtapeName}</h3>
                 {songArray}
-                 <button onClick={this.createMixtape} className='btn'>Done</button>
                 </div>
               </div>
             </div>
