@@ -59,7 +59,7 @@ class TheHome extends React.Component{
 			return(
 			<div>
 				
-				<button className="btn pink nav2" onClick={this.DisplaySearch}>Search and Create Mix(s)</button>
+				<button className="btn pink nav2" onClick={this.DisplaySearch}>Create New Mixtape</button>
 				
 
 				<SortMixtapes current_user={this.props.current_user} DisplayPlayMixtape = {this.DisplayPlayMixtape} display_user_mixtapes={this.state.display_user_mixtapes} />
@@ -72,9 +72,6 @@ class TheHome extends React.Component{
 			<div>
 
 				<button className="btn cyan nav1" onClick={this.DisplaySortMixtapes}>Mixtapes</button>
-				<button className="btn pink nav2" onClick={this.DisplaySearch}>Create New Mixtape</button>
-				
-
 				<Search current_user={this.props.current_user}/>
 			</div>);
 		};
