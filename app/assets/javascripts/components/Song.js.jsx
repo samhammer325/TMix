@@ -12,14 +12,14 @@ class Song extends React.Component{
   }
   componentDidMount(){
     //this.startTimer();
-
+    this.renderPlayButton();
     // Calls function multiple times on a repeating interval
-    setInterval(function(){ this.checkIfStreaming(); }, 10000);
+    //setInterval(function(){ this.checkIfStreaming(); }, 10000);
 
   }
   
   startTimer(){
-    window.setTimeout(this.checkIfStreaming(), 10000);
+    //window.setTimeout(this.checkIfStreaming(), 10000);
   }
 
   checkIfStreaming(){
@@ -84,7 +84,10 @@ class Song extends React.Component{
 
   render(){
     // debugger
-    this.renderPlayButton();
+
+    // this renders if song is avalibe so needs work but works.
+    
+    // this.renderPlayButton();
 
         if (this.state.streaming == true) {
           // alert('streaming');
