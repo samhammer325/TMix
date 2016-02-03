@@ -44,17 +44,14 @@
 	}(document, 'script', 'facebook-jssdk'));
 
 
-- if @mixtapes.present?
-	.sam= react_component 'Player'
-	.row
-		.col.s8.offset-s2
-			= react_component 'TheHome', { current_user: current_user}
+.sam= react_component 'Player'
+.row
+	.col.s8.offset-s2
+		- if params[:mixtape_id]
+			= react_component 'TheHome', { current_user: current_user, mixtape_id: params[:mixtape_id] }
+		- else
+			= react_component 'TheHome', { current_user: current_user }
 
-- else
-	.sam= react_component 'Player'
-	.row
-		.col.s8.offset-s2
-			= react_component 'TheHome', { current_user: current_user}
 
 
 

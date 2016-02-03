@@ -38,6 +38,7 @@ class MixtapesController < ApplicationController
 
 # not using below when player component is being used, but the code can be helpful
 	def show_mixtape
+		binding.pry
 		@mixtape = Mixtape.find(params[:id])
 		@songs = @mixtape.songs
 		# binding.pry

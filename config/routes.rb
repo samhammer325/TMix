@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
   match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
-
+  
   match '/mixtape/:id' => 'mixtapes#show_mixtape', via: [:get, :post], :as => :show_mixtape, :handlers => :jbuilder
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
