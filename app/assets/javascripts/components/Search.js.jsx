@@ -15,7 +15,7 @@
     let self = this;
     let searchTerm = self.refs.searchText.value.replace(/\s/g, "%20")
     $.ajax({
-      url: "http://api.dar.fm/playlist.php?&q=@artist%" + searchTerm + "&callback=jsonp&partner_token=9388418650",
+      url: "http://api.dar.fm/playlist.php?&q=@artist%" + searchTerm + "&callback=jsonp&web=1&partner_token=9388418650",
       jsonp: 'callback',
       type: 'GET',
       dataType: 'jsonp',
