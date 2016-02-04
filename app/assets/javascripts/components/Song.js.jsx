@@ -16,7 +16,7 @@ class Song extends React.Component{
     song = this.props.song_name.replace(/\s/g, '%20')
   
     $.ajax({
-      url: "http://api.dar.fm/playlist.php?q=" + artist + "%20" + song + "&callback=jsonp&partner_token=1234567890",
+      url: "http://api.dar.fm/playlist.php?q=" + artist + "%20" + song + "&callback=jsonp&web=1&partner_token=1234567890",
       jsonp: 'callback',
       type: 'GET',
       dataType: 'jsonp',
