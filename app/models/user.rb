@@ -6,11 +6,11 @@ class User < ActiveRecord::Base
   TEMP_EMAIL_PREFIX = "temporary@email"
   TEMP_EMAIL_REGEX = /\Atemporary@email/
 
-  has_many :rating, dependent: :destroy
-  has_many :playlists, through: :ratings, dependent: :destroy
+  has_many :ratings, dependent: :destroy
+  has_many :mixtapes, through: :ratings, dependent: :destroy
   #TODO: User can't have many songs unless songs has a user_id!
   has_many :songs, dependent: :destroy
-  
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable
@@ -52,7 +52,7 @@ class User < ActiveRecord::Base
     self.email && self.email !~ TEMP_EMAIL_REGEX
   end
 
-  
+
   # def self.from_omniauth(auth)
   #  where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
   #    user.email = auth.info.email
