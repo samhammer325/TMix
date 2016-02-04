@@ -16,6 +16,10 @@ $secondary-color: #5E1175 !default;
   margin-left: 45%;
 }
 
+.moove {
+  margin-right:185px;
+  margin-top:10px;
+ }
 
 .fright {
   position:absolute;
@@ -215,6 +219,7 @@ position: absolute;
   z-index: 10;
   bottom: 0px;
   border: 4px solid purple;
+  left: 26%;
   /*height: 100px;*/
   /*vertical-align: left;*/
   /*background-color: #000000;*/
