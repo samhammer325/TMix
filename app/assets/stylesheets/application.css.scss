@@ -237,6 +237,14 @@ position: absolute;
     margin-right: 1% !important;
 }
 
+.boxreset {
+  box-sizing: initial !important;
+}
+
+.card .card-content p {
+  max-height: 100%!important;
+}
+
 .blubtn{
   background-color: #00769C;
 }
@@ -280,6 +288,10 @@ position: absolute;
   right: 4%;
 }
 
+.foont {
+  font-size: 20px;
+}
+
 .mix {
   position: fixed;
   bottom: 0px;
@@ -287,13 +299,12 @@ position: absolute;
 }
 
 .socialright {
-  position: fixed;
-  top: 0px;
-  right: 0px;
-  width: 15%;
-  height: 205px;
-  background-color: rgba(62, 138, 123, 0.89);
-  border: 5px solid #201025
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: 15%;
+    height: 205px;
+    border: 3px solid #201025;
 }
 
 .iframe{
