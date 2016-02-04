@@ -59,7 +59,7 @@ class MixtapesController < ApplicationController
   	if search_terms == 'all'
   		@mixtapes = Mixtape.all
     elsif search_terms == 'users'
-      @mixtapes = Mixtape.where(user_id: current_user.id)
+      @mixtapes = Mixtape.where(user_id: current_user.id).order(created_at: :desc)
     elsif search_terms == 'highest_rated'
        @mixtapes.sort! {|a,b| a.average_rating <=> b.average_rating}
     end

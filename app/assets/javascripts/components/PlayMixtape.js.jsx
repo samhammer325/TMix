@@ -1,7 +1,7 @@
   class PlayMixtape extends React.Component{
   constructor(props){
     super(props)
-    this.state = {songs: []};
+    this.state = {songs: [], mixtapeName:''};
      this.getSongs = this.getSongs.bind(this);
   }
 
@@ -15,8 +15,9 @@
       type: 'GET',
       data: {mixtape_id: this.props.mixtape_id}
     }).success( data => {
-
+      this.setState({mixtapeName: data.name});
       this.setState({songs: data.songs});
+      // debugger
     })
   }
 
@@ -32,7 +33,7 @@
     return(<div>
             <div className= 'card-panel cyan'>
               <div className='card-content white-text'>
-                <h5>Play Mixtape: </h5>
+                <h5>{this.state.mixtapeName} </h5>
                 {songs}
               </div>
             </div>
