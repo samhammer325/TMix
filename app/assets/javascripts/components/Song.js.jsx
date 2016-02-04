@@ -30,6 +30,18 @@ class Song extends React.Component{
     });
   }
 
+  mobilePlayBtn(station){
+    song = this.props.song_name.replace(/\s/g, ".")
+    artist = this.props.artist_name.replace(/\s/g, ".")
+
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+      window.open("http://onrad.io/" + artist + "." + song)
+    } else {
+      this.play(station);
+    } 
+  }
+
+
   play(station){
     player.src = "http://api.dar.fm/player_api.php?station_id=" + this.state.station_id + "&custom_style=radioslice&partner_token=9388418650"
   }
@@ -44,7 +56,7 @@ class Song extends React.Component{
          <div>
           <p>{this.props.song_name}</p>
           <p>By: {this.props.artist_name}</p>
-          <button onClick={() => this.play(station)} className='btn'>Play</button>
+          <button onClick={() => this.mobilePlayBtn(station)} className='btn'>Play</button>
           </div>
         );
     }else{
