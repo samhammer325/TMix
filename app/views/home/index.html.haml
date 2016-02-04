@@ -1,7 +1,7 @@
 = render 'layouts/navbar'
 %link{:href => "https://fonts.googleapis.com/icon?family=Material+Icons", :rel => "stylesheet"}/
-%div.socialright#me
-	%h6.black-text.center.salt #{current_user.name}
+%div.socialright.cyan#me
+	%h6.black-text.center.salt.foont #{current_user.name}
 	- if current_user.picture == nil
 	- else
 		%img.center.pushlot{alt: "profile_pic", src: "#{current_user.picture}"}

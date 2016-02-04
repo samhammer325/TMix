@@ -106,8 +106,9 @@ class Mixtape extends React.Component{
              <div className="toop">
               <button className="btn" onClick={this.playMixtape}>Play</button>
              </div> 
-              <div className='card-content white-text' >
-                <p>Mixtape: {this.props.name}</p>
+              <div className='card-content white-text boxreset' >
+                <p className="salt">Mixtape: {this.props.name}</p>
+                <br />
                  {songs}
               </div>
              <div>
