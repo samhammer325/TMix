@@ -108,9 +108,11 @@
               </div>
             </div>
 
-          <h5 className="subtit whitetext salt ">Search for an artist:</h5>
-          <input className='col s4 offset s3' type='text' ref='searchText' autofocus='true' placeholder="Artist"/>
-          <button onClick={this.getSearchResults} className='btn waves-effect waves-light'>Search</button>
+          <h5 className="subtit white-text salt center">Search for an artist:</h5>
+          <input type='text' ref='searchText' autofocus='true' placeholder="Artist"/>
+          <div className="center">
+            <button onClick={this.getSearchResults} className='btn waves-effect waves-light'>Search</button>
+          </div>
           <br />
           <br />
           <h4 className='center-align center subtit white-text salt'>Artists playing:</h4>
