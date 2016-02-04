@@ -43,62 +43,12 @@ class Mixtape extends React.Component{
     }
   }
 
-
-
-  // deleteSong(song_id){
-  //   let self = this;
-  //   $.ajax({
-  //     url: '/song/' + song_id,
-  //     type: 'DELETE'
-  //   }).success( data => {
-  //     self.props.displayUsersMixTapes('users');
-  //   });
-  // }
-
-
-  // buttonSong(song_id){
-  //   if(this.props.author_id == this.props.current_user.id){
-  //     return(<div>
-  //               <button onClick={() => this.deleteSong(song_id)} className="noah waves-light waves-effect btn orange">delete Song</button>
-  //           </div>)
-  //   }
-  // }
-
-
-  
-       // debugger
-
-
-
-  // buttonSong(song_id){
-  //   if(this.props.author_id == this.props.current_user.id){
-  //     return(<div>
-  //               <button onClick={() => this.deleteSong(song_id)} className="noah waves-light waves-effect btn orange">delete Song</button>
-  //           </div>)
-  //   }
-  // }
-  
   render(){
-
     let songs = this.props.mixtape.map( song => {
-      let key = `song-${song.song_id}`;
-
-      // debugger
-
-      // you can undo this one if needs be
-       // return(<Song key={key} {...song} />);
-      return(<div>
-              <li> {song.song_name} by {song.artist_name} </li>
-              
-            </div>)
-
-       // return(<Song key={key} {...song} />);
-        // return( {song.song_name} {song.artist_name} {...song})</li>);
-
+      let key = `mixtapeSong-${song.song_id}`;
+      return(<SongDetails key={key} songName={song.song_name} artistName={song.artist_name} />);
     });
 
-
-            // <div onClick={this.playMixtape} className='card small blue darken-3 col s6 over'>
     return(<div className="pagination">
 
             <div className='card small cyan z-depth-3 col s6 over'>
@@ -112,7 +62,6 @@ class Mixtape extends React.Component{
                  {songs}
               </div>
              <div>
-               
               </div>
              <br />
              <br />

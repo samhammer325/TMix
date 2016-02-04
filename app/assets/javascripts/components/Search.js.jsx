@@ -7,6 +7,7 @@
     this.createMixtape = this.createMixtape.bind(this);
     this.getSongs = this.getSongs.bind(this);
     this.noArtists = this.noArtists.bind(this);
+    this.displayDoneButton = this.displayDoneButton.bind(this);
     this.pass = this.pass.bind(this);
   }
 
@@ -53,6 +54,15 @@
     })
   }
 
+  displayDoneButton(){
+    if(this.state.songs.length != 0){
+      return(<button onClick={this.pass} className='btn'>Done</button>);
+    }
+    else{
+      return<h5>Search for streaming songs to add to your new mixtape.</h5>
+    }
+  }
+
   noArtists(artists){
     if(artists.length == 0 && this.state.searched) {
       if(self.refs.searchText.value == "") {
@@ -93,7 +103,7 @@
                 <div className='card-content'>
                   <h3> {this.state.mixtapeName}</h3>
                 {songArray}
-                <button onClick={this.pass} className='btn'>Done</button>
+                {this.displayDoneButton()}
                 </div>
               </div>
             </div>

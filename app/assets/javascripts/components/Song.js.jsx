@@ -7,7 +7,7 @@ class Song extends React.Component{
   }
   
   componentDidMount(){
-    this.renderPlayButton();
+    // this.renderPlayButton();
   }
 
   renderPlayButton(){
@@ -21,11 +21,11 @@ class Song extends React.Component{
       type: 'GET',
       dataType: 'jsonp',
       }).success( data => {
-      this.setState({results: data});
+      // this.setState({results: data});
       
-      if (this.state.results.length != 0) {
-        this.setState({station_id: data[0].station_id});
-        this.setState({streaming: true});
+      if (data.length != 0) {
+        this.setState({station_id: data[0].station_id, streaming: true, results: data});
+        // this.setState({streaming: true});
       };
     });
   }
