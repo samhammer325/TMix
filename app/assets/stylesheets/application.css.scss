@@ -12,6 +12,10 @@ $secondary-color: #5E1175 !default;
   margin-right:5px;
 }
 
+.pagination li {
+  text-align:left!important;
+}
+
 .centerbutton {
   margin-left: 45%;
 }
@@ -127,6 +131,19 @@ $secondary-color: #5E1175 !default;
   position:absolute;
   top:12%;
   left:60%;
+}
+
+.inlin {
+  display:inline;
+}
+
+.flo {
+  float:right;
+}
+
+.paddin {
+  margin:2%;
+  font-size:120%;
 }
 
 .bck{

@@ -54,16 +54,20 @@ class Song extends React.Component{
       
       return(
          <div>
-          <p>{this.props.song_name}</p>
-          <p>By: {this.props.artist_name}</p>
-          <button onClick={() => this.mobilePlayBtn(station)} className='btn'>Play</button>
+          <div className="paddin">  
+            <h5 className="inlin">{this.props.song_name} By: {this.props.artist_name}</h5><button onClick={() => this.mobilePlayBtn(station)} className='btn inlin flo'>Play</button>
+          </div>
+          <hr />
           </div>
         );
     }else{
       return(
          <div className="tex">
-          <p>{this.props.song_name}</p>
-          <p>By: {this.props.artist_name}</p>
+          <div className="paddin">  
+            <h5>{this.props.song_name} By: {this.props.artist_name}</h5>
+          </div>
+          
+          <hr />
         </div>
         );
     };
