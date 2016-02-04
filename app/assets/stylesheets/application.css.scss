@@ -16,10 +16,6 @@ $secondary-color: #5E1175 !default;
   margin-left: 45%;
 }
 
-.moove {
-  margin-right:185px;
-  margin-top:10px;
-}
 
 .fright {
   position:absolute;
@@ -129,6 +125,12 @@ $secondary-color: #5E1175 !default;
   left:60%;
 }
 
+.bck{
+    background-image: url('lotsmix.jpg');
+    background-repeat: repeat;
+    background-attachment: fixed;
+
+}
 .imageback {
    position: relative;
 }
@@ -140,8 +142,9 @@ $secondary-color: #5E1175 !default;
 }
 
 #heigh {
-height:100%;
-width:100%;
+  height:100%;
+  width:100%;
+  display: fixed;
 }
 .abso {
   position:absolute;
@@ -196,9 +199,17 @@ position: absolute;
   background-color: #896891;
 }
 
+.purpl{
+  color: #5F1375;
+}
+
+.white{
+  color: white;
+}
+
 .player {
   width: 50%;
-	height: 100px;
+  height: 100px;
   position: fixed;
   vertical-align: left;
   z-index: 10;
@@ -239,14 +250,6 @@ position: absolute;
     left: auto;
     right: auto;
     margin-right: 1% !important;
-}
-
-.boxreset {
-  box-sizing: initial !important;
-}
-
-.card .card-content p {
-  max-height: 100%!important;
 }
 
 .blubtn{
@@ -292,10 +295,6 @@ position: absolute;
   right: 4%;
 }
 
-.foont {
-  font-size: 20px;
-}
-
 .mix {
   position: fixed;
   bottom: 0px;
@@ -303,12 +302,13 @@ position: absolute;
 }
 
 .socialright {
-    position: fixed;
-    top: 0px;
-    right: 0px;
-    width: 15%;
-    height: 205px;
-    border: 3px solid #201025;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  width: 15%;
+  height: 205px;
+  background-color: rgba(62, 138, 123, 0.89);
+  border: 5px solid #201025
 }
 
 .iframe{
