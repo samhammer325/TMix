@@ -31,6 +31,14 @@ $secondary-color: #5E1175 !default;
   right:7px;
 }
 
+.tit{
+  font-size: 4vw !important;
+}
+
+.subtit{
+  font-size: 2.5vw !important;
+}
+
 .fourteen{
   font-size: 14px !important;
 }
@@ -50,6 +58,10 @@ $secondary-color: #5E1175 !default;
 .bott {
   /*top:0px!important;*/
   bottom:3px!important;
+}
+
+.crd{
+  font-size: 2vw;
 }
 
 .signin {
@@ -99,7 +111,7 @@ $secondary-color: #5E1175 !default;
 }
 
 .buttonvw{
-  font-size: 1.3vw;
+  font-size: 1.3vw !important;
 }
 
 
@@ -247,9 +259,6 @@ position: absolute;
   margin-left:10px;
 }
 
-.uno {
-  margin-right:39px;
-}
 
 .noah {
   left: 60%;
@@ -294,7 +303,13 @@ position: absolute;
 }
 
 .logout {
-  margin-left: 50px;
+  margin-left: 2px !important;
+  letter-spacing: 0 !important;
+  text-align: center !important;
+  height: 17% !important;
+  width: 65% !important;
+  padding: 0 0 !important;
+  font-size: 1.3vw !important;
 }
 
 .push {
@@ -412,5 +427,4 @@ body {
 
 .inner{
   display: inline;
-  margin-left: 39px;
 }

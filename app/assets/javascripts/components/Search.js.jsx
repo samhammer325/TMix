@@ -107,20 +107,13 @@
                 </div>
               </div>
             </div>
-            <br />
-            <br />
-            <br />
-          <div>
-            <h5 className="salt center white-text">Search for an artist</h5>
-            <br />
-              <input className='marginn' type='text' ref='searchText' autofocus='true' placeholder="Artist"/>
-              <div className="center">
-              <button onClick={this.getSearchResults} className='btn waves-effect waves-light'>Search</button>
-              </div>
-          </div>
+
+          <h5 className="subtit whitetext salt ">Search for an artist:</h5>
+          <input className='col s4 offset s3' type='text' ref='searchText' autofocus='true' placeholder="Artist"/>
+          <button onClick={this.getSearchResults} className='btn waves-effect waves-light'>Search</button>
           <br />
           <br />
-          <h4 className='center-align center salt white-text'>Artists playing:</h4>
+          <h4 className='center-align center subtit white-text salt'>Artists playing:</h4>
           <br />
           <div className='row'>
             {this.noArtists(artists)}

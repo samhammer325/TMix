@@ -42,19 +42,20 @@ class SortMixtapes extends React.Component{
     return(<Mixtape key={key} displayUsersMixTapes={this.displayUsersMixTapes} current_user={this.props.current_user} displayPlayMixtape={this.props.DisplayPlayMixtape} mixtape_id={mixtape.id}{...mixtape} />);
 
     });
-    return(
-       <div className="inner">
-        <button className="btn waves-effect waves-light uno" onClick={this.displayUsersMixTapes.bind(this, "all" )}>Popular Mixtapes</button>
-        <button className="btn waves-effect waves-light" onClick={this.displayUsersMixTapes.bind(this, "users" )}>My Mixtapes</button>
-        <br />
-        <br />
-        <h2 className="salt white-text center">Mixtapes</h2>
-        <br />
-         {mixtapes}
-        <div className = 'center'>
-          <i className="medium material-icons" onClick={this.downRange}>fast_rewind _</i>
-          <i className="medium material-icons" onClick={this.upRange}>fast_forward</i>
-        </div>
-      </div>)};
+
+
+      return(
+
+         <div className="inner">
+          <button className="btn waves-effect waves-light" onClick={this.displayUsersMixTapes.bind(this, "all" )}>Popular Mixtapes</button>
+          <button className="btn waves-effect waves-light" onClick={this.displayUsersMixTapes.bind(this, "users" )}>My Mixtapes</button>
+          
+          <h3 className="tit salt white-text center">Mixtapes:</h3>
+           {mixtapes}
+          <div className = 'center'>
+            <i className="medium material-icons" onClick={this.downRange}>fast_rewind _</i>
+            <i className="medium material-icons" onClick={this.upRange}>fast_forward</i>
+          </div>
+        </div>)};
 }   
 
