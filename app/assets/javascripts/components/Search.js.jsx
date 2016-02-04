@@ -1,9 +1,5 @@
   class Search extends React.Component{
 
-// take input from search, and make an ajax call for info.
-// convert info to use for card.
-// send info to card {songinfo}  also change the search button to back to span if needed
-// must add key to get the warning away!
   constructor(props){
     super(props);
     this.state = {results: [], searched: false, mixtape_id: 0, mixtapeName: '', mixTapeCategory: '', songs: []};
@@ -34,13 +30,11 @@
       type: 'POST',
       data: {name: this.refs.mixtapeName.value, category: this.refs.category.value}
     }).success( data => {
-      // alert('yay')
       this.refs.mixtapeName.value = null;
       this.refs.category.value = null;
       this.setState ({mixtape_id: data.id, mixtapeName: data.name, mixTapeCategory: data.category, songs: []})
       $("#mixtapeForm").slideToggle("slow");
       $("#cardHolder").slideToggle("slow");
-
     });
   }
 
@@ -49,25 +43,13 @@
     $("#cardHolder").slideToggle("slow");
   }
 
-  // findMixTape(){
-  //   $ajax({
-  //     url: '/mixtapes',
-  //     type: 'GET'
-  //   }).success( data => {
-  //     this.setState({})
-  //   })
-  //   }
-  // }
-
   getSongs(){
     $.ajax({
       url: '/mixtapes_find_single_mixtape',
       type: 'GET',
       data: {mixtape_id: this.state.mixtape_id}
     }).success( data => {
-      // debugger
       this.setState({songs: data.songs});
-
     })
   }
 
@@ -81,26 +63,7 @@
     }
   }
 
-
-
-  // createSong(){
-  //   $.ajax({
-  //     url: '/songs',
-  //     type: 'POST',
-  //     data: {mixtape_id: this.mixtape_id}
-  //   }).success(
-  //    alert('yes'))
-  //   });
-  // }
-
-
-        // current_state = this.state;
-       // current_state[:mixtape_id] = data.mixtape_id;
-     // this.setState(current_state);
-
-
   render(){
-    // debugger
     self = this;
     let i = 0;
     let artists = this.state.results.map( artist => {
@@ -124,9 +87,7 @@
               <input className="col s6" placeholder='Category' ref='category'/>
             </div>
               <button onClick={this.createMixtape} className='btn'>Create New Mixtape</button>
-
           </div>
-
            <div id='cardHolder' className='row'>
              <div className='card-panel cyan'>
                 <div className='card-content'>
@@ -152,10 +113,9 @@
           <h4 className='center-align center salt white-text'>Artists playing:</h4>
           <br />
           <div className='row'>
-          {this.noArtists(artists)}
-          {artists}
+            {this.noArtists(artists)}
+            {artists}
           </div>
-
         </div>)
   }
 }

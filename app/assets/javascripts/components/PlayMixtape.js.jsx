@@ -3,12 +3,10 @@
     super(props)
     this.state = {songs: []};
      this.getSongs = this.getSongs.bind(this);
-     // this.findPlayingSongs = this.findPlayingSongs.bind(this);
   }
 
   componentWillMount(){
     this.getSongs();
-
   }
 
   getSongs(){
@@ -19,18 +17,8 @@
     }).success( data => {
 
       this.setState({songs: data.songs});
-
-
     })
   }
-
-  // findPlayingSongs(){
-  //   // debugger
-  //   for(var i = 0; i < this.state.songs.length; i++){
-  //     return
-  //   };
-
-  // }
 
   render(){
      let songs = this.state.songs.map( song => {
@@ -40,7 +28,6 @@
 
   });
 
-     // this.props.getSongs();
     return(<div>
             <div className= 'card-panel cyan'>
               <div className='card-content white-text'>
