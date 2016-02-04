@@ -1,73 +1,91 @@
 %nav
   .nav-wrapper.z-depth-3.cyan.bott
-    %a.brand-logo{:href => "/"}
-      %h1.nav-suff.salt T-Mix
+    %h1.brand-logo.salt.center Meet The Team
     %ul#nav-mobile.right.hide-on-med-and-down
       %li
         %a.bigger{:href => "/"} Home
 %br
 %br
+%body.bck
 .imageback
-  =image_tag("lotsmix.jpg", id: 'heigh')
   .z-depth-5  
-    %h1.center.salt.team Meet the Team
+    .row
     .container.abso.center
       .row
         .col.s4
           .card-panel.cyan.z-depth-3
-            =image_tag("glenn_600.png", class: 'pic')
+            %img.pic{:src => "/assets/glenn_600.png"}
             %h5.card-title.center.salt Glenn Sullivan
             %span.white-text
-              I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+              I have spent the last several years working in the field of video and audio post-production.
+              I have been able to see the power of internet development and how it creates a connection 
+              with the user. I enjoy hiking, fishing, graphic art, traveling,and reading.
             %br
-            %a.fa.fa-github.fa-2x{:href => "https://github.com/gpsullivan"}
+            %a.fa.fa-github.fa-2x{:href => "https://github.com/gpsullivan", :style => "color: white"}
+            %a.fa.fa-linkedin-square.fa-2x{:href => "https://www.linkedIn.com/in/gpsullivan", :style => "color: white"}
+            %br
+            %a{:href => "sullivangln87@gmail.com", :class => "purpl"} sullivangln87@gmail.com
         .col.s4
           .card-panel.white.z-depth-3
-            =image_tag("spencer_600.jpg.png", class: 'pic')
-            %h5.card-title.center.salt Spencer Christopherson
+            %img.pic{:src => "/assets/spencer_600.jpg.png"}
+            %h5.card-title.center.salt.black-text Spencer Christopherson
             %span.black-text
               This is another very simple card. I did not copy this from any website, and I actually
               just made it up on my own. I made it just as long as the previous example - except my example
               is way better. 
             %br
             %a.fa.fa-github.fa-2x{:href => "https://github.com/spencetacular"}
+            %a.fa.fa-linkedin-square.fa-2x{:href => "https://www.linkedin.com/in/spencerchristopherson"}
+            %br
+            %a{:href => "schristopherson@gmail.com", :class => "purpl"} schristopherson@gmail.com
         .col.s4
           .card-panel.cyan.z-depth-3
-            =image_tag("noah_600.png", class: 'pic')
+            %img.pic{:src => "/assets/noah_600.png"}
             %h5.card-title.center.salt Noah Loveland
             %span.white-text
-              Hey I'm Noah I've fallen in love with programming and building programs. I'm a Full-Stack Developer, I'm a Rubyist, and I'm a computer nerd. I enjoy Break Dancing, video games, and about any other kind of game there is.and here is my LinkedIn: <a href="www.linkedin.com/in/lovelandnoah">www.linkedin.com/in/lovelandnoah</a>
+              Hey I'm Noah I've fallen in love with programming and building programs. I'm a Full-Stack Developer, I'm a Rubyist, and I'm a computer nerd. I enjoy Break Dancing, video games, and about any other kind of game there is.
             %br
-            %a.fa.fa-github.fa-2x{:href => "https://github.com/lovelandnoah"}
+            %a.fa.fa-github.fa-2x{:href => "https://github.com/lovelandnoah", :style => "color: white"}
+            %a.fa.fa-linkedin-square.fa-2x{:href => "https://www.linkedin.com/in/lovelandnoah", :style => "color: white"}
+            %br
+            %a{:href => "lovelandnoah@gmail.com", :class => "purpl"} lovelandnoah@gmail.com
 
 
       %br
         .row
           .col.s4
             .card-panel.white.z-depth-3
-              =image_tag("brian_600.png", class: 'pic')
-              %h5.card-title.center.salt Brian Phelps
+              %img.pic{:src => "/assets/brian_600.png", :class => "purpl"}
+              %h5.card-title.center.salt.black-text Brian Phelps
               %span.black-text
-                I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+                Spending the last four years commited to graduating college, I wanted to continue my education. After receiving a diploma with a focus on business marketing, I wanted to become reacquainted with computers. I have been interested in them since I was very young, and wish to use the skills I earned at DevPoint Labs in the field! I enjoy music, coding, playing sports, and learning.  
               %br
               %a.fa.fa-github.fa-2x{:href => "https://github.com/F1nalFortune"}
+              %a.fa.fa-linkedin-square.fa-2x{:href => "https://www.https://www.linkedin.com/in/phelpsb92"}
+              %br
+              %a{:href => "phelpsb92@gmail.com", :class => "purpl"} phelpsb92@gmail.com
           .col.s4
             .card-panel.cyan.z-depth-3
-              =image_tag("sam_600.png", class: 'pic')
+              %img.pic{:src => "/assets/sam_600.png"}
               %h5.card-title.center.salt Sam Hammer
               %span.white-text
-                This is another very simple card. I did not copy this from any website, and I actually
-                just made it up on my own. I made it just as long as the previous example - except my example is way better.
+                I graduated from Torrey Pines high school in 2015 with experience in Java and Python. Since then I have learned Ruby on Rails and web development in the Devpoint Labs coding bootcamp. I like riding my bike and my hoverboard, and I’m fascinated with programming and computer science.
               %br
-              %a.fa.fa-github.fa-2x{:href => "https://github.com/samhammer325"}
+              %a.fa.fa-github.fa-2x{:href => "https://github.com/samhammer325", :style => "color: white"}
+              %a.fa.fa-linkedin-square.fa-2x{:href => "https://www.linkedin.com/in/hammers", :style => "color: white"}
+              %br
+              %a{:href => "sam@michaelrobertson.com", :class => "purpl"} sam@michaelrobertson.com
           .col.s4
             .card-panel.white.z-depth-3
-              =image_tag("COREY.png", class: 'pic')
+            %img.pic{:src => "/assets/COREY.png"}
               %h5.card-title.center.salt Corey Rugino
               %span.black-text
-                This is the last card example. This is going to be the longest example out of any
-                of the previous entries. This is because I wanted to have it show something that was 
-                bigger than the rest. The bigger - the better.
+                For the last 7 years I've been out West from NY constructing ski lifts in the summer months and boarding in the winter.  I have      always wanted to get back into coding, and this was a great fit.  I am looking forward to a long, fun time of coding ahead.
+              %br
               %a.fa.fa-github.fa-2x{:href => "https://github.com/coreyrugino"}
+              %a.fa.fa-linkedin-square.fa-2x{:href => "https://www.linkedin.com/in/coreyrugino"}
+              %br
+              %a.strong{:href => "coreyrugino@gmail.com", :class => "purpl"} coreyrugino@gmail.com
+        .row
+          .col.s4
+          %img.pic{:src => "/assets/group_tmix_original.jpg"}
