@@ -25,12 +25,30 @@ class SortMixtapes extends React.Component{
 
   upRange(){
     oldRange = this.state.rangeStart;
-    this.setState({rangeStart: oldRange + 4});
+    if(oldRange < this.state.mixtapes.length - 4) {
+      this.setState({rangeStart: oldRange + 4});
+    }
   }
 
   downRange(){
     oldRange = this.state.rangeStart;
-    this.setState({rangeStart: oldRange - 4});
+    if(oldRange > 0) {
+      this.setState({rangeStart: oldRange - 4});
+    }
+  }
+
+  renderFastForward(){
+    
+    if(this.state.rangeStart < this.state.mixtapes.length - 4) {
+      return(<i className="medium material-icons" onClick={this.upRange}>fast_forward</i>)
+    }
+  }
+
+  renderFastRewind(){
+    
+    if(this.state.rangeStart > 0) {
+      return(<i className="medium material-icons" onClick={this.downRange}>fast_rewind</i>)
+    }
   }
 
   render(){
@@ -38,9 +56,7 @@ class SortMixtapes extends React.Component{
     let mixtapesShow = this.state.mixtapes.slice(rangeStart[0], rangeStart[1])
     let mixtapes = mixtapesShow.map( mixtape => {
       let key = `mixtape-${mixtape.id}`;
-
     return(<Mixtape key={key} displayUsersMixTapes={this.displayUsersMixTapes} current_user={this.props.current_user} displayPlayMixtape={this.props.DisplayPlayMixtape} mixtape_id={mixtape.id}{...mixtape} />);
-
     });
 
 
@@ -53,8 +69,8 @@ class SortMixtapes extends React.Component{
           <h3 className="tit salt white-text center">Mixtapes:</h3>
            {mixtapes}
           <div className = 'center'>
-            <i className="medium material-icons" onClick={this.downRange}>fast_rewind _</i>
-            <i className="medium material-icons" onClick={this.upRange}>fast_forward</i>
+            {this.renderFastRewind()}
+            {this.renderFastForward()}
           </div>
         </div>)};
 }   
