@@ -1,6 +1,15 @@
+/ %nav
+/   .nav-wrapper.z-depth-3.cyan.bott
+/     %a.brand-logo.salt.test{:href => "#"} T-mix
+/     %ul#nav-mobile
+/       %li
+/         %a.moove.bigger{:href => "static_pages/bio"} About Us
+
 %nav
   .nav-wrapper.z-depth-3.cyan.bott
-    %a.brand-logo.center.salt T-mix
-    %ul#nav-mobile.left
+    %a{:href => "#"}= image_tag("Tmix_logo_small_text_and_skull.png", class: "logo")
+    %ul#nav-mobile.right
       %li
-        %a.moove{:href => "static_pages/bio"} About Us
+        %a.moove.bigger{:href => "static_pages/bio"} About Us
+      %li
+        %a{:href => "#"} home

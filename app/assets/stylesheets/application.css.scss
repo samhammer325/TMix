@@ -20,9 +20,12 @@ $secondary-color: #5E1175 !default;
   margin-left: 45%;
 }
 
+.tesst {
+  font-size:75px;
+}
+
 .moove {
-  margin-right:185px;
-  margin-top:10px;
+  margin-right:155px;
  }
 
 .fright {
@@ -179,6 +182,11 @@ $secondary-color: #5E1175 !default;
   width:100%;
   display: fixed;
 }
+
+.ooooh {
+  margin:2% 2% 2% 2%;
+}
+
 .abso {
   position:absolute;
   top:30%;
@@ -403,9 +411,25 @@ body {
 }
 
 .bigger {
-  margin-top:15%;
-  font-size:25px;
+  margin-top: 5%;
+  font-size: 18px;
+  position:relative;
+}
 
+.bottomleft {
+    position: fixed;
+    font-size: 18px;
+    bottom: 0px;
+    left: 16px;
+}
+
+.logo{
+  height: 102%;
+  margin-top: 0.5%;
+}
+
+.buttonnav{
+  margin:8px 10px;
 }
 
 .pic{

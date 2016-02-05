@@ -4,6 +4,6 @@ class SongDetails extends React.Component{
   }
 
   render() {
-    return(<li> {this.props.songName} by {this.props.artistName} </li>)
+    return(<li className="crd"> {this.props.songName} by {this.props.artistName} </li>)
   }
 }

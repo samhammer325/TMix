@@ -37,7 +37,7 @@ class TheHome extends React.Component{
 		if (this.state.sortMixtapesVisible) {
 			return(
 			<div className="inner">				
-				<button className="btn" onClick={this.DisplaySearch}>Create New Mixtape</button>
+				<button className="btn buttonnav" onClick={this.DisplaySearch}>Create New Mixtape</button>
 				<SortMixtapes current_user={this.props.current_user} DisplayPlayMixtape = {this.DisplayPlayMixtape} display_user_mixtapes={this.state.display_user_mixtapes} />
 			</div>);
 		};
@@ -65,7 +65,7 @@ class TheHome extends React.Component{
 					<button className="btn nav2" onClick={this.DisplaySearch}>Create New Mixtape</button>
 				</div>
 				<br />
-				<h1 className="center salt white-text">Playin a Mix</h1>
+				<h1 className="center salt white-text tit">Playin a Mix</h1>
 				<br />
 				<PlayMixtape current_user={this.props.current_user} mixtape_id={this.state.mixtape_id}/>
 			</div>);

@@ -47,8 +47,8 @@ class SortMixtapes extends React.Component{
       return(
 
          <div className="inner">
-          <button className="btn waves-effect waves-light" onClick={this.displayUsersMixTapes.bind(this, "all" )}>Popular Mixtapes</button>
-          <button className="btn waves-effect waves-light" onClick={this.displayUsersMixTapes.bind(this, "users" )}>My Mixtapes</button>
+          <button className="btn waves-effect waves-light buttonnav" onClick={this.displayUsersMixTapes.bind(this, "all" )}>Popular Mixtapes</button>
+          <button className="btn waves-effect waves-light buttonnav" onClick={this.displayUsersMixTapes.bind(this, "users" )}>My Mixtapes</button>
           
           <h3 className="tit salt white-text center">Mixtapes:</h3>
            {mixtapes}
