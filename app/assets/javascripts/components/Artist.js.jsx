@@ -9,7 +9,7 @@ class Artist extends React.Component{
 
   play(station){
     let player = document.getElementById("player")
-    player.src = "http://api.dar.fm/splayer_api.php?station_id=" + station + "&custom_style=radioslice&partner_token=9388418650"
+    player.src = "http://api.dar.fm/player_api.php?station_id=" + station + "&custom_style=radioslice&partner_token=9388418650"
   }
 
 
