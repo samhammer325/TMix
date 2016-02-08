@@ -1,32 +1,38 @@
-.container
-%h5.center Welcome #{current_user.email}
-%div.socialright
-	%h4 #{current_user.name}
+%a{:href => "static_pages/faq"} FAQ
+
+= render 'layouts/navbar'
+
+%link{:href => "https://fonts.googleapis.com/icon?family=Material+Icons", :rel => "stylesheet"}/
+%div.socialright.cyan#me
+	%h6.black-text.center.salt.foont.buttonvw #{current_user.name}
 	- if current_user.picture == nil
 	- else
-		%img{alt: "profile_pic", src: "#{current_user.picture}"}
+		%img.center.pushlot{alt: "profile_pic", src: "#{current_user.picture}"}
 	%br
 	- if /\.twimg/.match(current_user.picture)
 		%br
-		<a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="Keeping it fresh @MySongis Checkout my Mix - " data-size="large">Tweet	
+		<a href="https://twitter.com/share" class="twitter-share-button"{count} data-text='Keeping it fresh @T-Mix Checkout my Mix - "Put Mix Name Here" ' data-size="large">Tweet
+		%br
 		%br
 	- elsif /graph/.match(current_user.picture)
-		.fb-share-button.iframe{"data-href" => "http://www.localhost:3000", "data-layout" => "button_count"}
+		.fb-share-button.iframe.push{"data-href" => "http://tmix.herokuapp.com/", "data-layout" => "button_count"}
 		%br
 	- else
-		.fb-share-button.iframe{"data-href" => "http://www.localhost:3000", "data-layout" => "button_count"}
+		.fb-share-button.iframe.push{"data-href" => "http://tmix.herokuapp.com/", "data-layout" => "button_count"}
 		%br
 		%br
 		%br
-		<a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="Keeping it fresh @MySongis Checkout my Mix - " data-size="large">Tweet	
+		<a href="https://twitter.com/share" class="twitter-share-button"{count} data-text='Keeping it fresh @T-Mix Checkout my Mix - "Put Mix Name Here" ' data-size="large">Tweet
+		%br
+		%br
 		%br
 	%br
+	= link_to '', destroy_user_session_path, method: 'delete', class: "stupid"
 	%br
-	= link_to 'Logout', destroy_user_session_path, method: 'delete'
+	.btn.logout.waves-effect.waves-light.center= link_to 'Logout', destroy_user_session_path, method: 'delete', class: "white-text"
 	%br
 %br
 %br
-	%h2.center-align.rocksalt Welcome to My Song
 %br
 %hr
 
@@ -40,28 +46,23 @@
 		fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));
 
-
-- if @mixtapes.present?
-	.row
-		.col.s8.offset-s2
-			= react_component 'TheHome'
-- else
-	.row
-		.col.s8.offset-s2
-			= react_component 'TheHome'
-		
-	
+.sam= react_component 'Player'
+.row
+	.col.s8.offset-s2
+		- if params[:mixtape_id]
+			= react_component 'TheHome', { current_user: current_user, mixtape_id: params[:mixtape_id] }
+		- else
+			= react_component 'TheHome', { current_user: current_user }
 
 
 
 
-/ %iframe{: => "api.dar.fm/player_api.php?callsign=KBZT&onnow_display=true&station_display=true&volume_display=true&partner_token=9388418650" }
-/ 	%p come one work?
 
-
-/ %h1 = @graph.put_connections("me", "feed", message: "Hey I'm posting to facebook right now on a program I coded :D:D:D:D.")
+%script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.2.3/jquery.min.js"}
 
 
 
-= link_to 'Logout', destroy_user_session_path, method: 'delete'
+%br
+%br
+%br
 

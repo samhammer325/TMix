@@ -3,6 +3,7 @@ class SongController < ApplicationController
   end
 
   def create
+
   	song_name = params[:name]
   	artist = params[:artist]
   	mixtape_id = params[:mixtape_id]
@@ -18,6 +19,11 @@ class SongController < ApplicationController
     # 	#todo slidetoggle artist
     # end
     render json: @mixtape
+  end
+
+  def destroy
+    Song.find(params[:id]).destroy
+    head :ok
   end
 
   # def show

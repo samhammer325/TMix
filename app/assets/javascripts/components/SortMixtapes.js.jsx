@@ -2,18 +2,15 @@ class SortMixtapes extends React.Component{
 	constructor(props){
 		super(props);
 		this.displayUsersMixTapes = this.displayUsersMixTapes.bind(this);
-    this.toggleVisible = this.toggleVisible.bind(this);
-    this.state = {mixtapes: [], visible: true };
+    this.state = {mixtapes: [], visible: true, rangeStart: 0, displayMyMixtapes:true };
+    this.upRange = this.upRange.bind(this);
+    this.downRange = this.downRange.bind(this);
 	}
 
-componentDidMount(){
-    // this.displayUsersMixTapes()
+  componentDidMount(){
+     this.displayUsersMixTapes('users')    
   }
-
-  toggleVisible() {
-    this.setState({visible: !this.state.visible});
-  }
-
+ 
 	displayUsersMixTapes(search_terms){
     $.ajax({
       url: '/mixtapes_users_mixtapes',
@@ -26,47 +23,55 @@ componentDidMount(){
     });
   }
 
-  render(){
-
-    let mixtapes = this.state.mixtapes.map( mixtape => {
-      let key = `mixtape-${mixtape.id}`;
-      return(<Mixtape key={key} {...mixtape} />);
-    });
-
-    if(this.state.visible){
-      return(
-         <div>
-          <button onClick={this.toggleVisible}>Toggle MixTapes</button>
-       
-          <h1 className="yellow">MixTapes</h1>
-          <hr />
-          <button onClick={this.displayUsersMixTapes.bind(this, "all" )}>Display All Mixtapes</button>
-          <hr />
-          <button onClick={this.displayUsersMixTapes.bind(this, "users" )}>Display My Mixtapes</button>
-          <hr />
-          <button onClick={this.displayUsersMixTapes.bind(this, "highest_rated" )}>Display Highest Rated Mixtapes</button>
-          <hr />
-          <h3 className='center-align'>Mixtapes:</h3>
-           {mixtapes}
-        </div>)}
-      else {
-        return(
-          <div>
-           <button onClick={this.toggleVisible}>Toggle Mixtapes</button>
-           </div>)}
-       
+  upRange(){
+    oldRange = this.state.rangeStart;
+    if(oldRange < this.state.mixtapes.length - 4) {
+      this.setState({rangeStart: oldRange + 4});
+    }
   }
 
-   
-}
+  downRange(){
+    oldRange = this.state.rangeStart;
+    if(oldRange > 0) {
+      this.setState({rangeStart: oldRange - 4});
+    }
+  }
+
+  renderFastForward(){
+    
+    if(this.state.rangeStart < this.state.mixtapes.length - 4) {
+      return(<i className="medium material-icons" onClick={this.upRange}>fast_forward</i>)
+    }
+  }
+
+  renderFastRewind(){
+    
+    if(this.state.rangeStart > 0) {
+      return(<i className="medium material-icons" onClick={this.downRange}>fast_rewind</i>)
+    }
+  }
+
+  render(){
+    let rangeStart = [this.state.rangeStart, this.state.rangeStart + 4]
+    let mixtapesShow = this.state.mixtapes.slice(rangeStart[0], rangeStart[1])
+    let mixtapes = mixtapesShow.map( mixtape => {
+      let key = `mixtape-${mixtape.id}`;
+    return(<Mixtape key={key} displayUsersMixTapes={this.displayUsersMixTapes} current_user={this.props.current_user} displayPlayMixtape={this.props.DisplayPlayMixtape} mixtape_id={mixtape.id}{...mixtape} />);
+    });
 
 
+      return(
 
-
-
-
-
-
-
-
+         <div className="inner">
+          <button className="btn waves-effect waves-light buttonnav" onClick={this.displayUsersMixTapes.bind(this, "all" )}>Popular Mixtapes</button>
+          <button className="btn waves-effect waves-light buttonnav" onClick={this.displayUsersMixTapes.bind(this, "users" )}>My Mixtapes</button>
+          
+          <h3 className="tit salt white-text center">Mixtapes:</h3>
+           {mixtapes}
+          <div className = 'center'>
+            {this.renderFastRewind()}
+            {this.renderFastForward()}
+          </div>
+        </div>)};
+}   
 

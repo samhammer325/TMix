@@ -1,5 +1,5 @@
 Rails.application.configure do
-  config.app_domain = 'localhost:3000'
+  config.app_domain = 'http://tmix.herokuapp.com/'
   # Email
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
@@ -11,7 +11,7 @@ Rails.application.configure do
     user_name: 'mysongis325@gmail.com',
     password: 'devhackpoint',
     authentication: :plain,
-    domain: 'localhost:3000'
+    domain: 'http://tmix.herokuapp.com/'
   }
 
 

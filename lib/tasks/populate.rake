@@ -18,17 +18,17 @@ namespace :populate do
 	  		mixtape.random = false
 
 	  		Song.populate(1) do |song|
-					song.name = "Ride Wit Me"
-					song.artist = "Nelly"
-					song.album = "Country Grammer"
+					song.name = "What Do You Mean?"
+					song.artist = "Justin Bieber"
+					song.album = ""
 					song.favorite = false
 					song.mixtape_id = mixtape.id
   			end
 
   			Song.populate(1) do |song|
-					song.name = "Angel"
-					song.artist = "Shaggy"
-					song.album = "Hotshot"
+					song.name = "Love Yourself"
+					song.artist = "Justin Bieber"
+					song.album = ""
 					song.favorite = false
 					song.mixtape_id = mixtape.id
   			end

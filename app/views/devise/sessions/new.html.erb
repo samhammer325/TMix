@@ -1,26 +1,54 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+<nav>
+  <div class="nav-wrapper z-depth-3 cyan">
+    <a href="#" class="brand-logo center">
+      <h3 class="nav-stuff salt">
+        T-Mix
+      </h3>
+    </a>
+    <ul id="nav-mobile" class="left">
+      <li>
+        <a class="bigger" href="/static_pages/bio">
+          About Us
+        </a>
+      </li>
+    </ul>
   </div>
+</nav>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+<br />
+<div class="container responsive-img">
+  <div class="imageback">
+    <h4 class="textonpic email salt fourvw">Login</h4>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %> 
+      <div class="emailon input-field col m4 offset-m1">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true %>
+      </div>
+      <div class="passon input-field col m4 offset-m1">
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+        <div class="row">
+          <button class="btn signin cyan waves-effect buttonvw"><%= f.submit "Log in" %></button>
+          <div class="myclass">
+            <button class="btn cyan signup waves-effect buttonvw"><%= link_to "Sign up", new_registration_path(resource_name) %></button>
+        </div>
+      </div>
+    <% end -%>
+        <p class="faced fourteen">Sign in with</p>
+        <div>
+          <%= link_to user_omniauth_authorize_path(:facebook) do %>
+            <i class="fbook fa fa-facebook-official fa-5x"></i>
+          <% end %>
+        </div>
+        <p class="tweetd fourteen">Sign in with</p>
+        <div>
+          <%= link_to user_omniauth_authorize_path(:twitter) do %>
+            <i class="twet fa fa-twitter fa-5x"></i>   
+          <% end %>
+        </div>
+    <div class="center"><%= image_tag("cassette_tape_black.jpg", id: "img") %></div>
   </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+         <!--<%#= f.submit "Log in" %>-->
+  <br />
+</div>
