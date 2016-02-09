@@ -6,6 +6,10 @@ class Song extends React.Component{
     this.play = this.play.bind(this);  
   }
 
+  componentDidMount(){
+    this.renderPlayButton();
+  }
+
   renderPlayButton(){
     self = this;
     artist = this.props.artist_name.replace(/\s/g, '%20')
@@ -43,7 +47,6 @@ class Song extends React.Component{
   }
 
   render(){
-    this.renderPlayButton();
 
     if (this.state.streaming == true) {
       station = this.state.results[0].station_id
