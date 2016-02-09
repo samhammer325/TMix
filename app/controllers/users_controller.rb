@@ -1,10 +1,17 @@
 class UsersController < ApplicationController
 	before_action :set_user, only: [:show, :edit, :update, :destroy]
 	before_filter :ensure_sign_complete, only: [:new, :create, :update, :destroy]
-
+	skip_before_filter :authenticate_user!
 	def edit
 
 	end
+
+	def show
+	@user = User.find_by_username(params[:id])
+  #   @user = User.find_by_permalink(param[:id])
+  #   @title = @user.name
+	end
+
 
 	def update
 		respond_to do |f|
@@ -41,19 +48,17 @@ class UsersController < ApplicationController
 		end
 	end
 
-	def show
-     @user = User.find_by_permalink(param[:id])
-     @title = @user.name
+	def set_user
+		# binding.pry
+		@user = User.find_by(id: params[:id])
+		# @user = User.find_by(username: params[:username])
 	end
 
+
 	private
-		def set_user
-			@user = User.find(params[:id])
-		end
 
 		def user_params
 			accessible = [ :name, :email, :username ]
-			binding.pry
 			accessible << [ :password, :password_confirmation ] unless params[:user][:password].blank?
 			params.require(:user).permit(accessible)
 		end

@@ -2,11 +2,10 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
 
-
   TEMP_EMAIL_PREFIX = "temporary@email"
   TEMP_EMAIL_REGEX = /\Atemporary@email/
 
-  before_save :create_permalink
+  # before_save :create_permalink
 
   has_many :ratings, dependent: :destroy
   has_many :mixtapes, through: :ratings, dependent: :destroy
@@ -16,8 +15,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable
+  validates_uniqueness_of :username
+  validates_presence_of :username
 
   validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :update
+
 
   def self.find_for_oauth(auth, signed_in_resource = nil)
     identity = Identity.find_for_oauth(auth)
@@ -54,10 +56,10 @@ class User < ActiveRecord::Base
     self.email && self.email !~ TEMP_EMAIL_REGEX
   end
 
-  def to_param
-     permalink
-  end
-
+  # vanity URL
+  # def to_param
+  #   username
+  # end
 
   # def self.from_omniauth(auth)
   #  where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -65,10 +67,11 @@ class User < ActiveRecord::Base
   #    user.password = Devise.friendly_token[0,20]
   #  end
   # end
-
+  # vanity URL
   private
-    def create_permalink
-      self.permalink = username
-    end
+    # vanity URL
+    # def create_permalink
+    #   self.permalink = username.downcase
+    # end
 
 end
