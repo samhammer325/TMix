@@ -4,9 +4,16 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
   protect_from_forgery with: :exception
+
+  # this is hopefully to get usernames working
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:email, :password,:username) }
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:email, :password, :password_confirmation,:username) }
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:email, :password, :password_confirmation,:username) }
+  end
+
   def ensure_signup_complete
   	return if action_name == "finish_signup"
-
   	if current_user && !current_user.email_verified?
   		redirect_to root_path
   	end

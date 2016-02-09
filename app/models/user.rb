@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   TEMP_EMAIL_PREFIX = "temporary@email"
   TEMP_EMAIL_REGEX = /\Atemporary@email/
 
+  before_save :create_permalink
+
   has_many :ratings, dependent: :destroy
   has_many :mixtapes, through: :ratings, dependent: :destroy
   #TODO: User can't have many songs unless songs has a user_id!
@@ -52,6 +54,10 @@ class User < ActiveRecord::Base
     self.email && self.email !~ TEMP_EMAIL_REGEX
   end
 
+  def to_param
+     permalink
+  end
+
 
   # def self.from_omniauth(auth)
   #  where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -59,5 +65,10 @@ class User < ActiveRecord::Base
   #    user.password = Devise.friendly_token[0,20]
   #  end
   # end
+
+  private
+    def create_permalink
+      self.permalink = username
+    end
 
 end
