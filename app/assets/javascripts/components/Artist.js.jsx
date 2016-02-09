@@ -14,7 +14,6 @@ class Artist extends React.Component{
 
 
   add(songName, artist){
-    // debugger
     let self = this;
     $.ajax({
       url: '/song',

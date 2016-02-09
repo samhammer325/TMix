@@ -18,11 +18,7 @@ class Player extends React.Component{
     }
   }
 
-
-
-
   render(){
-
     return(
       <div>
         {this.mobilePlayer()}
@@ -32,4 +28,3 @@ class Player extends React.Component{
 }
 
 
- // http://dar.fm/player_api.php?custom_style=mixtape

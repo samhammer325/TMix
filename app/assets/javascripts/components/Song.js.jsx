@@ -5,10 +5,6 @@ class Song extends React.Component{
     this.renderPlayButton = this.renderPlayButton.bind(this);
     this.play = this.play.bind(this);  
   }
-  
-  componentDidMount(){
-    // this.renderPlayButton();
-  }
 
   renderPlayButton(){
     self = this;

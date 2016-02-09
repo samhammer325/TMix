@@ -17,12 +17,10 @@
     }).success( data => {
       this.setState({mixtapeName: data.name});
       this.setState({songs: data.songs});
-      // debugger
     })
   }
 
   render(){
-    // this.getSongs();
     let songs = this.state.songs.map( song => {
     let key = `song-${song.song_id}`;
 

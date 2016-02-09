@@ -4,17 +4,12 @@ class Mixtape extends React.Component{
 
     this.playMixtape = this.playMixtape.bind(this);
     this.deleteMixtape = this.deleteMixtape.bind(this)
-    // this.deleteBtn = this.deleteBtn.bind(this)
-    // this.deleteSong = this.deleteSong.bind(this)
-    // this.state = {songs: [] };
-    // this.state = { mixtapes: [] };
+
   }
 
 
   playMixtape(){
-    //debugger
     this.props.displayPlayMixtape(this.props.mixtape_id);
-     // alert('play');
 
   }
 

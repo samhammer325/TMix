@@ -9,6 +9,13 @@
     this.noArtists = this.noArtists.bind(this);
     this.displayDoneButton = this.displayDoneButton.bind(this);
     this.pass = this.pass.bind(this);
+    this.showSuggestions = this.showSuggestions.bind(this);
+  }
+
+  componentDidMount(){
+    self = this;
+    self.showSuggestions();
+
   }
 
   getSearchResults(){
@@ -22,6 +29,21 @@
     }).success( data => {
       this.state.searched = true;
       this.setState({results: data});
+    });
+  }
+
+  showSuggestions(){
+    $("#search").autocomplete( {
+      source(request, response){ 
+        $.ajax({
+          url: "http://api.dar.fm/songartist.php?q=" + request.term + "&callback=jsonp&web=1&partner_token=9388418650",
+          jsonp: "callback",
+          type: "GET",
+          dataType: "jsonp",
+        }).success( data => {
+            response(data)
+        });
+      }
     });
   }
 
@@ -109,7 +131,7 @@
             </div>
 
           <h5 className="subtit white-text salt center">Search for an artist:</h5>
-          <input type='text' ref='searchText' autofocus='true' placeholder="Artist"/>
+          <input id='search' type='text' ref='searchText' autofocus='true' placeholder="Artist"/>
           <div className="center">
             <button onClick={this.getSearchResults} className='btn waves-effect waves-light'>Search</button>
           </div>
