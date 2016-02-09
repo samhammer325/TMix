@@ -15,7 +15,6 @@
   componentDidMount(){
     self = this;
     self.showSuggestions();
-
   }
 
   getSearchResults(){
@@ -36,7 +35,7 @@
     $("#search").autocomplete( {
       source(request, response){ 
         $.ajax({
-          url: "http://api.dar.fm/songartist.php?q=" + request.term + "&callback=jsonp&web=1&partner_token=9388418650",
+          url: "http://api.dar.fm/songartist.php?q=*" + request.term + "*&callback=jsonp&web=1&partner_token=9388418650",
           jsonp: "callback",
           type: "GET",
           dataType: "jsonp",
