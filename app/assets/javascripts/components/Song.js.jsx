@@ -25,10 +25,13 @@ class Song extends React.Component{
       
       if (data.length != 0) {
         this.setState({station_id: data[0].station_id, streaming: true, results: data});
+
         // this.setState({streaming: true});
       };
     });
   }
+
+  // streaming: true
 
   mobilePlayBtn(station){
     song = this.props.song_name.replace(/\s/g, ".")
