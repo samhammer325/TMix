@@ -3,6 +3,18 @@ class MixtapesController < ApplicationController
 	def index
   end
 
+  def show
+    @mixtape = Mixtape.find(params[:id])
+    @songs = @mixtape.songs
+    
+    url_prefix = 'https://chart.googleapis.com/chart?chs=300x300&cht=qr&chld=H&chl='
+
+    profile_url = request.original_url
+
+    @qr = url_prefix + profile_url
+
+  end
+
 	def create
 		mixtape_name = params[:name]
 		mixtape_category = params[:category]

@@ -26,10 +26,6 @@ class SongController < ApplicationController
     head :ok
   end
 
-  # def show
-  # 	@songs = Song.find_by(mixtape_id: params[:mixtape_id])
-  # end
-
   private
 
     # def song_params

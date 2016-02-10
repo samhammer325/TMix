@@ -39,6 +39,7 @@ gem 'react-rails'
 gem 'puma'
 gem 'rails_12factor'
 gem 'font-awesome-sass'
+gem 'jquery-ui-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

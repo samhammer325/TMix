@@ -5,9 +5,9 @@ class Song extends React.Component{
     this.renderPlayButton = this.renderPlayButton.bind(this);
     this.play = this.play.bind(this);  
   }
-  
+
   componentDidMount(){
-    // this.renderPlayButton();
+    this.renderPlayButton();
   }
 
   renderPlayButton(){
@@ -50,7 +50,6 @@ class Song extends React.Component{
   }
 
   render(){
-    this.renderPlayButton();
 
     if (this.state.streaming == true) {
       station = this.state.results[0].station_id
