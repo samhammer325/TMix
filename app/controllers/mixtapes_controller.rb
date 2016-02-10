@@ -4,9 +4,15 @@ class MixtapesController < ApplicationController
   end
 
   def show
-  	@mixtape = Mixtape.find(params[:id])
+    @mixtape = Mixtape.find(params[:id])
     @songs = @mixtape.songs
-    # binding.pry
+    
+    url_prefix = 'https://chart.googleapis.com/chart?chs=300x300&cht=qr&chld=H&chl='
+
+    profile_url = request.original_url
+
+    @qr = url_prefix + profile_url
+
   end
 
 	def create
