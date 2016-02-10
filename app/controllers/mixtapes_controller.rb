@@ -3,6 +3,12 @@ class MixtapesController < ApplicationController
 	def index
   end
 
+  def show
+  	@mixtape = Mixtape.find(params[:id])
+    @songs = @mixtape.songs
+    # binding.pry
+  end
+
 	def create
 		mixtape_name = params[:name]
 		mixtape_category = params[:category]

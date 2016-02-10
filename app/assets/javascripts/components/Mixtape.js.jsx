@@ -4,7 +4,11 @@ class Mixtape extends React.Component{
 
     this.playMixtape = this.playMixtape.bind(this);
     this.deleteMixtape = this.deleteMixtape.bind(this)
+    
+  }
 
+  componentWillMount(){
+    this.setState({mixtapeUrl: "/mixtapes/" + this.props.mixtape_id});
   }
 
 
@@ -13,9 +17,7 @@ class Mixtape extends React.Component{
 
   }
 
-
   show_mixtape(){
-
 
   }
 
@@ -39,6 +41,7 @@ class Mixtape extends React.Component{
   }
 
   render(){
+    
     let songs = this.props.mixtape.map( song => {
       let key = `mixtapeSong-${song.song_id}`;
       return(<SongDetails key={key} songName={song.song_name} artistName={song.artist_name} />);
@@ -50,6 +53,8 @@ class Mixtape extends React.Component{
              { this.deleteBtn() }
              <div className="toop">
               <button className="btn" onClick={this.playMixtape}>Play</button>
+              <a className="btn" href={this.state.mixtapeUrl}>LINK</a>
+
              </div> 
               <div className='card-content white-text boxreset' >
                 <p className="salt crd center">{this.props.name}</p>
