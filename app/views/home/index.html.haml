@@ -5,7 +5,7 @@
 	%h6.black-text.center.salt.foont.buttonvw #{current_user.name}
 	- if current_user.picture == nil
 	- else
-		%img.center.pushlot{alt: "profile_pic", src: "#{current_user.picture}"}
+		%img.center.pushlot{alt: "profile_pic", src: @img}
 	%br
 	- if /\.twimg/.match(current_user.picture)
 		%br
