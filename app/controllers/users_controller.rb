@@ -1,28 +1,25 @@
 class UsersController < ApplicationController
 	before_action :set_user, only: [:show, :edit, :update, :destroy]
 	before_filter :ensure_sign_complete, only: [:new, :create, :update, :destroy]
-	skip_before_filter :authenticate_user!
+	# skip_before_filter :authenticate_user!
 	def edit
 
 	end
 
 	def show
-	@user = User.find_by_username(params[:id])
+		if @user = User.find_by_username(params[:id])
+		else
+			@user = current_user
+		end
 
-    @mixtape = Mixtape.where(user_id: current_user.id)
-		binding.pry
-    @songs = Song.where(mixtape_id: @mixtape[0].id)
-
+		@mixtape = Mixtape.where(user_id: @user.id)
+		if @mixtape.any?
+    	@songs = Song.where(mixtape_id: @mixtape[0].id)
+		end
     url_prefix = 'https://chart.googleapis.com/chart?chs=300x300&cht=qr&chld=H&chl='
-
     profile_url = request.original_url
-
     @qr = url_prefix + profile_url
-
-  #   @user = User.find_by_permalink(param[:id])
-  #   @title = @user.name
 	end
-
 
 	def update
 		respond_to do |f|
@@ -64,7 +61,6 @@ class UsersController < ApplicationController
 		@user = User.find_by(id: params[:id])
 		# @user = User.find_by(username: params[:username])
 	end
-
 
 	private
 
