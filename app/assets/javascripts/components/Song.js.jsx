@@ -1,7 +1,7 @@
 class Song extends React.Component{
   constructor(props){
     super(props);
-    this.state = {results: [], station_id: 0};
+    this.state = {results: [], streaming: false, station_id: 0};
     this.renderPlayButton = this.renderPlayButton.bind(this);
     this.play = this.play.bind(this);  
   }
@@ -21,13 +21,17 @@ class Song extends React.Component{
       type: 'GET',
       dataType: 'jsonp',
       }).success( data => {
+      // this.setState({results: data});
       
       if (data.length != 0) {
-        this.setState({station_id: data[0].station_id, results: data});
+        this.setState({station_id: data[0].station_id, streaming: true, results: data});
 
+        // this.setState({streaming: true});
       };
     });
   }
+
+  // streaming: true
 
   mobilePlayBtn(station){
     song = this.props.song_name.replace(/\s/g, ".")
@@ -46,6 +50,9 @@ class Song extends React.Component{
   }
 
   render(){
+
+    if (this.state.streaming == true) {
+      station = this.state.results[0].station_id
       
       return(
          <div>
