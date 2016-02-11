@@ -8,6 +8,17 @@ class UsersController < ApplicationController
 
 	def show
 	@user = User.find_by_username(params[:id])
+
+    @mixtape = Mixtape.where(user_id: current_user.id)
+		binding.pry
+    @songs = Song.where(mixtape_id: @mixtape[0].id)
+
+    url_prefix = 'https://chart.googleapis.com/chart?chs=300x300&cht=qr&chld=H&chl='
+
+    profile_url = request.original_url
+
+    @qr = url_prefix + profile_url
+
   #   @user = User.find_by_permalink(param[:id])
   #   @title = @user.name
 	end
