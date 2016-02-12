@@ -1,22 +1,29 @@
-%h1 you are checkout out a user page
-%h3 #{@user.email}
-%h3 #{@user.username}
+.container
+	-if current_user.id == @user.id
+		%h1 Your profile, #{@user.username}.
+	-else
+		%h1 #{@user.username}'s Profile
 
--if @mixtape.any?
-	%div.card-panel.cyan
-		%div.card-content.white-text
-			%h5.center
-				= @mixtape.name
-				- @songs.each do |song|
-					.tex
-						.paddin
-							%h5.inline
-								%span
-									= song.name
-								%span By:
-								%span
-									= song.artist
-								%button.btn.inlin.flo Play
--else
-%img{:alt => "My QR code", :src => @qr}
-%a.moove.bigger{:href => "home#index"} Mixtape
+	%h3 #{@user.email}
+	%h2 Preferred music: #{@user.permalink}
+
+	-if @mixtape.any?
+		%div.card-panel.cyan
+			%div.card-content.white-text
+				%h5.center
+					= @mixtape.name
+					- @songs.each do |song|
+						.tex
+							.paddin
+								%h5.inline
+									%span
+										= song.name
+									%span By:
+									%span
+										= song.artist
+									%button.btn.inlin.flo Play
+	-else
+	%img{:alt => "My QR code", :src => @qr}
+	%a.moove.bigger{:href => "home#index"} Mixtape
+	-if current_user.id == @user.id
+		%a.moove.bigger{:href => "users_edit"} Edit
