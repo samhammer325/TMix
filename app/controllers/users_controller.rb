@@ -3,7 +3,17 @@ class UsersController < ApplicationController
 	before_filter :ensure_sign_complete, only: [:new, :create, :update, :destroy]
 	# skip_before_filter :authenticate_user!
 	def edit
+		# binding.pry
+		# id = current_user.id
+		# @user = User.where(id: current_user.id)
+		# binding.pry
+		@user = current_user
+		# @user = current_user.id
+	end
 
+	def update
+		@user = current_user
+		binding.pry
 	end
 
 	def show
@@ -19,6 +29,7 @@ class UsersController < ApplicationController
     url_prefix = 'https://chart.googleapis.com/chart?chs=300x300&cht=qr&chld=H&chl='
     profile_url = request.original_url
     @qr = url_prefix + profile_url
+		# binding.pry
 	end
 
 	def update
