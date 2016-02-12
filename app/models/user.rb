@@ -35,9 +35,10 @@ class User < ActiveRecord::Base
         user = User.new(
           name: auth.extra.raw_info.name,
           picture: auth.info.image,
-          #username: auth.info.nickname || auth.uid,
+          username: auth.info.nickname || auth.uid,
           email: email ? email : "#{TEMP_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
-          password: Devise.friendly_token[0,20]
+          password: Devise.friendly_token[0,20],
+          # username: auth.extra.raw_info.username
         )
         # user.skip_confirmation! #if user.respond_to?(:skip_confirmation)
         user.save!

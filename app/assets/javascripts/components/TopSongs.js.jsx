@@ -28,12 +28,13 @@ class TopSongs extends React.Component{
     let i = 0;
     let topartists = this.state.results.map( topartist => {
       let key = `topartist-${i += 1}`
-      return(<TopArtist key={key} {...topartist} rplay={self.playSong} mixtapeId={self.state.mixtape_id} getSongs={this.getSongs}/>);
+      return(<TopArtist key={key} rank={i} {...topartist} rplay={self.playSong} mixtapeId={self.state.mixtape_id} getSongs={this.getSongs}/>);
     });
 		
 		return(
-	  	<div className="center container" onMouseEnter={this.topCharts}> 
-	           		<br />
+	  	<div className="center container" > 
+	           		{this.topCharts()}
+                <br />
 	           		<br />
 						<div className='row' onMouseEnter={this.topCharts}>
             	{topartists}

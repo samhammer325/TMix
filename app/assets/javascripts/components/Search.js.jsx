@@ -21,7 +21,7 @@
     let self = this;
     let searchTerm = self.refs.searchText.value.replace(/\s/g, "%20")
     $.ajax({
-      url: "http://api.dar.fm/playlist.php?&q=@artist%" + searchTerm + "&callback=jsonp&web=1&partner_token=9388418650",
+      url: "http://api.dar.fm/playlist.php?&q=" + searchTerm + "&callback=jsonp&web=1&partner_token=9388418650",
       jsonp: 'callback',
       type: 'GET',
       dataType: 'jsonp',
@@ -119,24 +119,26 @@
             </div>
               <button onClick={this.createMixtape} className='btn'>Create New Mixtape</button>
           </div>
+          <br />
            <div id='cardHolder' className='row'>
              <div className='card-panel cyan'>
                 <div className='card-content'>
                   <h3> {this.state.mixtapeName}</h3>
                 {songArray}
                 {this.displayDoneButton()}
+                <br />
                 </div>
               </div>
             </div>
 
-          <h5 className="subtit white-text salt center">Search for an artist:</h5>
+          <h5 className="subtit white-text salt center">Search for an Artist or Song:</h5>
           <input id='search' type='text' ref='searchText' autofocus='true' placeholder="Artist"/>
           <div className="center">
             <button onClick={this.getSearchResults} className='btn waves-effect waves-light'>Search</button>
           </div>
           <br />
           <br />
-          <h4 className='center-align center subtit white-text salt'>Artists playing:</h4>
+          <h4 className='center-align center subtit white-text salt'>Songs Playing:</h4>
           <br />
           <div className='row'>
             {this.noArtists(artists)}

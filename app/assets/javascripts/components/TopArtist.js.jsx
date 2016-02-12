@@ -13,6 +13,23 @@ class TopArtist extends React.Component{
   }
 
 
+  mobilePlayButton(station){
+    song = this.props.songtitle.replace(/\s/g, ".")
+    artist = this.props.songartist.replace(/\s/g, ".")
+
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+      window.open("http://onrad.io/" + artist + "." + song)
+    } else {
+      this.play(station);
+    } 
+  }
+
+
+
+
+
+
+
   add(songName, artist){
     // debugger
     let self = this;
@@ -36,13 +53,14 @@ class TopArtist extends React.Component{
     return(<div>
             <div className="nav4 card-panel height cyan z-depth-3">
               <div className="card-content purple">
-                <p className="stylez center truncate">
+                <div className="stylez center truncate">
+                  <h4 className="salt white-text"># {this.props.rank}</h4>
                   <h3 className="salt white-text">{this.props.songtitle}</h3>
                   <h4 className="salt white-text">By: {this.props.songartist}</h4>
-                </p>
+                </div>
                 <div className="row center">
                 	<br />
-                  <a className="btn waves-effect waves-light marg" onClick={() => this.play(this.props.station_id)}>play</a>
+                  <a className="btn waves-effect waves-light marg" onClick={() => this.mobilePlayButton(this.props.station_id)}>play</a>
                   <a className="btn bluezs waves-effect waves-light" onClick={() => this.add(this.props.title, this.props.artist)}>Add</a>
                 </div>
                 <br />
