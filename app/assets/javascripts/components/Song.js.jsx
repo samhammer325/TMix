@@ -34,14 +34,14 @@ class Song extends React.Component{
   // streaming: true
 
   mobilePlayBtn(station){
-    song = this.props.song_name.replace(/\s/g, ".")
-    artist = this.props.artist_name.replace(/\s/g, ".")
+    // song = this.props.song_name.replace(/\s/g, ".")
+    // artist = this.props.artist_name.replace(/\s/g, ".")
 
-    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-      window.open("http://onrad.io/" + artist + "." + song)
-    } else {
-      this.play(station);
-    } 
+    // if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    //   window.open("http://onrad.io/" + artist + "." + song)
+    // } else {
+    //   this.play(station);
+    // } 
   }
 
 
@@ -51,28 +51,22 @@ class Song extends React.Component{
 
   render(){
 
-    if (this.state.streaming == true) {
-      station = this.state.results[0].station_id
-      
-      return(
-         <div>
-          <div className="paddin">  
-            <h5 className="inlin">{this.props.song_name} By: {this.props.artist_name}</h5><button onClick={() => this.mobilePlayBtn(station)} className='btn inlin flo'>Play</button>
-          </div>
-          <hr />
-          </div>
-        );
-    }else{
-      return(
-         <div className="tex">
-          <div className="paddin">  
-            <h5>{this.props.song_name} By: {this.props.artist_name}</h5>
-          </div>
-          
-          <hr />
+   
+      // <button onClick={() => this.mobilePlayBtn(station)} className='btn inlin flo'>Play</button>
+    return(
+       <div>
+        <div className="paddin">  
+          <h5 className='inlin'>
+          <span className='song-name'>{this.props.song_name}</span>
+          <span> By:  </span> 
+          <span className='artist-name'>{this.props.artist_name}</span>
+          </h5>
+          <button className='btn inlin flo play-button button-grey'>Play</button>
         </div>
-        );
-    };
+        <hr />
+        </div>
+      );
+    
   }
 }
 
